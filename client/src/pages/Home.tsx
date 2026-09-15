@@ -115,9 +115,49 @@ export default function Home() {
         <section className="py-14 sm:py-20 bg-background"><div className="container max-w-5xl"><div className="text-center mb-10"><h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">Менторское сопровождение</h2><p className="text-lg text-foreground/75">Формат для долгосрочной совместной работы. Доступен после проведения экспресс-аудита и отдельного согласования.</p></div><Card className="p-6 sm:p-10 bg-white border-border"><p className="text-foreground/75 leading-relaxed mb-6">Ежемесячное сопровождение рассчитано на ограниченный и заранее согласованный объём взаимодействия и предназначено для соискателей, которым нужна регулярная экспертная поддержка при самостоятельной подготовке исследования.</p><div className="space-y-5"><div><h3 className="font-bold text-primary">До 4 индивидуальных онлайн-сессий в месяц</h3><p className="text-foreground/70">15–30 минут каждая; суммарно не более 2 часов в месяц.</p></div><div><h3 className="font-bold text-primary">Экспертная проверка материалов</h3><p className="text-foreground/70">До 25–30 страниц в месяц: заранее согласованные фрагменты диссертации, введения, автореферата или научных статей.</p></div><div><h3 className="font-bold text-primary">Публикационный консалтинг</h3><p className="text-foreground/70">Консультационная помощь в структурировании и подготовке статей; написание за автора и гарантия публикации не входят.</p></div><div><h3 className="font-bold text-primary">Поддержка в мессенджере</h3><p className="text-foreground/70">Ответы по рабочим дням в формате «вопрос–ответ», в течение одного рабочего дня. Мессенджер не является круглосуточным каналом связи.</p></div></div><div className="mt-8 rounded-xl border border-accent/30 bg-accent/5 p-5"><p className="font-bold text-primary">Стоимость — 30 000 ₽ в месяц.</p><p className="mt-1 text-foreground/70">Минимальный срок сопровождения — 6 месяцев. Неиспользованные сессии и непереданный в согласованный срок объём материалов не переносятся, если иное заранее не согласовано.</p></div><p className="mt-6 text-sm text-foreground/60">Все тексты и научные решения готовятся соискателем самостоятельно. Сопровождение не включает написание диссертации или статей за автора и не гарантирует публикацию или успешную защиту.</p></Card></div></section>
 
         <section className="py-14 sm:py-20 bg-background"><div className="container max-w-5xl"><div className="text-center"><h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">Публикации</h2><p className="mx-auto max-w-3xl text-lg text-foreground/70">Некоторые публикации последних лет — авторские материалы Михаила Палагина в журнале Business Excellence.</p><a href="/publications" className="mt-7 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-accent/90">Посмотреть публикации</a></div></div></section>\n\n        <section className="py-14 sm:py-20 bg-secondary/30"><div className="container max-w-4xl"><h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary text-center mb-10">Частые вопросы</h2><div className="space-y-3">{faq.map(([question, answer]) => <details key={question} className="group rounded-xl border border-border bg-white px-5 sm:px-6"><summary className="cursor-pointer list-none py-5 font-semibold text-primary"><span className="flex items-center justify-between gap-4"><span>{question}</span><span className="text-accent transition-transform group-open:rotate-180">⌄</span></span></summary><p className="border-t border-border pb-5 pt-4 leading-relaxed text-foreground/70">{answer}</p></details>)}</div></div></section>
+<label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70">
+  <input 
+    type="checkbox" 
+    name="Согласие на обработку обращения" 
+    required 
+    className="mt-1 h-4 w-4 shrink-0 accent-accent" 
+  />
+  <span>
+    Я согласен(на) на обработку указанных данных для ответа на обращение и ознакомлен(а) с{' '}
+    <a 
+      href="/privacy.html" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-accent underline underline-offset-2"
+    >
+      Политикой конфиденциальности
+    </a>.
+  </span>
+</label>
 
-        <section id="contact-form" className="py-16 sm:py-24 bg-background"><div className="container max-w-2xl"><h2 className="text-3xl sm:text-5xl font-bold text-primary text-center mb-5">Заявка на предварительное согласование</h2><p className="text-center text-foreground/70 mb-10">Опишите ситуацию в свободной форме. Вопросы-подсказки — необязательны. Отправка заявки не означает начало аудита.</p><Card className="p-5 sm:p-8 bg-white border-border"><form action="https://formspree.io/f/mwleqepg" method="POST" className="space-y-6"><input type="hidden" name="subject" value="Новая заявка на научный консалтинг" /><div><label className="block text-sm font-medium text-foreground mb-2" htmlFor="free-description">Описание ситуации</label><Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-40" /><p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после предварительного согласования.</p></div><details className="group rounded-xl border border-border bg-muted/20"><summary className="cursor-pointer list-none px-5 py-4 font-semibold text-primary"><span className="flex items-center justify-between gap-4"><span>Вопросы-подсказки — отвечать необязательно</span><span className="text-accent">⌄</span></span></summary><div className="border-t border-border px-5 pb-5 pt-5"><p className="text-sm text-foreground/70 leading-relaxed">Тема, специальность, объект и предмет исследования, научная проблема, текущая стадия работы, публикации и замечания руководителя — можно указать только то, что уже сформулировано.</p></div></details><div className="pt-4 border-t border-border space-y-4"><p className="text-sm text-muted-foreground">Контактные данные для обратной связи:</p><Input type="text" placeholder="Ваше имя" name="Имя" required className="w-full" /><Input type="email" placeholder="E-mail для ответа" name="_replyto" required className="w-full" /><Input type="text" placeholder="Telegram — по желанию" name="Telegram" className="w-full" /></div><div className="rounded-lg border border-border bg-muted/30 p-4 text-sm leading-relaxed text-foreground/70"><p><strong className="text-foreground">Условия:</strong> заявка может быть отправлена до оплаты; работа начинается только после подтверждения оплаты 6 000 ₽.</p><p className="mt-2">Срок письменного аудита — обычно 2 рабочих дня, в отдельных случаях — до 3 рабочих дней. Если результат не предоставлен в течение 7 рабочих дней, оплаченная сумма возвращается.</p></div><div className="rounded-lg border border-accent/30 bg-accent/5 p-4 text-sm leading-relaxed text-foreground/75"><p><strong className="text-foreground">Конфиденциальность и авторские права.</strong> Все присланные материалы используются только для рассмотрения заявки и оказания согласованных консультационных услуг. Авторские права на материалы сохраняются за их правообладателем. Полученные сведения и документы не передаются третьим лицам, за исключением случаев, предусмотренных законодательством.</p></div><label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70"><input type="checkbox" name="Согласие на обработку обращения" required className="mt-1 h-4 w-4 shrink-0 accent-accent" /><span>Я согласен(на) на обработку указанных данных для ответа на обращение и ознакомлен(а) с условиями работы, оплаты и возврата.</span></label><label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70"><input type="checkbox" name="Ознакомление с офертой" required className="mt-1 h-4 w-4 shrink-0 accent-accent" /><span>Я ознакомлен(а) с <a href="/oferta.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">договором публичной оферты</a> и принимаю его условия.</span></label><Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white text-lg py-6"><Send className="mr-2" size={20} />Отправить заявку на предварительное согласование</Button></form></Card></div></section>
-      </main>
+<label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70">
+  <input 
+    type="checkbox" 
+    name="Ознакомление с офертой" 
+    required 
+    className="mt-1 h-4 w-4 shrink-0 accent-accent" 
+  />
+  <span>
+    Я ознакомлен(а) с{' '}
+    <a 
+      href="/offer.html" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-accent underline underline-offset-2"
+    >
+      договором публичной оферты
+    </a>{' '}
+    и принимаю его условия.
+  </span>
+</label>
+
+    
+            </main>
 
       <footer className="border-t border-border bg-white"><div className="container py-8 flex flex-col sm:flex-row gap-4 items-center justify-between text-sm text-foreground/60"><p>© Михаил Палагин · Научный консалтинг</p><div className="flex gap-4"><a href="/oferta.html" className="text-accent hover:underline">Договор публичной оферты</a><a href="mailto:vned.mp@yandex.ru" className="text-accent hover:underline">vned.mp@yandex.ru</a></div></div></footer>
     </div>
