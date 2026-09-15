@@ -116,6 +116,7 @@ export default function Home() {
 
         <section className="py-14 sm:py-20 bg-background"><div className="container max-w-5xl"><div className="text-center"><h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">Публикации</h2><p className="mx-auto max-w-3xl text-lg text-foreground/70">Некоторые публикации последних лет — авторские материалы Михаила Палагина в журнале Business Excellence.</p><a href="/publications" className="mt-7 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-accent/90">Посмотреть публикации</a></div></div></section>\n\n        <section className="py-14 sm:py-20 bg-secondary/30"><div className="container max-w-4xl"><h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary text-center mb-10">Частые вопросы</h2><div className="space-y-3">{faq.map(([question, answer]) => <details key={question} className="group rounded-xl border border-border bg-white px-5 sm:px-6"><summary className="cursor-pointer list-none py-5 font-semibold text-primary"><span className="flex items-center justify-between gap-4"><span>{question}</span><span className="text-accent transition-transform group-open:rotate-180">⌄</span></span></summary><p className="border-t border-border pb-5 pt-4 leading-relaxed text-foreground/70">{answer}</p></details>)}</div></div></section>
 <label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70">
+ <label className="flex items-start gap-3 text-sm leading-relaxed text-foreground/70">
   <input 
     type="checkbox" 
     name="Согласие на обработку обращения" 
@@ -156,8 +157,22 @@ export default function Home() {
   </span>
 </label>
 
-    
-  vned.mp@yandex.ru
-        </div>
+<Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white text-lg py-6">
+  <Send className="mr-2" size={20} />
+  Отправить заявку на предварительное согласование
+</Button>
+</form>
+</Card>
+</div>
+</section>
+  <footer className="mt-16 py-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+    <div>
+      © {new Date().getFullYear()} Михаил Палагин · Научный консалтинг. Все права защищены.
+    </div>
+    <div>
+      vned.mp@yandex.ru
+    </div>
+  </footer>
+</main>
   );
 }
