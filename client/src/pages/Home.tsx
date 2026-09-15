@@ -157,9 +157,7 @@ export default function Home() {
 </label>
 
     
-            </main>
-
-      <footer className="border-t border-border bg-white"><div className="container py-8 flex flex-col sm:flex-row gap-4 items-center justify-between text-sm text-foreground/60"><p>© Михаил Палагин · Научный консалтинг</p><div className="flex gap-4"><a href="/oferta.html" className="text-accent hover:underline">Договор публичной оферты</a><a href="mailto:vned.mp@yandex.ru" className="text-accent hover:underline">vned.mp@yandex.ru</a></div></div></footer>
-    </div>
+  vned.mp@yandex.ru
+        </div>
   );
 }
