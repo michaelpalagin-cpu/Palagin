@@ -1,14 +1,17 @@
 import React from 'react';
-import { Send, CheckCircle, Shield, GraduationCap, Award, Briefcase, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle, Shield, GraduationCap, Award, Briefcase, FileText, ArrowRight } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
+import { useLocation } from 'wouter';
 
 export default function Home() {
+  const [, setLocation] = useLocation();
+
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
-      {/* Шапка и главный экран */}
+      {/* Шапка сайта */}
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
         <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="font-bold text-xl text-primary">Михаил Палагин</div>
@@ -16,22 +19,33 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Главный экран */}
       <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-slate-50">
         <div className="container max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
             Михаил Палагин
           </h1>
           <p className="text-xl sm:text-2xl font-bold text-teal-600 mb-8">
-            Научный консалтинг и менторство для соискателей ученых степеней (к.т.н. / д.т.н.)
+            Научный консалтинг и менторство для соискателей ученых степеней (к.т.н.)
           </p>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Экспертное сопровождение аспирантов и докторантов по техническим специальностям. От обоснования научной новизны до генеральной репетиции предзащиты.
+            Экспертное сопровождение аспирантов по техническим специальностям. От обоснования научной новизны до генеральной репетиции предзащиты.
           </p>
-          <a href="#contact-form">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg px-8 py-6 rounded-xl shadow-lg shadow-teal-600/20">
-              Подать заявку на экспресс-аудит <ArrowRight className="ml-2" size={20} />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#contact-form">
+              <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg px-8 py-6 rounded-xl shadow-lg shadow-teal-600/20">
+                Подать заявку на экспресс-аудит <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </a>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-slate-200 text-slate-700 font-medium text-lg px-8 py-6 rounded-xl"
+              onClick={() => setLocation('/publications')}
+            >
+              <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть публикации
             </Button>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -84,7 +98,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Тарифы */}
+      {/* Форматы работы */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Форматы работы и стоимость</h2>
@@ -115,7 +129,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Форма контактов */}
+      {/* Форма заявки */}
       <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
         <div className="container max-w-2xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
