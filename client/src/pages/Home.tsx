@@ -205,10 +205,12 @@ export default function Home() {
               </details>
 
               <div className="pt-4 border-t border-slate-100 space-y-4">
-                <p className="text-base font-medium text-slate-800">Контактные данные для обратной связи:</p>
+                <p className="text-base font-medium text-slate-800">
+                  Контактные данные (для ответа обязателен минимум один из каналов связи):
+                </p>
                 <Input type="text" placeholder="Ваше имя" name="Имя" required className="w-full rounded-xl text-base" />
-                <Input type="email" placeholder="E-mail для ответа" name="_replyto" required className="w-full rounded-xl text-base" />
-                <Input type="text" placeholder="Telegram — по желанию" name="Telegram" className="w-full rounded-xl text-base" />
+                <Input id="contact-email" type="email" placeholder="E-mail для ответа" name="_replyto" className="w-full rounded-xl text-base" />
+                <Input id="contact-telegram" type="text" placeholder="Telegram (аккаунт или номер телефона)" name="Telegram" className="w-full rounded-xl text-base" />
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-4 text-xs sm:text-sm leading-relaxed text-slate-600 space-y-2">
@@ -244,7 +246,19 @@ export default function Home() {
                 </span>
               </label>
 
-              <Button type="submit" size="lg" className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg py-6 rounded-xl shadow-md">
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg py-6 rounded-xl shadow-md"
+                onClick={(e) => {
+                  const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
+                  const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
+                  if (!email && !telegram) {
+                    e.preventDefault();
+                    alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
+                  }
+                }}
+              >
                 <Send className="mr-2" size={18} /> Отправить заявку на предварительное согласование
               </Button>
             </form>
