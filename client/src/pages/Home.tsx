@@ -49,7 +49,7 @@ export default function Home() {
                   size="lg" 
                   variant="outline" 
                   className="border-slate-200 text-slate-700 font-medium text-lg px-6 py-6 rounded-xl bg-white hover:bg-slate-50 w-full sm:w-auto"
-                  onClick={() => setLocation('/publications')}
+                  onClick={() => setLocation('/публикации')}
                 >
                   <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть publications
                 </Button>
@@ -149,7 +149,7 @@ export default function Home() {
                 <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
-              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / month <span className="text-xs font-normal text-slate-500">(документально доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
+              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs font-normal text-slate-500">(документально доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
           </div>
         </div>
