@@ -24,7 +24,7 @@ export default function Home() {
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             
-            {/* Левая колонка: Ваш новый текст */}
+            {/* Левая колонка: Ваш текст */}
             <div className="md:col-span-7 text-center md:text-left space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
                 <Award size={16} /> Кандидат технических наук (с 1992 года)
@@ -33,7 +33,7 @@ export default function Home() {
                 Экспертное сопровождение аспирантов по техническим специальностям
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                От обоснования научной новизны до репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
+                От обоснования научной новизны до репетиции предзащиты. Более 30 лет in экспертном научном сообществе.
               </p>
               <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-xl text-sm text-slate-700 space-y-2 text-left">
                 <p className="m-0">✔️ Работаю только с темами, в которых действительно разбираюсь.</p>
@@ -49,9 +49,9 @@ export default function Home() {
                   size="lg" 
                   variant="outline" 
                   className="border-slate-200 text-slate-700 font-medium text-lg px-6 py-6 rounded-xl bg-white hover:bg-slate-50 w-full sm:w-auto"
-                  onClick={() => setLocation('/публикации')}
+                  onClick={() => setLocation('/publications')}
                 >
-                  <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть publications
+                  <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть публикации
                 </Button>
               </div>
             </div>
@@ -116,6 +116,7 @@ export default function Home() {
             <div className="flex gap-4 p-4 bg-white border border-border rounded-xl">
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
+                <h4 className="font-bold text-teal-600 shrink-0" size={24} />
                 <h4 className="font-bold text-slate-900 mb-1">Строгая специализация</h4>
                 <p className="text-sm text-slate-600 m-0">Консультирую только по техническим наукам. Если тема лежит вне зоны моей глубокой компетенции, я честно откажусь от проекта на этапе заявки.</p>
               </div>
@@ -145,11 +146,11 @@ export default function Home() {
               <p className="text-sm text-muted-foreground mb-4">Регулярное консалтинговое сопровождение до полной готовности диссертации.</p>
               <ul className="space-y-2 text-sm text-slate-600 mb-6 list-disc list-inside">
                 <li>Индивидуальные сессии: до 4 онлайн-консультаций в месяц (по 15-30 минут).</li>
-                <li>Письменный аудит наработок: регулярная экспертная вычитка и рецензирование текстов (до 25-30 страниц в месяц).</li>
+                <li>Письменный адуит наработок: регулярная экспертная вычитка и рецензирование текстов (до 25-30 страниц в месяц).</li>
                 <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
-              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs font-normal text-slate-500">(документально доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
+              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
           </div>
         </div>
@@ -171,7 +172,7 @@ export default function Home() {
                 <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после согласования.</p>
               </div>
 
-              {/* НАСТОЯЩИЙ ИСПРАВЛЕННЫЙ БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
+              {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
               <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
                 <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4">
                   <span>Вопросы-подсказки — отвечать необязательно</span>
@@ -240,6 +241,3 @@ export default function Home() {
           </div>
           <div className="text-slate-500 font-medium">
             vned.mp@yandex.ru
-          </div>
-        </div>
-      </footer>
