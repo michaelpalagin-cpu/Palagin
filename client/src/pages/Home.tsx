@@ -33,10 +33,10 @@ export default function Home() {
                 Экспертное сопровождение аспирантов по техническим специальностям
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                От обоснования научной новизны до репетиции предзащиты. Более 30 лет in экспертном научном сообществе.
+                От обоснования научной новизны до репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
               </p>
               <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-xl text-sm text-slate-700 space-y-2 text-left">
-                <p className="m-0">✔️ Работаю только с темами, в которых действительно разбираюсь.</p>
+                <p className="m-0">✔️ Работаю только с темами, in которых действительно разбираюсь.</p>
                 <p className="m-0">❌ Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
@@ -116,7 +116,6 @@ export default function Home() {
             <div className="flex gap-4 p-4 bg-white border border-border rounded-xl">
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
-                <h4 className="font-bold text-teal-600 shrink-0" size={24} />
                 <h4 className="font-bold text-slate-900 mb-1">Строгая специализация</h4>
                 <p className="text-sm text-slate-600 m-0">Консультирую только по техническим наукам. Если тема лежит вне зоны моей глубокой компетенции, я честно откажусь от проекта на этапе заявки.</p>
               </div>
@@ -146,7 +145,7 @@ export default function Home() {
               <p className="text-sm text-muted-foreground mb-4">Регулярное консалтинговое сопровождение до полной готовности диссертации.</p>
               <ul className="space-y-2 text-sm text-slate-600 mb-6 list-disc list-inside">
                 <li>Индивидуальные сессии: до 4 онлайн-консультаций в месяц (по 15-30 минут).</li>
-                <li>Письменный адуит наработок: регулярная экспертная вычитка и рецензирование текстов (до 25-30 страниц в месяц).</li>
+                <li>Письменный аудит наработок: регулярная экспертная вычитка и рецензирование текстов (до 25-30 страниц в месяц).</li>
                 <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
@@ -241,3 +240,9 @@ export default function Home() {
           </div>
           <div className="text-slate-500 font-medium">
             vned.mp@yandex.ru
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
