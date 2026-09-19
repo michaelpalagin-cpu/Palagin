@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, CheckCircle, Shield, GraduationCap, Award, Briefcase, FileText, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle, Shield, Award, Briefcase, FileText, ArrowRight } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -19,65 +19,90 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Главный экран */}
-      <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-slate-50">
-        <div className="container max-w-3xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-            Михаил Палагин
-          </h1>
-          <p className="text-xl sm:text-2xl font-bold text-teal-600 mb-8">
-            Научный консалтинг и менторство для соискателей ученых степеней (к.т.н.)
-          </p>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Экспертное сопровождение аспирантов по техническим специальностям. От обоснования научной новизны до генеральной репетиции предзащиты.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#contact-form">
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg px-8 py-6 rounded-xl shadow-lg shadow-teal-600/20">
-                Подать заявку на экспресс-аудит <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </a>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-slate-200 text-slate-700 font-medium text-lg px-8 py-6 rounded-xl"
-              onClick={() => setLocation('/publications')}
-            >
-              <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть публикации
-            </Button>
+      {/* Первый экран (с вашей Фотографией) */}
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-border">
+        <div className="container max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+            
+            {/* Левая колонка: Ваш новый текст */}
+            <div className="md:col-span-7 text-center md:text-left space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
+                <Award size={16} /> Кандидат технических наук (с 1992 года)
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Экспертное сопровождение аспирантов по technical специальностям
+              </h1>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                От обоснования научной новизны до репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
+              </p>
+              <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-xl text-sm text-slate-700 space-y-2 text-left">
+                <p className="m-0">✔️ Работаю только с темами, в которых действительно разбираюсь.</p>
+                <p className="m-0">❌ Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
+                <a href="#contact-form" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg px-6 py-6 rounded-xl shadow-lg shadow-teal-600/20 w-full">
+                    Подать заявку на экспресс-аудит <ArrowRight className="ml-2" size={20} />
+                  </Button>
+                </a>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-slate-200 text-slate-700 font-medium text-lg px-6 py-6 rounded-xl bg-white hover:bg-slate-50 w-full sm:w-auto"
+                  onClick={() => setLocation('/publications')}
+                >
+                  <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть публикации
+                </Button>
+              </div>
+            </div>
+
+            {/* Правая колонка: Ваша фотография */}
+            <div className="md:col-span-5 flex justify-center">
+              <div className="relative group max-w-[320px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+                <img 
+                  src="/photo.jpg" 
+                  alt="Михаил Палагин" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Блок Обо мне */}
-      <section className="py-16 sm:py-24 bg-white border-y border-border">
+      {/* Блок Об эксперте */}
+      <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
-            <GraduationCap className="text-teal-600" /> Об эксперте
+            Об эксперте
           </h2>
           <div className="prose prose-slate max-w-none text-slate-600 space-y-6 leading-relaxed">
-            <p>
-              Здравствуйте! Меня зовут <strong>Михаил Палагин</strong>. Я кандидат технических наук и практикующий научный ментор. Мой академический и профессиональный путь уникален тем, что я совмещаю глубокую фундаментальную подготовку с многолетним управленческим опытом в реальном секторе экономики.
+            <p className="text-lg text-slate-900 font-medium">
+              Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
-              <Card className="p-5 border border-slate-100 bg-slate-50/50 rounded-xl">
-                <div className="font-bold text-slate-900 flex items-center gap-2 mb-2"><Award className="text-teal-600" size={18} /> Ученая степень</div>
-                <p className="text-sm m-0">Кандидат технических наук (<strong>к.т.н. с 1992 года</strong>). Более 30 лет в экспертном научном сообществе.</p>
-              </Card>
-              <Card className="p-5 border border-slate-100 bg-slate-50/50 rounded-xl">
-                <div className="font-bold text-slate-900 flex items-center gap-2 mb-2"><Briefcase className="text-teal-600" size={18} /> Бизнес-компетенции</div>
-                <p className="text-sm m-0">Большой опыт работы на <strong>руководящих позициях в бизнесе</strong> (управление технологическими проектами и командами).</p>
-              </Card>
-            </div>
             <p>
-              Я знаю внутреннюю кухню диссертационных советов, жесткие критерии ВАК и — главное — как применить техническую теорию на практике. Я не пишу тексты за вас, я выступаю в роли независимого научного продюсера и тренера: помогаю выкристаллизовать новизну, усилить практическую значимость и защитить результаты.
+              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Не пишу диссертации «под ключ» и не торгую готовыми текстами. Работаю как независимый научный продюсер и тренер. 
+            </p>
+            
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6">
+              <div className="font-bold text-slate-900 mb-3 text-base">Помогаю:</div>
+              <ul className="space-y-3 text-sm text-slate-700 m-0 list-none pl-0">
+                <li className="flex items-center gap-2">🔹 выстроить логику исследования</li>
+                <li className="flex items-center gap-2">🔹 выкристаллизовать научную новизну</li>
+                <li className="flex items-center gap-2">🔹 усилить практическую значимость работы</li>
+                <li className="flex items-center gap-2">🔹 подготовиться к защите</li>
+              </ul>
+            </div>
+
+            <p className="text-sm border-l-4 border-teal-600 pl-4 italic text-slate-600">
+              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
             </p>
           </div>
         </div>
       </section>
-
       {/* Принципы работы */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
           <div className="space-y-4">
@@ -98,6 +123,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Форматы работы */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
