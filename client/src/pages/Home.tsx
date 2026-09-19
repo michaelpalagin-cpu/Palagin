@@ -64,17 +64,15 @@ export default function Home() {
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
-  src="/photo.jpg" 
-  
-  
-  alt="Михаил Палагин"
-  loading="lazy"
-  decoding="async"
-  width="240"
-  height="320"
-  style={{ imageRendering: 'auto' }}
-/>
-
+                  src="/photo.jpg" 
+                  alt="Михаил Палагин" 
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width="240"
+                  height="320"
+                  style={{ imageRendering: 'auto' }}
+                />
               </div>
             </div>
 
@@ -253,10 +251,11 @@ export default function Home() {
                 </span>
               </label>
 
+              {/* ПОЛНОСТЬЮ АДАПТИВНАЯ КНОПКА С СОХРАНЕНИЕМ СМЫСЛА */}
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg py-6 rounded-xl shadow-md"
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
                 onClick={(e) => {
                   const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                   const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
@@ -266,7 +265,8 @@ export default function Home() {
                   }
                 }}
               >
-                <Send className="mr-2" size={18} /> Отправить заявку на предварительное согласование
+                <Send className="shrink-0 hidden sm:inline" size={18} /> 
+                <span>Отправить заявку на предварительное согласование</span>
               </Button>
             </form>
           </Card>
