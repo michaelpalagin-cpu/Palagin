@@ -30,7 +30,7 @@ export default function Home() {
                 <Award size={16} /> Кандидат технических наук (с 1992 года)
               </div>
               <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Экспертное сопровождение аспирантов по technical специальностям
+                Экспертное сопровождение аспирантов по техническим специальностям
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
                 От обоснования научной новизны до репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
@@ -135,7 +135,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-slate-600 mb-6 list-disc list-inside">
                 <li>Глубокий предварительный анализ ваших материалов (черновики, статьи, планы).</li>
                 <li>Письменное экспертное заключение с разбором сильных и слабых мест научного аппарата.</li>
-                <li>Онлайн-сессия (разбор 15-30 минут) для обсуждения вектора доработок.</li>
+                <li>По согласованию сторон: онлайн-сессия (разбор 15-30 минут) для обсуждения результатов экспресс-аудита.</li>
               </ul>
               <div className="font-bold text-xl text-slate-900">Стоимость: 6 000 ₽ <span className="text-xs font-normal text-muted-foreground">(разовый платеж после одобрения заявки)</span></div>
             </Card>
