@@ -141,7 +141,7 @@ export default function Home() {
             </Card>
 
             <Card className="p-6 sm:p-8 border border-teal-100 bg-teal-50/20 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">🔹 Шаг 2. Менторское сопровождение</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">🔹 Шаг 2. Mentorskoe сопровождение</h3>
               <p className="text-sm text-muted-foreground mb-4">Регулярное консалтинговое сопровождение до полной готовности диссертации.</p>
               <ul className="space-y-2 text-sm text-slate-600 mb-6 list-disc list-inside">
                 <li>Индивидуальные сессии: до 4 онлайн-консультаций в месяц (по 15-30 минут).</li>
@@ -170,6 +170,19 @@ export default function Home() {
                 <Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-[160px] rounded-xl" />
                 <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после согласования.</p>
               </div>
+
+              {/* ВОЗВРАЩЕННЫЙ БЛОК: Вопросы-подсказки */}
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4">
+                  <span>Вопросы-подсказки — отвечать необязательно</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 pb-5 pt-5 bg-white rounded-b-xl">
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Тема, специальность, объект и предмет исследования, научная проблема, текущая стадия работы, публикации и замечания руководителя — можно указать только то, что уже сформулировано.
+                  </p>
+                </div>
+              </details>
 
               <div className="pt-4 border-t border-slate-100 space-y-4">
                 <p className="text-sm font-medium text-slate-800">Контактные данные для обратной связи:</p>
