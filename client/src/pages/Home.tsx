@@ -19,25 +19,31 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Первый экран (с вашей Фотографией) */}
+      {/* Первый экран (Hero) — Фото уменьшено, шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-border">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             
-            {/* Левая колонка: Ваш текст */}
-            <div className="md:col-span-7 text-center md:text-left space-y-6">
+            {/* Левая колонка: Текстовый контент с увеличенными шрифтами */}
+            <div className="md:col-span-8 text-center md:text-left space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
                 <Award size={16} /> Кандидат технических наук (с 1992 года)
               </div>
               <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Экспертное сопровождение аспирантов по техническим специальностям
               </h1>
-              <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                От обоснования научной новизны до репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
+              {/* Шрифты подзаголовка увеличены для лучшей читаемости */}
+              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
+                От обоснования научной новизны до генеральной репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
               </p>
-              <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-xl text-sm text-slate-700 space-y-2 text-left">
-                <p className="m-0">✔️ Работаю только с темами, in которых действительно разбираюсь.</p>
-                <p className="m-0">❌ Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</p>
+              {/* Блок с галочками — шрифты увеличены до text-base, исправлена опечатка 'in' */}
+              <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 space-y-3 text-left shadow-sm">
+                <p className="m-0 flex items-start gap-2">
+                  <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
+                </p>
+                <p className="m-0 flex items-start gap-2">
+                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
                 <a href="#contact-form" className="w-full sm:w-auto">
@@ -56,9 +62,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Правая колонка: Ваша фотография */}
-            <div className="md:col-span-5 flex justify-center">
-              <div className="relative group max-w-[320px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+            {/* Правая колонка: Фотография уменьшена на ~25-30% (max-w-[240px]) */}
+            <div className="md:col-span-4 flex justify-center">
+              <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
                   src="/photo.jpg" 
                   alt="Михаил Палагин" 
@@ -70,50 +76,51 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Блок Об эксперте */}
+      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта для комфортного чтения */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
             Об эксперте
           </h2>
-          <div className="prose prose-slate max-w-none text-slate-600 space-y-6 leading-relaxed">
-            <p className="text-lg text-slate-900 font-medium">
+          {/* Текст увеличен с text-slate-600 до более контрастного, размер увеличен на 1-2 пункта */}
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
+            <p className="text-xl text-slate-900 font-bold">
               Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
             </p>
             <p>
-              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Не пишу диссертации «под ключ» и не торгую готовыми текстами. Работаю как независимый научный продюсер и тренер. 
+              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
             </p>
             
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6">
-              <div className="font-bold text-slate-900 mb-3 text-base">Помогаю:</div>
-              <ul className="space-y-3 text-sm text-slate-700 m-0 list-none pl-0">
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
+              <div className="font-bold text-slate-900 mb-3 text-lg">Помогаю:</div>
+              <ul className="space-y-3 text-slate-800 m-0 list-none pl-0 font-medium">
                 <li className="flex items-center gap-2">🔹 выстроить логику исследования</li>
                 <li className="flex items-center gap-2">🔹 выкристаллизовать научную новизну</li>
-                <li className="flex items-center gap-2">🔹 усилить практическую значимость работы</li>
+                <li className="flex items-center gap-2">🔹 усилить практическую значимость</li>
                 <li className="flex items-center gap-2">🔹 подготовиться к защите</li>
               </ul>
             </div>
 
-            <p className="text-sm border-l-4 border-teal-600 pl-4 italic text-slate-600">
-              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
+            <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
+              Консультирую только по техническим специальностям in зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
             </p>
           </div>
         </div>
       </section>
+
       {/* Принципы работы */}
       <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
           <div className="space-y-4">
-            <div className="flex gap-4 p-4 bg-white border border-border rounded-xl">
+            <div className="flex gap-4 p-4 bg-white border border-border rounded-xl shadow-sm">
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Прозрачность и легитимность</h4>
                 <p className="text-sm text-slate-600 m-0">Я не пишу диссертации «под ключ» и не торгую готовыми текстами. Моя задача — обучить вас методологии и довести работу до критериев ВАК.</p>
               </div>
             </div>
-            <div className="flex gap-4 p-4 bg-white border border-border rounded-xl">
+            <div className="flex gap-4 p-4 bg-white border border-border rounded-xl shadow-sm">
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Строгая специализация</h4>
@@ -123,7 +130,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Форматы работы */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -168,7 +174,7 @@ export default function Home() {
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="free-description">Описание ситуации</label>
                 <Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-[160px] rounded-xl" />
-                <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после согласования.</p>
+                <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после предварительного согласования.</p>
               </div>
 
               {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
@@ -178,29 +184,26 @@ export default function Home() {
                   <span className="transition-transform group-open:rotate-180 text-teal-600 text-lg">▼</span>
                 </summary>
                 <div className="border-t border-slate-200 px-5 pb-5 pt-5 bg-white rounded-b-xl">
-                  <p className="text-sm text-slate-600 leading-relaxed m-0 text-left">
-                    <div className="text-sm text-slate-600 leading-relaxed space-y-4 text-left">
-  <div>
-    <strong className="text-slate-900 block mb-1">1. Научный аппарат (базовые ориентиры):</strong>
-    <p className="m-0 pl-3">· Сформулированы ли уже тема, объект и предмет исследования?</p>
-    <p className="m-0 pl-3">· По какой конкретно специальности (шифру ВАК) планируется защита?</p>
-    <p className="m-0 pl-3">· В чём, по вашему мнению, заключается научная проблема или противоречие, которое вы решаете?</p>
-  </div>
-  <div>
-    <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
-    <p className="m-0 pl-3">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
-    <p className="m-0 pl-3">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
-    <p className="m-0 pl-3">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
-    <p className="m-0 pl-3">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
-  </div>
-  <div>
-    <strong className="text-slate-900 block mb-1">3. Затруднения и цель взаимодействия:</strong>
-    <p className="m-0 pl-3">· Какие сложности вы видите (не получается с научной новизной, замечания от научного руководителя, теория не стыкуется с практикой, если что-то другое — опишите)?</p>
-    <p className="m-0 pl-3">· Какой конкретно результат вы хотите получить от нашего взаимодействия в целом и на 1-ом этапе конкретно?</p>
-  </div>
-</div>
-
-                  </p>
+                  <div className="text-sm text-slate-600 leading-relaxed space-y-4 text-left">
+                    <div>
+                      <strong className="text-slate-900 block mb-1">1. Научный аппарат (базовые ориентиры):</strong>
+                      <p className="m-0 pl-3">· Сформулированы ли уже тема, объект и предмет исследования?</p>
+                      <p className="m-0 pl-3">· По какой конкретно специальности (шифру ВАК) планируется защита?</p>
+                      <p className="m-0 pl-3">· В чём, по вашему мнению, заключается научная проблема или противоречие, которое вы решаете?</p>
+                    </div>
+                    <div>
+                      <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
+                      <p className="m-0 pl-3">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
+                      <p className="m-0 pl-3">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
+                      <p className="m-0 pl-3">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
+                      <p className="m-0 pl-3">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
+                    </div>
+                    <div>
+                      <strong className="text-slate-900 block mb-1">3. Затруднения и цель взаимодействия:</strong>
+                      <p className="m-0 pl-3">· Какие сложности вы видите (не получается с научной новизной, замечания от научного руководителя, теория не стыкуется с практикой, если что-то другое — опишите)?</p>
+                      <p className="m-0 pl-3">· Какой конкретно результат вы хотите получить от нашего взаимодействия в целом и на 1-ом этапе конкретно?</p>
+                    </div>
+                  </div>
                 </div>
               </details>
 
