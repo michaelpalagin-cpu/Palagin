@@ -51,7 +51,7 @@ export default function Home() {
                   className="border-slate-200 text-slate-700 font-medium text-lg px-6 py-6 rounded-xl bg-white hover:bg-slate-50 w-full sm:w-auto"
                   onClick={() => setLocation('/publications')}
                 >
-                  <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть публикации
+                  <FileText className="mr-2 text-teal-600" size={20} /> Посмотреть publications
                 </Button>
               </div>
             </div>
@@ -141,15 +141,15 @@ export default function Home() {
             </Card>
 
             <Card className="p-6 sm:p-8 border border-teal-100 bg-teal-50/20 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">🔹 Шаг 2. Mentorskoe сопровождение</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">🔹 Шаг 2. Менторское сопровождение</h3>
               <p className="text-sm text-muted-foreground mb-4">Регулярное консалтинговое сопровождение до полной готовности диссертации.</p>
               <ul className="space-y-2 text-sm text-slate-600 mb-6 list-disc list-inside">
                 <li>Индивидуальные сессии: до 4 онлайн-консультаций в месяц (по 15-30 минут).</li>
                 <li>Письменный аудит наработок: регулярная экспертная вычитка и рецензирование текстов (до 25-30 страниц в месяц).</li>
-                <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации в ВАК.</li>
+                <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
-              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
+              <div className="font-bold text-xl text-teal-700">Стоимость: 30 000 ₽ / month <span className="text-xs font-normal text-slate-500">(документально доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
           </div>
         </div>
@@ -171,14 +171,14 @@ export default function Home() {
                 <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после согласования.</p>
               </div>
 
-              {/* ВОЗВРАЩЕННЫЙ БЛОК: Вопросы-подсказки */}
+              {/* НАСТОЯЩИЙ ИСПРАВЛЕННЫЙ БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
               <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
                 <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4">
                   <span>Вопросы-подсказки — отвечать необязательно</span>
                   <span className="transition-transform group-open:rotate-180 text-teal-600 text-lg">▼</span>
                 </summary>
                 <div className="border-t border-slate-200 px-5 pb-5 pt-5 bg-white rounded-b-xl">
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed m-0 text-left">
                     Тема, специальность, объект и предмет исследования, научная проблема, текущая стадия работы, публикации и замечания руководителя — можно указать только то, что уже сформулировано.
                   </p>
                 </div>
@@ -206,7 +206,7 @@ export default function Home() {
               <label className="flex items-start gap-3 text-xs leading-relaxed text-slate-600 cursor-pointer">
                 <input type="checkbox" name="Согласие на обработку обращения" required className="mt-0.5 h-4 w-4 shrink-0 rounded accent-teal-600" />
                 <span>
-                  Я согласен(на) на обработку указанных данных для ответа на обращение и ознакомлен(а) с{' '}
+                  Я согласен(на) на обработку указанных данных для ответа на обращение и ознакомлен(а) с {' '}
                   <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">
                     Политикой конфиденциальности
                   </a>.
@@ -216,7 +216,7 @@ export default function Home() {
               <label className="flex items-start gap-3 text-xs leading-relaxed text-slate-600 cursor-pointer">
                 <input type="checkbox" name="Ознакомление с офертой" required className="mt-0.5 h-4 w-4 shrink-0 rounded accent-teal-600" />
                 <span>
-                  Я ознакомлен(а) с{' '}
+                  Я ознакомлен(а) с {' '}
                   <a href="/offer.html" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">
                     договором публичной оферты
                   </a>{' '}
@@ -243,6 +243,3 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
-  );
-}
