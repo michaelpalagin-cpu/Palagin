@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Правая колонка: Фотография уменьшена на ~25-30% */}
+            {/* Правая колонка: Адаптивная и облегченная фотография */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Форматы работы — шрифты увеличены */}
+      {/* Форматы работы и стоимость — шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Форматы работы и стоимость</h2>
@@ -160,6 +160,35 @@ export default function Home() {
               </ul>
               <div className="font-bold text-xl sm:text-2xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs sm:text-sm font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ВАШ НОВЫЙ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
+      <section className="py-16 sm:py-24 bg-white border-b border-border">
+        <div className="container max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
+          <p className="text-center text-slate-600 mb-12 text-base font-medium">сопровождение на отдельных этапах.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
+              <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">🎯 Автореферат</h4>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Помощь в выстраивании структуры, формулировке научной новизны, положений и выводов. Автореферат — это лицо вашей работы, именно по нему большинство диссовета будет оценивать масштаб вашего исследования.</p>
+            </Card>
+            <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
+              <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">📊 Подготовка презентации и доклада к предзащите</h4>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Разработка логики слайдов, текста и основных акцентов выступления. Помогу выстроить доклад так, чтобы за 15 регламентных минут донести до членов совета главную ценность вашей диссертации и снять большинство вопросов ещё до их появления.</p>
+            </Card>
+            <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
+              <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">🎤 Репетиция предзащиты</h4>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Проведение репетиции выступления (онлайн). Полноценный разбор защиты «в боевых условиях» с моделированием каверзных вопросов от совета и психологической подготовкой.</p>
+            </Card>
+            <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
+              <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">✍️ Помощь с ответами на отзывы</h4>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Подготовка сильных, аргументированных и тактичных ответов на замечания официальных оппонентов и ведущей организации. Помогу грамотно защитить свою позицию и снять критические замечания без потери лица.</p>
+            </Card>
+          </div>
+          <div className="mt-8 p-5 bg-teal-50/40 border border-teal-100 rounded-xl text-center text-base font-medium text-slate-800 shadow-sm">
+            💡 Стоимость дополнительных услуг рассчитывается индивидуально в зависимости от объёма работы и текущего состояния материалов. Чтобы получить условия под вашу задачу, укажите её в описании ситуации в форме заявки ниже.
           </div>
         </div>
       </section>
@@ -197,7 +226,7 @@ export default function Home() {
                       <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
                       <p className="m-0 pl-3">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
                       <p className="m-0 pl-3">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
-                      <p className="m-0 pl-3">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
+                      <p className="m-0 pl-3">· Есть ли у вас публикации in рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
                       <p className="m-0 pl-3">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
                     </div>
                     <div>
