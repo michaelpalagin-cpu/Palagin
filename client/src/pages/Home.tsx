@@ -40,7 +40,7 @@ export default function Home() {
                   <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
-                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
+                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до criteria ВАК.</span>
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ВАШ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
+      {/* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
@@ -200,7 +200,40 @@ export default function Home() {
             Опишите ситуацию в свободной форме. Вопросы-подсказки — необязательны. Отправка заявки не означает начало аудита.
           </p>
           <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm">
-            <form action="https://formspree.io" method="POST" className="space-y-6">
+            <form 
+              action="https://formspree.io" 
+              method="POST" 
+              className="space-y-6"
+              onSubmit={async (e) => {
+                const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
+                const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
+                const name = (document.getElementsByName('Имя')[0] as HTMLInputElement)?.value;
+                const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
+
+                if (!email && !telegram) {
+                  e.preventDefault();
+                  alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
+                  return;
+                }
+
+                // Фоновое дублирование в Telegram-бот перед штатной отправкой Formspree
+                if (name && description) {
+                  const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
+                  const chatId = '761184918';
+                  const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
+                  
+                  try {
+                    await fetch(`https://telegram.org{botToken}/sendMessage`, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ chat_id: chatId, text: messageText })
+                    });
+                  } catch (error) {
+                    console.error('Ошибка фоновой отправки в Telegram:', error);
+                  }
+                }
+              }}
+            >
               <input type="hidden" name="subject" value="Новая заявка на научный консалтинг" />
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="free-description">Описание ситуации</label>
@@ -280,43 +313,14 @@ export default function Home() {
                 </span>
               </label>
 
-                           <Button 
+              <Button 
                 type="submit" 
                 size="lg" 
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
-                onClick={async (e) => {
-                  const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
-                  const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
-                  const name = (document.getElementsByName('Имя')[0] as HTMLInputElement)?.value;
-                  const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
-
-                  if (!email && !telegram) {
-                    e.preventDefault();
-                    alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
-                    return;
-                  }
-
-                  if (name && description) {
-                    const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
-                    const chatId = '761184918';
-                    const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
-                    
-                    try {
-                      await fetch(`https://telegram.org{botToken}/sendMessage`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ chat_id: chatId, text: messageText })
-                      });
-                    } catch (error) {
-                      console.error('Ошибка отправки в Telegram:', error);
-                    }
-                  }
-                }}
               >
                 <Send className="shrink-0 hidden sm:inline" size={18} /> 
                 <span>Отправить заявку на предварительное согласование</span>
               </Button>
-
             </form>
           </Card>
         </div>
