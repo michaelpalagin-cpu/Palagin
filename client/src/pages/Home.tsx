@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 space-y-3 text-left shadow-sm">
                 <p className="m-0 flex items-start gap-2">
-                  <span>✔️</span> <span>Работаю только с темами, in которых действительно разбираюсь.</span>
+                  <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
                   <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
@@ -91,7 +91,7 @@ export default function Home() {
               Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
             </p>
             <p>
-              Сочетаю академическую экспертизу и управленческий опыт in бизнесе. Работаю как независимый научный продюсер и тренер.
+              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
             </p>
             
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
 
             <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
-              Консультирую только по техническим специальностям in зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
+              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
             </p>
           </div>
         </div>
@@ -280,7 +280,6 @@ export default function Home() {
                 </span>
               </label>
 
-              {/* ПОЛНОСТЬЮ АДАПТИВНАЯ КНОПКА С СОХРАНЕНИЕМ СМЫСЛА И ИНТЕГРАЦИЕЙ БОТА */}
               <Button 
                 type="submit" 
                 size="lg" 
@@ -298,9 +297,8 @@ export default function Home() {
                   }
 
                   if (name && description) {
-                    // Формируем текст уведомления в Telegram-бот
                     const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
-                    const chatId = '761184918'; // Идентификатор вашего чата
+                    const chatId = '761184918';
                     const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
                     
                     try {
@@ -333,3 +331,7 @@ export default function Home() {
             vned.mp@yandex.ru
           </div>
         </div>
+      </footer>
+    </main>
+  );
+}
