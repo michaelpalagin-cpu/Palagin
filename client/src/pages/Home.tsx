@@ -40,7 +40,7 @@ export default function Home() {
                   <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
-                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до criteria ВАК.</span>
+                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
@@ -204,10 +204,10 @@ export default function Home() {
               action="https://formspree.io" 
               method="POST" 
               className="space-y-6"
-              onSubmit={async (e) => {
+              onSubmit={(e) => {
                 const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                 const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
-                const name = (document.getElementsByName('Имя')[0] as HTMLInputElement)?.value;
+                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
 
                 if (!email && !telegram) {
@@ -216,20 +216,21 @@ export default function Home() {
                   return;
                 }
 
-                // Фоновое дублирование в Telegram-бот перед штатной отправкой Formspree
+                // Параллельный фоновый поток: отправка в Telegram без блокировки Formspree
                 if (name && description) {
                   const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
                   const chatId = '761184918';
                   const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
                   
-                  try {
-                    await fetch(`https://telegram.org{botToken}/sendMessage`, {
+                  if (navigator.sendBeacon) {
+                    navigator.sendBeacon(`https://telegram.org{botToken}/sendMessage`, JSON.stringify({ chat_id: chatId, text: messageText }));
+                  } else {
+                    fetch(`https://telegram.org{botToken}/sendMessage`, {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ chat_id: chatId, text: messageText })
-                    });
-                  } catch (error) {
-                    console.error('Ошибка фоновой отправки в Telegram:', error);
+                      body: JSON.stringify({ chat_id: chatId, text: messageText }),
+                      keepalive: true
+                    }).catch(err => console.error(err));
                   }
                 }
               }}
@@ -275,7 +276,7 @@ export default function Home() {
                 <p className="text-base font-medium text-slate-800">
                   Контактные данные (для ответа обязателен минимум один из каналов связи):
                 </p>
-                <Input type="text" placeholder="Ваше имя" name="Имя" required className="w-full rounded-xl text-base" />
+                <Input id="contact-name" type="text" placeholder="Ваше имя" name="Имя" required className="w-full rounded-xl text-base" />
                 <Input id="contact-email" type="email" placeholder="E-mail для ответа" name="_replyto" className="w-full rounded-xl text-base" />
                 <Input id="contact-telegram" type="text" placeholder="Telegram (аккаунт или номер телефона)" name="Telegram" className="w-full rounded-xl text-base" />
               </div>
@@ -331,9 +332,6 @@ export default function Home() {
         <div className="container max-w-3xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
             © {new Date().getFullYear()} Михаил Палагин · Научный консалтинг. Все права защищены.
-          </div>
-          <div className="text-slate-500 font-medium">
-            vned.mp@yandex.ru
           </div>
         </div>
       </footer>
