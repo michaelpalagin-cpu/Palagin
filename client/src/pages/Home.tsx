@@ -280,7 +280,7 @@ export default function Home() {
                 </span>
               </label>
 
-              <Button 
+                           <Button 
                 type="submit" 
                 size="lg" 
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
@@ -316,6 +316,7 @@ export default function Home() {
                 <Send className="shrink-0 hidden sm:inline" size={18} /> 
                 <span>Отправить заявку на предварительное согласование</span>
               </Button>
+
             </form>
           </Card>
         </div>
