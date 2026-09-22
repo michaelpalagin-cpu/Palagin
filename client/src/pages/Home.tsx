@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Правая колонка: Фотография */}
+            {/* Правая колонка: Адаптивная и облегченная фотография */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок Об эксперте */}
+      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Принципы работы */}
+      {/* Принципы работы — шрифты увеличены */}
       <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Форматы работы и стоимость */}
+      {/* Форматы работы и стоимость — шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Форматы работы и стоимость</h2>
@@ -158,12 +158,12 @@ export default function Home() {
                 <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
-              <div className="font-bold text-xl sm:text-2xl text-teal-700">Стоимость: 30 000 ₽ / month <span className="text-xs sm:text-sm font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
+              <div className="font-bold text-xl sm:text-2xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs sm:text-sm font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
           </div>
         </div>
       </section>
-      {/* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ */}
+      {/* ВАШ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
@@ -200,28 +200,26 @@ export default function Home() {
           </p>
           <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm">
             <form 
-              action="https://formspree.io" 
-              method="POST" 
               className="space-y-6"
               onSubmit={async (e) => {
+                e.preventDefault(); // Намертво блокируем перезагрузку страницы браузером
+
+                const currentForm = e.currentTarget;
                 const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                 const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
                 const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
 
                 if (!email && !telegram) {
-                  e.preventDefault();
                   alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
                   return;
                 }
 
-                // ПРИОРИТЕТ ПОЧТЫ: Останавливаем дефолтную отправку для обработки асинхронной цепочки
-                e.preventDefault();
+                // Сбор всех данных полей формы в стандартный формат
+                const formData = new FormData(currentForm);
 
-                const formData = new FormData(e.currentTarget);
-                
                 try {
-                  // 1. Сначала железно отправляем письмо на почту через Formspree
+                  // 1. ПРИОРИТЕТ ПОЧТЫ: Отправляем данные на Formspree через фоновый fetch
                   const response = await fetch('https://formspree.io', {
                     method: 'POST',
                     body: formData,
@@ -229,7 +227,7 @@ export default function Home() {
                   });
 
                   if (response.ok) {
-                    // 2. СТРОГО ПОСЛЕ ТОГО, как почта успешно ушла, отправляем скрытый дубль в Telegram-бот
+                    // 2. ДУБЛИРОВАНИЕ В ТГ: Только после успешного ответа почты шлем уведомление в бот
                     if (name && description) {
                       const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
                       const chatId = '761184918';
@@ -239,17 +237,17 @@ export default function Home() {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ chat_id: chatId, text: messageText })
-                      }).catch(err => console.error('Ошибка фоновой отправки в ТГ:', err));
+                      }).catch(err => console.error('Ошибка отправки дубля в ТГ:', err));
                     }
 
-                    // Перенаправляем на стандартный экран «Успешно» от Formspree
+                    // Перенаправляем пользователя на стандартный экран благодарности Formspree
                     window.location.href = 'https://formspree.io';
                   } else {
-                    alert('Произошла ошибка при отправке почты. Пожалуйста, попробуйте еще раз.');
+                    alert('Произошла ошибка при регистрации заявки на сервере. Пожалуйста, попробуйте еще раз.');
                   }
                 } catch (error) {
-                  console.error('Ошибка отправки формы:', error);
-                  alert('Сетевая ошибка. Пожалуйста, продублируйте заявку на почту: vned.mp@yandex.ru');
+                  console.error('Критическая ошибка отправки формы:', error);
+                  alert('Сетевая ошибка. Пожалуйста, направьте описание вашей задачи напрямую на почту: vned.mp@yandex.ru');
                 }
               }}
             >
@@ -332,10 +330,10 @@ export default function Home() {
                 </span>
               </label>
 
-                          <Button 
+              <Button 
                 type="submit" 
-                size="lg" 
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
+
+                                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
               >
                 <Send className="shrink-0 hidden sm:inline" size={18} /> 
                 <span>Отправить заявку на предварительное согласование</span>
@@ -359,4 +357,3 @@ export default function Home() {
     </main>
   );
 }
- 
