@@ -201,11 +201,11 @@ export default function Home() {
             <form 
               className="space-y-6"
               onSubmit={async (e) => {
-                e.preventDefault(); // Намертво блокируем автоматическую перезагрузку страницы
+                e.preventDefault(); // Намертво блокируем перезагрузку страницы
 
-                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                 const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
+                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
 
                 if (!email && !telegram) {
@@ -213,31 +213,30 @@ export default function Home() {
                   return;
                 }
 
-                // Чистый и защищенный запрос напрямую к API Telegram без Formspree
-                const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
-                const chatId = '761184918';
-                const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name || 'Не указано'}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description || 'Не заполнено'}`;
+                // Единый пакет данных для отправки на ваш сервер
+                const payload = { name, email, telegram, description };
 
                 try {
-                  const response = await fetch(`https://telegram.org{botToken}/sendMessage`, {
+                  // Прямой запрос к встроенному серверу проекта, который сам отправит и email, и сообщение в ТГ
+                  const response = await fetch('/api/send-request', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: chatId, text: messageText })
+                    body: JSON.stringify(payload)
                   });
 
                   if (response.ok) {
-                    alert('Спасибо! Ваша заявка успешно отправлена на предварительное согласование. Михаил Палагин свяжется с вами в ближайшее время.');
-                    // Очищаем поля формы на экране
+                    alert('Спасибо! Ваша заявка успешно отправлена одновременно на почту и в Telegram. Михаил Палагин свяжется с вами в ближайшее время.');
+                    // Очищаем форму на экране
                     (document.getElementById('free-description') as HTMLTextAreaElement).value = '';
                     (document.getElementById('contact-name') as HTMLInputElement).value = '';
                     (document.getElementById('contact-email') as HTMLInputElement).value = '';
                     (document.getElementById('contact-telegram') as HTMLInputElement).value = '';
                   } else {
-                    alert('Произошла ошибка при связи с ботом. Пожалуйста, отправьте описание задачи напрямую на почту vned.mp@yandex.ru');
+                    alert('Произошла ошибка при отправке через сервер. Пожалуйста, продублируйте задачу напрямую на почту vned.mp@yandex.ru');
                   }
                 } catch (error) {
                   console.error('Ошибка отправки:', error);
-                  alert('Сетевая ошибка. Пожалуйста, отправьте описание задачи на почту vned.mp@yandex.ru');
+                  alert('Сетевая ошибка. Пожалуйста, отправьте описание вашей задачи напрямую на почту vned.mp@yandex.ru');
                 }
               }}
             >
@@ -246,6 +245,7 @@ export default function Home() {
                 <Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-[160px] rounded-xl text-base" />
                 <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после предварительного согласования.</p>
               </div>
+
               {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
               <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
                 <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base">
@@ -318,11 +318,6 @@ export default function Home() {
                 </span>
               </label>
 
-              {/* НАДЁЖНАЯ ПЛАШКА ПРЯМОГО ДУБЛИРОВАНИЯ ПОЧТЫ */}
-              <div className="p-4 rounded-xl border border-amber-100 bg-amber-50/30 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                📬 <strong>Дополнительный канал связи:</strong> Если у вас возникли временные сложности с отправкой формы или у вас нет аккаунта Telegram, вы всегда можете направить описание вашей ситуации и файлы черновиков напрямую на мою электронную почту: <a href="mailto:vned.mp@yandex.ru" className="text-teal-600 underline font-semibold">vned.mp@yandex.ru</a>
-              </div>
-
               <Button 
                 type="submit" 
                 size="lg" 
@@ -336,6 +331,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Подвал */}
       {/* Подвал */}
       <footer className="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
         <div className="container max-w-3xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
