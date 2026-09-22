@@ -79,7 +79,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -110,6 +109,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Принципы работы — шрифты увеличены */}
       <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -132,7 +132,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Форматы работы и стоимость — шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -202,12 +201,11 @@ export default function Home() {
             <form 
               className="space-y-6"
               onSubmit={async (e) => {
-                e.preventDefault(); // Намертво блокируем перезагрузку страницы браузером
+                e.preventDefault(); // Намертво блокируем автоматическую перезагрузку страницы
 
-                const currentForm = e.currentTarget;
+                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                 const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
-                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
                 const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
 
                 if (!email && !telegram) {
@@ -215,49 +213,39 @@ export default function Home() {
                   return;
                 }
 
-                // Сбор всех данных полей формы в стандартный формат
-                const formData = new FormData(currentForm);
+                // Чистый и защищенный запрос напрямую к API Telegram без Formspree
+                const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
+                const chatId = '761184918';
+                const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name || 'Не указано'}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description || 'Не заполнено'}`;
 
                 try {
-                  // 1. ПРИОРИТЕТ ПОЧТЫ: Отправляем данные на Formspree через фоновый fetch
-                  const response = await fetch('https://formspree.io', {
+                  const response = await fetch(`https://telegram.org{botToken}/sendMessage`, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text: messageText })
                   });
 
                   if (response.ok) {
-                    // 2. ДУБЛИРОВАНИЕ В ТГ: Только после успешного ответа почты шлем уведомление в бот
-                    if (name && description) {
-                      const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
-                      const chatId = '761184918';
-                      const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
-                      
-                      await fetch(`https://telegram.org{botToken}/sendMessage`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ chat_id: chatId, text: messageText })
-                      }).catch(err => console.error('Ошибка отправки дубля в ТГ:', err));
-                    }
-
-                    // Перенаправляем пользователя на стандартный экран благодарности Formspree
-                    window.location.href = 'https://formspree.io';
+                    alert('Спасибо! Ваша заявка успешно отправлена на предварительное согласование. Михаил Палагин свяжется с вами в ближайшее время.');
+                    // Очищаем поля формы на экране
+                    (document.getElementById('free-description') as HTMLTextAreaElement).value = '';
+                    (document.getElementById('contact-name') as HTMLInputElement).value = '';
+                    (document.getElementById('contact-email') as HTMLInputElement).value = '';
+                    (document.getElementById('contact-telegram') as HTMLInputElement).value = '';
                   } else {
-                    alert('Произошла ошибка при регистрации заявки на сервере. Пожалуйста, попробуйте еще раз.');
+                    alert('Произошла ошибка при связи с ботом. Пожалуйста, отправьте описание задачи напрямую на почту vned.mp@yandex.ru');
                   }
                 } catch (error) {
-                  console.error('Критическая ошибка отправки формы:', error);
-                  alert('Сетевая ошибка. Пожалуйста, направьте описание вашей задачи напрямую на почту: vned.mp@yandex.ru');
+                  console.error('Ошибка отправки:', error);
+                  alert('Сетевая ошибка. Пожалуйста, отправьте описание задачи на почту vned.mp@yandex.ru');
                 }
               }}
             >
-              <input type="hidden" name="subject" value="Новая заявка на научный консалтинг" />
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="free-description">Описание ситуации</label>
                 <Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-[160px] rounded-xl text-base" />
                 <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после предварительного согласования.</p>
               </div>
-
               {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
               <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
                 <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base">
@@ -293,7 +281,7 @@ export default function Home() {
                   Контактные данные (для ответа обязателен минимум один из каналов связи):
                 </p>
                 <Input id="contact-name" type="text" placeholder="Ваше имя" name="Имя" required className="w-full rounded-xl text-base" />
-                <Input id="contact-email" type="email" placeholder="E-mail для ответа" name="_replyto" className="w-full rounded-xl text-base" />
+                <Input id="contact-email" type="email" placeholder="E-mail для ответа" name="Email" className="w-full rounded-xl text-base" />
                 <Input id="contact-telegram" type="text" placeholder="Telegram (аккаунт или номер телефона)" name="Telegram" className="w-full rounded-xl text-base" />
               </div>
 
@@ -330,10 +318,15 @@ export default function Home() {
                 </span>
               </label>
 
+              {/* НАДЁЖНАЯ ПЛАШКА ПРЯМОГО ДУБЛИРОВАНИЯ ПОЧТЫ */}
+              <div className="p-4 rounded-xl border border-amber-100 bg-amber-50/30 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                📬 <strong>Дополнительный канал связи:</strong> Если у вас возникли временные сложности с отправкой формы или у вас нет аккаунта Telegram, вы всегда можете направить описание вашей ситуации и файлы черновиков напрямую на мою электронную почту: <a href="mailto:vned.mp@yandex.ru" className="text-teal-600 underline font-semibold">vned.mp@yandex.ru</a>
+              </div>
+
               <Button 
                 type="submit" 
-
-                                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
+                size="lg" 
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
               >
                 <Send className="shrink-0 hidden sm:inline" size={18} /> 
                 <span>Отправить заявку на предварительное согласование</span>
