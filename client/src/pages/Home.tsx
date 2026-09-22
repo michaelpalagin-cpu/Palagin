@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, CheckCircle, Shield, Award, Briefcase, FileText, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle, Shield, Award, FileText, ArrowRight } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Правая колонка: Адаптивная и облегченная фотография */}
+            {/* Правая колонка: Фотография */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
+      {/* Блок Об эксперте */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Принципы работы — шрифты увеличены */}
+      {/* Принципы работы */}
       <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Форматы работы и стоимость — шрифты увеличены */}
+      {/* Форматы работы и стоимость */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Форматы работы и стоимость</h2>
@@ -158,12 +158,11 @@ export default function Home() {
                 <li>Публикационный консалтинг: экспертная помощь при подготовке статей к публикации.</li>
                 <li>Оперативная поддержка в рабочем мессенджере по текущим вопросам.</li>
               </ul>
-              <div className="font-bold text-xl sm:text-2xl text-teal-700">Стоимость: 30 000 ₽ / месяц <span className="text-xs sm:text-sm font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
+              <div className="font-bold text-xl sm:text-2xl text-teal-700">Стоимость: 30 000 ₽ / month <span className="text-xs sm:text-sm font-normal text-slate-500">(доступно после Шага 1. Минимальный срок — 6 месяцев)</span></div>
             </Card>
           </div>
         </div>
       </section>
-
       {/* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -204,7 +203,7 @@ export default function Home() {
               action="https://formspree.io" 
               method="POST" 
               className="space-y-6"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                 const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
                 const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
@@ -216,22 +215,41 @@ export default function Home() {
                   return;
                 }
 
-                // Параллельный фоновый поток: отправка в Telegram без блокировки Formspree
-                if (name && description) {
-                  const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
-                  const chatId = '761184918';
-                  const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
-                  
-                  if (navigator.sendBeacon) {
-                    navigator.sendBeacon(`https://telegram.org{botToken}/sendMessage`, JSON.stringify({ chat_id: chatId, text: messageText }));
+                // ПРИОРИТЕТ ПОЧТЫ: Останавливаем дефолтную отправку для обработки асинхронной цепочки
+                e.preventDefault();
+
+                const formData = new FormData(e.currentTarget);
+                
+                try {
+                  // 1. Сначала железно отправляем письмо на почту через Formspree
+                  const response = await fetch('https://formspree.io', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                  });
+
+                  if (response.ok) {
+                    // 2. СТРОГО ПОСЛЕ ТОГО, как почта успешно ушла, отправляем скрытый дубль в Telegram-бот
+                    if (name && description) {
+                      const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
+                      const chatId = '761184918';
+                      const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
+                      
+                      await fetch(`https://telegram.org{botToken}/sendMessage`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: chatId, text: messageText })
+                      }).catch(err => console.error('Ошибка фоновой отправки в ТГ:', err));
+                    }
+
+                    // Перенаправляем на стандартный экран «Успешно» от Formspree
+                    window.location.href = 'https://formspree.io';
                   } else {
-                    fetch(`https://telegram.org{botToken}/sendMessage`, {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ chat_id: chatId, text: messageText }),
-                      keepalive: true
-                    }).catch(err => console.error(err));
+                    alert('Произошла ошибка при отправке почты. Пожалуйста, попробуйте еще раз.');
                   }
+                } catch (error) {
+                  console.error('Ошибка отправки формы:', error);
+                  alert('Сетевая ошибка. Пожалуйста, продублируйте заявку на почту: vned.mp@yandex.ru');
                 }
               }}
             >
@@ -314,7 +332,7 @@ export default function Home() {
                 </span>
               </label>
 
-              <Button 
+                          <Button 
                 type="submit" 
                 size="lg" 
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
@@ -333,8 +351,12 @@ export default function Home() {
           <div>
             © {new Date().getFullYear()} Михаил Палагин · Научный консалтинг. Все права защищены.
           </div>
+          <div className="text-slate-500 font-medium">
+            vned.mp@yandex.ru
+          </div>
         </div>
       </footer>
     </main>
   );
 }
+ 
