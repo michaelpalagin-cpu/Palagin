@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 space-y-3 text-left shadow-sm">
                 <p className="m-0 flex items-start gap-2">
-                  <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
+                  <span>✔️</span> <span>Работаю только с темами, in которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
                   <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
@@ -91,7 +91,7 @@ export default function Home() {
               Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
             </p>
             <p>
-              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
+              Сочетаю академическую экспертизу и управленческий опыт in бизнесе. Работаю как независимый научный продюсер и тренер.
             </p>
             
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
 
             <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
-              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
+              Консультирую только по техническим специальностям in зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
             </p>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ВАШ НОВЫЙ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
+      {/* ВАШ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
@@ -226,7 +226,7 @@ export default function Home() {
                       <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
                       <p className="m-0 pl-3">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
                       <p className="m-0 pl-3">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
-                      <p className="m-0 pl-3">· Есть ли у вас публикации in рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
+                      <p className="m-0 pl-3">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
                       <p className="m-0 pl-3">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
                     </div>
                     <div>
@@ -280,17 +280,38 @@ export default function Home() {
                 </span>
               </label>
 
-              {/* ПОЛНОСТЬЮ АДАПТИВНАЯ КНОПКА С СОХРАНЕНИЕМ СМЫСЛА */}
+              {/* ПОЛНОСТЬЮ АДАПТИВНАЯ КНОПКА С СОХРАНЕНИЕМ СМЫСЛА И ИНТЕГРАЦИЕЙ БОТА */}
               <Button 
                 type="submit" 
                 size="lg" 
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
-                onClick={(e) => {
+                onClick={async (e) => {
                   const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
                   const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
+                  const name = (document.getElementsByName('Имя')[0] as HTMLInputElement)?.value;
+                  const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
+
                   if (!email && !telegram) {
                     e.preventDefault();
                     alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
+                    return;
+                  }
+
+                  if (name && description) {
+                    // Формируем текст уведомления в Telegram-бот
+                    const botToken = '8919004705:AAGM6YO6vvmZRcN93YM3agjlshlwF-35G48';
+                    const chatId = '761184918'; // Идентификатор вашего чата
+                    const messageText = `🔔 Новая заявка на сайте!\n\n👤 Имя: ${name}\n📧 E-mail: ${email || 'Не указан'}\n💬 Telegram: ${telegram || 'Не указан'}\n\n📝 Описание ситуации:\n${description}`;
+                    
+                    try {
+                      await fetch(`https://telegram.org{botToken}/sendMessage`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: chatId, text: messageText })
+                      });
+                    } catch (error) {
+                      console.error('Ошибка отправки в Telegram:', error);
+                    }
                   }
                 }}
               >
@@ -312,7 +333,3 @@ export default function Home() {
             vned.mp@yandex.ru
           </div>
         </div>
-      </footer>
-    </main>
-  );
-}
