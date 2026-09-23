@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Правая колонка: Адаптивная и облегченная фотография */}
+            {/* Правая колонка: Фотография */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
                 <img 
@@ -190,37 +190,58 @@ export default function Home() {
       </section>
       {/* Форма заявки и Подвал */}
       <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
-        <div className="container max-w-2xl mx-auto px-4">
+        <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
           <p className="text-center text-slate-600 mb-8 text-base">
-            Чтобы исключить сетевые сбои, приём анкет переведен на официальный защищенный сервис Яндекс Формы.
+            Ознакомьтесь с вопросами-подсказками и заполните защищенную встроенную форму Яндекса ниже.
           </p>
           
-          <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm">
-            <div className="space-y-6 text-center py-2">
-              <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 text-left shadow-sm">
-                📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности, защиты ваших авторских прав и автоматической проверки контактов от опечаток, подача заявки осуществляется через платформу Яндекса.
+          <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm space-y-8">
+            
+            {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК — СОХРАНЕН В ПОЛНОМ ОБЪЕМЕ */}
+            <details className="group rounded-xl border border-slate-200 bg-slate-50/50" open>
+              <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base bg-slate-100/50 rounded-t-xl">
+                <span>Вопросы-подсказки для описания ситуации (развернуть)</span>
+                <span className="transition-transform group-open:rotate-180 text-teal-600 text-lg">▼</span>
+              </summary>
+              <div className="border-t border-slate-200 px-5 pb-6 pt-5 bg-white rounded-b-xl">
+                <div className="text-base text-slate-700 leading-relaxed space-y-4 text-left">
+                  <div>
+                    <strong className="text-slate-900 block mb-1">1. Научный аппарат (базовые ориентиры):</strong>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Сформулированы ли уже тема, объект и предмет исследования?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· По какой конкретно специальности (шифру ВАК) планируется защита?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· В чём, по вашему мнению, заключается научная проблема или противоречие, которое вы решаете?</p>
+                  </div>
+                  <div>
+                    <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
+                  </div>
+                  <div>
+                    <strong className="text-slate-900 block mb-1">3. Затруднения и цель взаимодействия:</strong>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Какие сложности вы видите (не получается с научной новизной, замечания от научного руководителя, теория не стыкуется с практикой, если что-то другое — опишите)?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· Какой конкретно результат вы хотите получить от нашего взаимодействия в целом и на 1-ом этапе конкретно?</p>
+                  </div>
+                </div>
               </div>
-              
-              <a 
-                href="https://yandex.com"
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="block w-full"
-              >
-                <Button 
-                  type="button" 
-                  size="lg" 
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-6 rounded-xl shadow-md flex justify-center items-center gap-2 h-auto whitespace-normal"
-                >
-                  <Send className="shrink-0" size={18} /> 
-                  <span>Заполнить защищенную заявку на предварительное согласование в Яндекс.Формах</span>
-                </Button>
-              </a>
-              
-              <p className="text-xs text-muted-foreground">
-                Нажатием на кнопку вы подтверждаете согласие с Политикой конфиденциальности и договором публичной оферты.
-              </p>
+            </details>
+
+            {/* ВСТРОЕННЫЙ ИНТЕРАКТИВНЫЙ МОДУЛЬ ЯНДЕКС ФОРМЫ (ВЫСШАЯ ЛИГА) */}
+            <div className="w-full overflow-hidden rounded-xl border border-slate-100 bg-slate-50/30 pt-2 flex justify-center">
+              <iframe 
+                src="https://yandex.ru" 
+                frameBorder="0" 
+                name="ya-form-6ab40911d046882036649f4e" 
+                className="w-full min-h-[580px] max-w-[650px]"
+                scrolling="no"
+                title="Форма заявки Михаил Палагин"
+              />
+            </div>
+
+            <div className="rounded-xl border border-teal-100 bg-teal-50/30 p-4 text-xs sm:text-sm leading-relaxed text-slate-700">
+              🛡️ <strong>Безопасность данных:</strong> Все присланные материалы используются строго для предварительного рассмотрения обращения. Сведения и документы защищены сквозным шифрованием Яндекса, не передаются третьим лицам и не подлежат разглашению.
             </div>
           </Card>
         </div>
