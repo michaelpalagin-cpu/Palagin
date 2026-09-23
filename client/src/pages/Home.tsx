@@ -77,59 +77,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
-      <section className="py-16 sm:py-24 bg-white border-b border-border">
-        <div className="container max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
-            Об эксперте
-          </h2>
-          <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
-            <p className="text-xl text-slate-900 font-bold">
-              Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
-            </p>
-            <p>
-              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
-            </p>
-            
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
-              <div className="font-bold text-slate-900 mb-3 text-lg">Помогаю:</div>
-              <ul className="space-y-3 text-slate-800 m-0 list-none pl-0 font-medium">
-                <li className="flex items-center gap-2">🔹 выстроить логику исследования</li>
-                <li className="flex items-center gap-2">🔹 выкристаллизовать научную новизну</li>
-                <li className="flex items-center gap-2">🔹 усилить практическую значимость</li>
-                <li className="flex items-center gap-2">🔹 подготовиться к защите</li>
-              </ul>
-            </div>
-
-            <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
-              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Принципы работы — шрифты увеличены */}
-      <section className="py-16 bg-slate-50 border-b border-border">
-        <div className="container max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
-          <div className="space-y-4">
-            <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
-              <CheckCircle className="text-teal-600 shrink-0" size={24} />
-              <div>
-                <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Прозрачность и легитимность</h4>
-                <p className="text-base text-slate-600 m-0 leading-relaxed">Я не пишу диссертации «под ключ» и не торгую готовыми текстами. Моя задача — обучить вас методологии и довести работу до критериев ВАК.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
-              <CheckCircle className="text-teal-600 shrink-0" size={24} />
-              <div>
-                <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Строгая специализация</h4>
-                <p className="text-base text-slate-600 m-0 leading-relaxed">Консультирую только по техническим наукам. Если тема лежит вне зоны моей глубокой компетенции, я честно откажусь от проекта на этапе заявки.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Форматы работы и стоимость — шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -228,10 +175,10 @@ export default function Home() {
               </div>
             </details>
 
-            {/* ВСТРОЕННЫЙ ИНТЕРАКТИВНЫЙ МОДУЛЬ ЯНДЕКС ФОРМЫ (ВЫСШАЯ ЛИГА) */}
+            {/* ВСТРОЕННЫЙ ИНТЕРАКТИВНЫЙ МОДУЛЬ ЯНДЕКС ФОРМЫ (.COM ЗЕРКАЛО) */}
             <div className="w-full overflow-hidden rounded-xl border border-slate-100 bg-slate-50/30 pt-2 flex justify-center">
               <iframe 
-                src="https://yandex.ru" 
+                src="https://yandex.com" 
                 frameBorder="0" 
                 name="ya-form-6ab40911d046882036649f4e" 
                 className="w-full min-h-[580px] max-w-[650px]"
