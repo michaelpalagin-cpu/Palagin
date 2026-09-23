@@ -203,7 +203,7 @@ export default function Home() {
               </div>
               
               <a 
-                href="https://yandex.ru"
+                href="https://yandex.com"
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="block w-full"
