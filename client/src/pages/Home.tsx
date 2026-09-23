@@ -136,11 +136,10 @@ export default function Home() {
         </div>
       </section>
       {/* Форма заявки и Подвал */}
-      <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
-        <div className="container max-w-3xl mx-auto px-4">
+      <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">        <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
           <p className="text-center text-slate-600 mb-8 text-base">
-            Ознакомьтесь с вопросами-подсказками и заполните защищенную встроенную форму Яндекса ниже.
+            Ознакомьтесь с вопросами-подсказками и перейдите к заполнению защищенной анкеты Яндекса.
           </p>
           
           <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm space-y-8">
@@ -175,20 +174,31 @@ export default function Home() {
               </div>
             </details>
 
-            {/* ВСТРОЕННЫЙ ИНТЕРАКТИВНЫЙ МОДУЛЬ ЯНДЕКС ФОРМЫ (.COM ЗЕРКАЛО) */}
-            <div className="w-full overflow-hidden rounded-xl border border-slate-100 bg-slate-50/30 pt-2 flex justify-center">
-              <iframe 
-                src="https://yandex.com" 
-                frameBorder="0" 
-                name="ya-form-6ab40911d046882036649f4e" 
-                className="w-full min-h-[580px] max-w-[650px]"
-                scrolling="no"
-                title="Форма заявки Михаил Палагин"
-              />
-            </div>
-
-            <div className="rounded-xl border border-teal-100 bg-teal-50/30 p-4 text-xs sm:text-sm leading-relaxed text-slate-700">
-              🛡️ <strong>Безопасность данных:</strong> Все присланные материалы используются строго для предварительного рассмотрения обращения. Сведения и документы защищены сквозным шифрованием Яндекса, не передаются третьим лицам и не подлежат разглашению.
+            {/* НАША НАДЕЖНАЯ ПРЯМАЯ КНОПКА ПЕРЕХОДА */}
+            <div className="space-y-4 text-center py-2 border-t border-slate-100 pt-6">
+              <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-sm sm:text-base text-slate-700 text-left shadow-sm">
+                📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности и автоматической проверки контактов от опечаток, подача заявки осуществляется через официальную защищенную платформу Яндекса.
+              </div>
+              
+              <a 
+                href="https://yandex.ru" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block w-full"
+              >
+                <Button 
+                  type="button" 
+                  size="lg" 
+                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-6 rounded-xl shadow-md flex justify-center items-center gap-2 h-auto whitespace-normal"
+                >
+                  <Send className="shrink-0" size={18} /> 
+                  <span>Открыть анкету и заполнить заявку в Яндекс.Формах</span>
+                </Button>
+              </a>
+              
+              <p className="text-xs text-muted-foreground">
+                Нажатием на кнопку вы подтверждаете согласие с Политикой конфиденциальности и договором публичной оферты.
+              </p>
             </div>
           </Card>
         </div>
@@ -204,7 +214,7 @@ export default function Home() {
             vned.mp@yandex.ru
           </div>
         </div>
-      </footer>
+          </footer>
     </main>
   );
 }
