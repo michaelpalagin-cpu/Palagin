@@ -17,7 +17,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Первый экран (Hero) — Фото уменьшено, шрифты увеличены */}
+      {/* Первый экран (Hero) — Все ссылки ведут строго на якорь контактной формы */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-border">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
@@ -28,7 +28,7 @@ export default function Home() {
                 <Award size={16} /> Кандидат технических наук (с 1992 года)
               </div>
               <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Экспертное сопровождение аспирантов по техническим специальностям
+                Экспертное сопровождение аспирантов по technical специальностям
               </h1>
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
                 От обоснования научной новизны до генеральной репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
@@ -74,6 +74,59 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
+      <section className="py-16 sm:py-24 bg-white border-b border-border">
+        <div className="container max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
+            Об эксперте
+          </h2>
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
+            <p className="text-xl text-slate-900 font-bold">
+              Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
+            </p>
+            <p>
+              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
+            </p>
+            
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
+              <div className="font-bold text-slate-900 mb-3 text-lg">Помогаю:</div>
+              <ul className="space-y-3 text-slate-800 m-0 list-none pl-0 font-medium">
+                <li className="flex items-center gap-2">🔹 выстроить логику исследования</li>
+                <li className="flex items-center gap-2">🔹 выкристаллизовать научную новизну</li>
+                <li className="flex items-center gap-2">🔹 усилить практическую значимость</li>
+                <li className="flex items-center gap-2">🔹 подготовиться к защите</li>
+              </ul>
+            </div>
+
+            <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
+              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Принципы работы — шрифты увеличены */}
+      <section className="py-16 bg-slate-50 border-b border-border">
+        <div className="container max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+              <CheckCircle className="text-teal-600 shrink-0" size={24} />
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Прозрачность и легитимность</h4>
+                <p className="text-base text-slate-600 m-0 leading-relaxed">Я не пишу диссертации «под ключ» и не торгую готовыми текстами. Моя задача — обучить вас методологии и довести работу до критериев ВАК.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+              <CheckCircle className="text-teal-600 shrink-0" size={24} />
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Строгая специализация</h4>
+                <p className="text-base text-slate-600 m-0 leading-relaxed">Консультирую только по техническим наукам. Если тема лежит вне зоны моей глубокой компетенции, я честно откажусь от проекта на этапе заявки.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -135,8 +188,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Форма заявки и Подвал */}
-      <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">        <div className="container max-w-3xl mx-auto px-4">
+      {/* Форма заявки и Подвал — Чистая логика без iframe и скрытых тегов form */}
+      <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
+        <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
           <p className="text-center text-slate-600 mb-8 text-base">
             Ознакомьтесь с вопросами-подсказками и перейдите к заполнению защищенной анкеты Яндекса.
@@ -214,7 +268,7 @@ export default function Home() {
             vned.mp@yandex.ru
           </div>
         </div>
-          </footer>
+      </footer>
     </main>
   );
 }
