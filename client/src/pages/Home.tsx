@@ -175,134 +175,31 @@ export default function Home() {
             Опишите ситуацию в свободной форме. Вопросы-подсказки — необязательны. Отправка заявки не означает начало аудита.
           </p>
           <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm">
-            <form 
-              className="space-y-6"
-              onSubmit={async (e) => {
-                e.preventDefault(); // Намертво блокируем перезагрузку страницы браузером
-
-                const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
-                const telegram = (document.getElementById('contact-telegram') as HTMLInputElement)?.value;
-                const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
-                const description = (document.getElementById('free-description') as HTMLTextAreaElement)?.value;
-
-                if (!email && !telegram) {
-                  alert('Пожалуйста, укажите хотя бы один способ связи для ответа (E-mail или Telegram).');
-                  return;
-                }
-
-                // Единый пакет данных для отправки на ваш защищенный серверный прокси-мост
-                const payload = { name, email, telegram, description };
-
-                try {
-                  // Стреляем на внутренний адрес Vercel, защищенный от любых блокировок в РФ
-                  const response = await fetch('/api/send-request', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                  });
-
-                  if (response.ok) {
-                    alert('Спасибо! Ваша заявка успешно отправлена. Михаил Палагин свяжется с вами в ближайшее время.');
-                    // Очищаем форму на экране
-                    (document.getElementById('free-description') as HTMLTextAreaElement).value = '';
-                    (document.getElementById('contact-name') as HTMLInputElement).value = '';
-                    (document.getElementById('contact-email') as HTMLInputElement).value = '';
-                    (document.getElementById('contact-telegram') as HTMLInputElement).value = '';
-                  } else {
-                    alert('Произошла техническая заминка. Пожалуйста, отправьте описание задачи напрямую на почту: vned.mp@yandex.ru');
-                  }
-                } catch (error) {
-                  console.error('Ошибка отправки:', error);
-                  alert('Сетевая задержка. Пожалуйста, отправьте описание задачи напрямую на почту: vned.mp@yandex.ru');
-                }
-              }}
-            >
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="free-description">Описание ситуации</label>
-                <Textarea id="free-description" name="Описание ситуации" required placeholder="Расскажите о теме, текущем этапе, затруднениях и желаемом результате" className="w-full min-h-[160px] rounded-xl text-base" />
-                <p className="mt-2 text-xs text-muted-foreground">Можно написать столько, сколько считаете нужным. Дополнительные материалы можно направить после предварительного согласования.</p>
+                       <div className="space-y-6 text-center py-6">
+              <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 text-left shadow-sm">
+                📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности, защиты ваших авторских прав и исключения технических сбоев, прием анкет переведен на официальный защищенный сервис Яндекс Формы.
               </div>
-              {/* БЛОК ВОПРОСОВ-ПОДСКАЗОК */}
-              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
-                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base">
-                  <span>Вопросы-подсказки — отвечать необязательно</span>
-                  <span className="transition-transform group-open:rotate-180 text-teal-600 text-lg">▼</span>
-                </summary>
-                <div className="border-t border-slate-200 px-5 pb-5 pt-5 bg-white rounded-b-xl">
-                  <div className="text-base text-slate-700 leading-relaxed space-y-4 text-left">
-                    <div>
-                      <strong className="text-slate-900 block mb-1">1. Научный аппарат (базовые ориентиры):</strong>
-                      <p className="m-0 pl-3">· Сформулированы ли уже тема, объект и предмет исследования?</p>
-                      <p className="m-0 pl-3">· По какой конкретно специальности (шифру ВАК) планируется защита?</p>
-                      <p className="m-0 pl-3">· В чём, по вашему мнению, заключается научная проблема или противоречие, которое вы решаете?</p>
-                    </div>
-                    <div>
-                      <strong className="text-slate-900 block mb-1">2. Текущее состояние работы:</strong>
-                      <p className="m-0 pl-3">· На каком этапе вы находитесь (сбор материала, написаны отдельные главы, готова первая черновая редакция)?</p>
-                      <p className="m-0 pl-3">· Какие материалы вы планируете направить по почте для проведения экспресс-аудита?</p>
-                      <p className="m-0 pl-3">· Есть ли у вас публикации в рецензируемых журналах, патенты или свидетельства на ЭВМ?</p>
-                      <p className="m-0 pl-3">· Проходило ли предварительное обсуждение на кафедре? Или до предзащиты ещё далеко?</p>
-                    </div>
-                    <div>
-                      <strong className="text-slate-900 block mb-1">3. Затруднения и цель взаимодействия:</strong>
-                      <p className="m-0 pl-3">· Какие сложности вы видите (не получается с научной новизной, замечания от научного руководителя, теория не стыкуется с практикой, если что-то другое — опишите)?</p>
-                      <p className="m-0 pl-3">· Какой конкретно результат вы хотите получить от нашего взаимодействия в целом и на 1-ом этапе конкретно?</p>
-                    </div>
-                  </div>
-                </div>
-              </details>
-
-              <div className="pt-4 border-t border-slate-100 space-y-4">
-                <p className="text-base font-medium text-slate-800">
-                  Контактные данные (для ответа обязателен минимум один из каналов связи):
-                </p>
-                <Input id="contact-name" type="text" placeholder="Ваше имя" name="Имя" required className="w-full rounded-xl text-base" />
-                <Input id="contact-email" type="email" placeholder="E-mail для ответа" name="Email" className="w-full rounded-xl text-base" />
-                <Input id="contact-telegram" type="text" placeholder="Telegram (аккаунт или номер телефона)" name="Telegram" className="w-full rounded-xl text-base" />
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-4 text-xs sm:text-sm leading-relaxed text-slate-600 space-y-2">
-                <p><strong>Условия:</strong> заявка отправляется до оплаты; работа начинается только после подтверждения заявки Исполнителем и предоплаты 6 000 ₽.</p>
-                <p>Срок письменного аудита — обычно 2-3 рабочих дня. Если результат не предоставлен в течение 7 рабочих дней, оплаченная сумма возвращается.</p>
-              </div>
-
-              <div className="rounded-xl border border-teal-100 bg-teal-50/30 p-4 text-xs sm:text-sm leading-relaxed text-slate-700 flex items-start gap-2">
-                <Shield className="text-teal-600 shrink-0 mt-0.5" size={16} />
-                <div>
-                  <strong>Конфиденциальность и авторские права:</strong> Все присланные материалы используются только для рассмотрения заявки. Сведения и документы не передаются третьим лицам, за исключением случаев, предусмотренных законодательством РФ.
-                </div>
-              </div>
-
-              <label className="flex items-start gap-3 text-xs sm:text-sm leading-relaxed text-slate-600 cursor-pointer">
-                <input type="checkbox" name="Согласие на обработку обращения" required className="mt-0.5 h-4 w-4 shrink-0 rounded accent-teal-600" />
-                <span>
-                  Я согласен(на) на обработку указанных данных для ответа на обращение и ознакомлен(а) с {' '}
-                  <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">
-                    Политикой конфиденциальности
-                  </a>.
-                </span>
-              </label>
-
-              <label className="flex items-start gap-3 text-xs sm:text-sm leading-relaxed text-slate-600 cursor-pointer">
-                <input type="checkbox" name="Ознакомление с офертой" required className="mt-0.5 h-4 w-4 shrink-0 rounded accent-teal-600" />
-                <span>
-                  Я ознакомлен(а) с {' '}
-                  <a href="/offer.html" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">
-                    договором публичной оферты
-                  </a>{' '}
-                  и принимаю его условия.
-                </span>
-              </label>
-
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-5 rounded-xl shadow-md whitespace-normal break-words h-auto text-center px-4 flex flex-col sm:flex-row justify-center items-center gap-2"
+              
+              <a 
+                href="https://yandex.ru" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block w-full"
               >
-                <Send className="shrink-0 hidden sm:inline" size={18} /> 
-                <span>Отправить заявку на предварительное согласование</span>
-              </Button>
-            </form>
+                <Button 
+                  type="button" 
+                  size="lg" 
+                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base sm:text-lg py-6 rounded-xl shadow-md flex justify-center items-center gap-2 h-auto whitespace-normal"
+                >
+                  <Send className="shrink-0" size={18} /> 
+                  <span>Заполнить защищенную заявку на предварительное согласование в Яндекс.Формах</span>
+                </Button>
+              </a>
+              
+              <p className="text-xs text-muted-foreground">
+                Нажатием на кнопку вы подтверждаете согласие с Политикой конфиденциальности и договором публичной оферты.
+              </p>
+            </div>
           </Card>
         </div>
       </section>
@@ -321,3 +218,4 @@ export default function Home() {
     </main>
   );
 }
+ 
