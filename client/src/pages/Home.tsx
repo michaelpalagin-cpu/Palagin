@@ -2,8 +2,6 @@ import React from 'react';
 import { Send, CheckCircle, Shield, Award, FileText, ArrowRight } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
 import { useLocation } from 'wouter';
 
 export default function Home() {
@@ -19,11 +17,12 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Первый экран (Hero) */}
+      {/* Первый экран (Hero) — Фото уменьшено, шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-border">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             
+            {/* Левая колонка: Текстовый контент с увеличенными шрифтами */}
             <div className="md:col-span-8 text-center md:text-left space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
                 <Award size={16} /> Кандидат технических наук (с 1992 года)
@@ -36,7 +35,7 @@ export default function Home() {
               </p>
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 space-y-3 text-left shadow-sm">
                 <p className="m-0 flex items-start gap-2">
-                  <span>✔️</span> <span>Работаю только с темами, in которых действительно разбираюсь.</span>
+                  <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
                   <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
@@ -59,23 +58,39 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Правая колонка: Адаптивная и облегченная фотография */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group max-w-[240px] w-full aspect-[3/4] bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
-                <img src="/photo.jpg" alt="Михаил Палагин" className="w-full h-full object-cover" loading="lazy" width="240" height="320" />
+                <img 
+                  src="/photo.jpg" 
+                  alt="Михаил Палагин" 
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width="240"
+                  height="320"
+                  style={{ imageRendering: 'auto' }}
+                />
               </div>
             </div>
 
           </div>
         </div>
       </section>
-
-      {/* Блок Об эксперте */}
+      {/* Блок Об эксперте — Текст увеличен на 1-2 пункта */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">Об эксперте</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center flex items-center justify-center gap-2">
+            Об эксперте
+          </h2>
           <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
-            <p className="text-xl text-slate-900 font-bold">Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.</p>
-            <p>Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.</p>
+            <p className="text-xl text-slate-900 font-bold">
+              Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.
+            </p>
+            <p>
+              Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.
+            </p>
+            
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
               <div className="font-bold text-slate-900 mb-3 text-lg">Помогаю:</div>
               <ul className="space-y-3 text-slate-800 m-0 list-none pl-0 font-medium">
@@ -85,9 +100,14 @@ export default function Home() {
                 <li className="flex items-center gap-2">🔹 подготовиться к защите</li>
               </ul>
             </div>
+
+            <p className="text-base border-l-4 border-teal-600 pl-4 italic font-medium text-slate-600">
+              Консультирую только по техническим специальностям в зоне своей компетенции. Если тема вне её — честно откажусь на этапе заявки.
+            </p>
           </div>
         </div>
       </section>
+
       {/* Принципы работы — шрифты увеличены */}
       <section className="py-16 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -110,7 +130,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Форматы работы и стоимость — шрифты увеличены */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
@@ -141,8 +160,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ */}
+      {/* ВАШ УТВЕРЖДЕННЫЙ БЛОК: Дополнительные услуги */}
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
@@ -150,20 +168,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
               <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">🎯 Автореферат</h4>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Помощь в выстраивании структуры, формулировке научной новизны, положений и выводов.</p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Помощь в выстраивании структуры, формулировке научной новизны, положений и выводов. Автореферат — это лицо вашей работы, именно по нему большинство диссовета будет оценивать масштаб вашего исследования.</p>
             </Card>
             <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
               <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">📊 Подготовка презентации и доклада к предзащите</h4>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Разработка логики слайдов, текста и основных акцентов выступления.</p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Разработка логики слайдов, текста и основных акцентов выступления. Помогу выстроить доклад так, чтобы за 15 регламентных минут донести до членов совета главную ценность вашей диссертации и снять большинство вопросов ещё до их появления.</p>
             </Card>
             <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
               <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">🎤 Репетиция предзащиты</h4>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Проведение репетиции выступления (онлайн) с моделированием вопросов от совета.</p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Проведение репетиции выступления (онлайн). Полноценный разбор защиты «в боевых условиях» с моделированием каверзных вопросов от совета и психологической подготовкой.</p>
             </Card>
             <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
               <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">✍️ Помощь с ответами на отзывы</h4>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Подготовка сильных, аргументированных и тактичных ответов на замечания оппонентов.</p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Подготовка сильных, аргументированных и тактичных ответов на замечания официальных оппонентов и ведущей организации. Помогу грамотно защитить свою позицию и снять критические замечания без потери лица.</p>
             </Card>
+          </div>
+          <div className="mt-8 p-5 bg-teal-50/40 border border-teal-100 rounded-xl text-center text-base font-medium text-slate-800 shadow-sm">
+            💡 Стоимость дополнительных услуг рассчитывается индивидуально в зависимости от объёма работы и текущего состояния материалов. Чтобы получить условия под вашу задачу, укажите её в описании ситуации в Яндекс.Форме ниже.
           </div>
         </div>
       </section>
@@ -172,12 +193,13 @@ export default function Home() {
         <div className="container max-w-2xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
           <p className="text-center text-slate-600 mb-8 text-base">
-            Опишите ситуацию в свободной форме. Вопросы-подсказки — необязательны. Отправка заявки не означает начало аудита.
+            Чтобы исключить сетевые сбои, приём анкет переведен на официальный защищенный сервис Яндекс Формы.
           </p>
+          
           <Card className="p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm">
-                       <div className="space-y-6 text-center py-6">
+            <div className="space-y-6 text-center py-2">
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 text-left shadow-sm">
-                📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности, защиты ваших авторских прав и исключения технических сбоев, прием анкет переведен на официальный защищенный сервис Яндекс Формы.
+                📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности, защиты ваших авторских прав и автоматической проверки контактов от опечаток, подача заявки осуществляется через платформу Яндекса.
               </div>
               
               <a 
@@ -218,4 +240,3 @@ export default function Home() {
     </main>
   );
 }
- 
