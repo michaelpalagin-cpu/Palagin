@@ -206,7 +206,7 @@ export default function Home() {
               </div>
               
               <a 
-                href="https://forms.yandex.ru" 
+                href="https://forms.yandex.ru/u/6ab40911d046882036649f4e/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="block w-full"
