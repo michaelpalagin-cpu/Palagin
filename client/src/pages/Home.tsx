@@ -27,14 +27,14 @@ export default function Home() {
                 Экспертное сопровождение аспирантов по техническим специальностям
               </h1>
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
-                От обоснования научной новизны до генеральной репетиции предзащиты. Более 30 лет в экспертном научном сообществе.
+                От обоснования научной новизны до генеральной репетиции предзащиты. Многолетний опыт экспертизы и консалтинга.
               </p>
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-base text-slate-700 space-y-3 text-left shadow-sm">
                 <p className="m-0 flex items-start gap-2">
                   <span>✔️</span> <span>Работаю только с темами, в которых действительно разбираюсь.</span>
                 </p>
                 <p className="m-0 flex items-start gap-2">
-                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до критериев ВАК.</span>
+                  <span>❌</span> <span>Не пишу текст за вас — помогаю выстроить работу до требуемых критериев.</span>
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
