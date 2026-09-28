@@ -68,7 +68,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Об эксперте</h2>
           <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
             <p className="text-xl text-slate-900 font-bold">Михаил Палагин — кандидат технических наук (с 1992 года), научный ментор.</p>
-            <p>Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и тренер.</p>
+            <p>Сочетаю академическую экспертизу и управленческий опыт в бизнесе. Работаю как независимый научный продюсер и коуч.</p>
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 my-6 shadow-sm">
               <div className="font-bold text-slate-900 mb-3 text-lg">Помогаю:</div>
               <ul className="space-y-3 text-slate-800 m-0 list-none pl-0 font-medium">
@@ -92,14 +92,14 @@ export default function Home() {
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
                 <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Прозрачность и легитимность</h4>
-                <p className="text-base text-slate-600 m-0 leading-relaxed">Я не пишу диссертации «под ключ» и не торгую готовыми текстами. Моя задача — обучить вас методологии и довести работу до критериев ВАК.</p>
+                <p className="text-base text-slate-600 m-0 leading-relaxed">Я не пишу диссертации „под ключ“ и не торгую готовыми текстами. Моя задача — обучить вас методологии и помочь выстроить научный аппарат исследования по требованиям академических стандартов.</p>
               </div>
             </div>
             <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
               <CheckCircle className="text-teal-600 shrink-0" size={24} />
               <div>
                 <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Строгая специализация</h4>
-                <p className="text-base text-slate-600 m-0 leading-relaxed">Консультирую только по техническим наукам. Если тема лежит вне зоны моей глубокой компетенции, я честно откажусь от проекта на этапе заявки.</p>
+                <p className="text-base text-slate-600 m-0 leading-relaxed">Экспертиза и консалтинг строго в рамках технических специальностей. Если задача лежит вне зоны моей профессиональной компетентности, я честно откажусь от сотрудничества на этапе рассмотрения заявки.</p>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function Home() {
                   <div>
                     <strong className="text-slate-900 block mb-1">1. Научный аппарат (базовые ориентиры):</strong>
                     <p className="m-0 pl-3 text-sm sm:text-base">· Сформулированы ли уже тема, объект и предмет исследования?</p>
-                    <p className="m-0 pl-3 text-sm sm:text-base">· По какой конкретно специальности (шифру ВАК) планируется защита?</p>
+                    <p className="m-0 pl-3 text-sm sm:text-base">· По какой конкретно специальности (номер/шифр) планируется защита?</p>
                     <p className="m-0 pl-3 text-sm sm:text-base">· В чём, по вашему мнению, заключается научная проблема или противоречие, которое вы решаете?</p>
                   </div>
                   <div>
