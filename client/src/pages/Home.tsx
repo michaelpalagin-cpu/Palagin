@@ -105,6 +105,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+              {/* Блок: Примеры ситуаций */}
+        <section className="py-16 bg-slate-50 border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">
+              Примеры ситуаций, с которыми я работаю
+            </h2>
+            <div className="space-y-4">
+              <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Научная новизна</h4>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    Новизна была сформулирована через разработку системы/алгоритма. Пересобрали положения: выделили метод, модель и границы применимости. Научный аппарат стал соответствовать требованиям.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Границы исследования</h4>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    Заявленная новизна оказалась слишком широкой. Уточнили объект, предмет и область применения. Работа стала заметно более защищённой от замечаний.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Автореферат и структура</h4>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    Слабая связь между целью, положениями и выводами. Усилили внутреннюю логику и акценты на новом знании. Структура стала понятнее для членов совета.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Предзащита и доклад</h4>
+                  <p className="text-slate-600 text-base leading-relaxed">
+                    Доклад и презентация были перегружены деталями. Перестроили логику выступления и слайды, провели репетицию. Выступление стало чётче и убедительнее.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4 p-5 bg-white border border-border rounded-xl shadow-sm">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-1 text-base sm:text-lg">Отзывы оппонентов</h4>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    В отзывах были и technical, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       <section className="py-16 sm:py-24 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
