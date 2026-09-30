@@ -213,6 +213,102 @@ export default function Home() {
           </div>
         </div>
       </section>
+              {/* Блок: Часто задаваемые вопросы (FAQ) */}
+        <section className="py-16 bg-white border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">
+              Часто задаваемые вопросы
+            </h2>
+            <div className="space-y-4">
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>С какими специальностями вы работаете?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Только с техническими специальностями и только в рамках тем, в которых у меня есть достаточная экспертиза. Если задача выходит за зону моей компетенции — честно откажусь ещё на этапе рассмотрения заявки.
+                </div>
+              </details>
+
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>Вы пишете текст диссертации за соискателя?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Нет. Я не пишу работу и не продаю готовые тексты. Моя задача — помочь выстроить логику исследования, сформулировать научную новизну, усилить научный аппарат и подготовиться к защите.
+                </div>
+              </details>
+
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>Сколько длится экспресс-аудит?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Обычно несколько рабочих дней после получения материалов. По итогам вы получаете письменное экспертное заключение. При необходимости проводим короткий созвон для обсуждения.
+                </div>
+              </details>
+
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>Можно ли обратиться, если диссертация уже в работе?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Да. Большинство запросов приходит не на старте, а когда уже есть текст, статьи, замечания научного руководителя или кафедры.
+                </div>
+              </details>
+
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>Как обеспечивается конфиденциальность?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Все материалы используются только для работы по вашему запросу. Документы и переписка не передаются третьим лицам.
+                </div>
+              </details>
+
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-4 text-base sm:text-lg hover:bg-slate-100/50 transition-colors">
+                  <span>Что будет, если после экспресс-аудита я не захочу продолжать?</span>
+                  <span className="transition-transform group-open:rotate-180 text-teal-600 font-bold text-lg">▼</span>
+                </summary>
+                <div className="border-t border-slate-200 px-5 py-4 text-base text-slate-600 leading-relaxed bg-white rounded-b-xl">
+                  Это нормальная ситуация. Экспресс-аудит — самостоятельный продукт. Вы получаете разбор и рекомендации и можете использовать их дальше самостоятельно.
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        {/* Блок: Готовы сделать следующий шаг? */}
+        <section className="py-16 bg-slate-50 border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+              Готовы сделать следующий шаг?
+            </h2>
+            <p className="text-base text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Если вы узнали свою ситуацию в примерах выше или просто хотите понять, насколько текущие материалы соответствуют требованиям, начните с экспресс-аудита.
+            </p>
+            
+            <div className="bg-white border border-border rounded-xl p-6 text-left shadow-sm max-w-xl mx-auto">
+              <h4 className="font-bold text-slate-900 mb-4 text-base sm:text-lg text-center md:text-left">
+                Что происходит после заявки:
+              </h4>
+              <ul className="space-y-3 text-base text-slate-600 list-disc list-inside leading-relaxed">
+                <li>Я смотрю материалы и оцениваю, могу ли быть полезен именно в вашей теме.</li>
+                <li>В течение 1–2 рабочих дней даю ответ — беру работу или аргументированно отказываюсь.</li>
+                <li>Если тема в зоне компетенции, согласовываем экспресс-аудит и дальше двигаемся предметно.</li>
+              </ul>
+              <p className="mt-4 pt-4 border-t border-slate-100 text-sm font-medium text-slate-500 text-center">
+                Никакого давления. Только честная оценка текущей точки и понятный план.
+              </p>
+            </div>
+          </div>
+        </section>
+
 
       <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
         <div className="container max-w-3xl mx-auto px-4">
