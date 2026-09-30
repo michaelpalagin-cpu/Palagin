@@ -351,7 +351,31 @@ export default function Home() {
               <div className="p-5 bg-amber-50/50 border border-amber-100 rounded-xl text-sm sm:text-base text-slate-700 text-left shadow-sm">
                 📌 <strong>Внимание для соискателей:</strong> Для обеспечения 100% конфиденциальности и автоматической проверки контактов от опечаток, подача заявки осуществляется через официальную защищенную платформу Яндекса.
               </div>
-              
+                          {/* Блок юридических согласий */}
+            <div className="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <input 
+                  type="checkbox" 
+                  required 
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500 cursor-pointer"
+                />
+                <span className="text-sm text-slate-600 leading-relaxed">
+                  Я даю согласие на обработку моих персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" className="text-teal-600 underline hover:text-teal-700 font-medium">Политикой конфиденциальности</a>.
+                </span>
+              </label>
+
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <input 
+                  type="checkbox" 
+                  required 
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500 cursor-pointer"
+                />
+                <span className="text-sm text-slate-600 leading-relaxed">
+                  Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" className="text-teal-600 underline hover:text-teal-700 font-medium">Условиями оказания консалтинговых услуг</a>, самостоятельно являюсь автором направляемых материалов и не заказываю написание работы «под ключ».
+                </span>
+              </label>
+            </div>
+
               <a 
                 href="https://forms.yandex.ru/u/6ab40911d046882036649f4e/" 
                 target="_blank" 
@@ -368,9 +392,7 @@ export default function Home() {
                 </Button>
               </a>
               
-              <p className="text-xs text-muted-foreground">
-                Нажатием на кнопку вы подтверждаете согласие с Политикой конфиденциальности и договором публичной оферты.
-              </p>
+             
             </div>
           </Card>
         </div>
