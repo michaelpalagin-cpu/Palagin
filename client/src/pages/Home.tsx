@@ -16,7 +16,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-border">
+      <section className="py-12 sm:py-12 bg-gradient-to-b from-white to-slate-50 border-b border-border">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             <div className="md:col-span-8 text-center md:text-left space-y-6">
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white border-b border-border">
+      <section className="py-12 sm:py-12 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Об эксперте</h2>
           <div className="prose prose-slate max-w-none text-slate-700 space-y-6 leading-relaxed text-base sm:text-lg">
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-16 bg-slate-50 border-b border-border">
+      <section className="py-12 bg-slate-50 border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">Мои принципы работы</h2>
           <div className="space-y-4">
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
               {/* Блок: Примеры ситуаций */}
-        <section className="py-16 bg-slate-50 border-b border-border">
+        <section className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">
               Примеры ситуаций, с которыми я работаю
@@ -157,9 +157,9 @@ export default function Home() {
         </section>
 
 
-      <section className="py-16 sm:py-24 bg-white border-b border-border">
+      <section className="py-12 sm:py-12 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Форматы работы и стоимость</h2>
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-8">Форматы работы и стоимость</h2>
           <div className="space-y-8">
             <Card className="p-6 sm:p-8 border border-slate-200 bg-white rounded-2xl shadow-sm">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">🔹 Шаг 1. Экспресс-аудит исследования</h3>
@@ -186,10 +186,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-16 sm:py-24 bg-white border-b border-border">
+      <section className="py-12 sm:py-12 bg-white border-b border-border">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Дополнительные услуги</h2>
-          <p className="text-center text-slate-600 mb-12 text-base font-medium">сопровождение на отдельных этапах.</p>
+          <p className="text-center text-slate-600 mb-8 text-base font-medium">сопровождение на отдельных этапах.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="p-5 border border-slate-200 bg-white rounded-xl shadow-sm space-y-2">
               <h4 className="font-bold text-slate-900 text-lg flex items-center gap-2">🎯 Автореферат</h4>
@@ -214,7 +214,7 @@ export default function Home() {
         </div>
       </section>
               {/* Блок: Часто задаваемые вопросы (FAQ) */}
-        <section className="py-16 bg-white border-b border-border">
+        <section className="py-12 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-8">
               Часто задаваемые вопросы
@@ -284,7 +284,7 @@ export default function Home() {
         </section>
 
         {/* Блок: Готовы сделать следующий шаг? */}
-        <section className="py-16 bg-slate-50 border-b border-border">
+        <section className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
               Готовы сделать следующий шаг?
@@ -310,7 +310,7 @@ export default function Home() {
         </section>
 
 
-      <section id="contact-form" className="py-16 sm:py-24 bg-slate-50">
+      <section id="contact-form" className="py-12 sm:py-12 bg-slate-50">
         <div className="container max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Заявка на предварительное согласование</h2>
           <p className="text-center text-slate-600 mb-8 text-base">
