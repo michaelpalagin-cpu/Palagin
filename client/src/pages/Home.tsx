@@ -48,7 +48,7 @@ export default function Home() {
                   <img 
                     src="/photo.jpg" 
                     alt="Михаил Палагин" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-top"
                     onError={(e) => {
                       (e.target as HTMLElement).style.display = 'none';
                     }}
@@ -253,7 +253,7 @@ export default function Home() {
               </div>
 
               <a 
-                href="https://yandex.ru" 
+              href="https://forms.yandex.ru/cloud/6ab40911d046882036649f4e/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors animate-pulse"
