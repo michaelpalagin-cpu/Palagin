@@ -253,7 +253,7 @@ export default function Home() {
               </div>
 
               <a 
-              href="https://forms.yandex.ru/cloud/6ab40911d046882036649f4e/" 
+              href="https://forms.yandex.ru/embed/6ab40911d046882036649f4e/"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors animate-pulse"
