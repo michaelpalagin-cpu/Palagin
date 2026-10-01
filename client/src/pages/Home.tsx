@@ -58,65 +58,41 @@ export default function Home() {
         {/* Принципы работы */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
-              Мои принципы работы
-            </h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Мои принципы работы</h2>
             <div className="space-y-3">
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Только технические науки</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки.
-                </p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Строго без написания «под ключ»</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Я не пишу за вас диссертации и не торгую готовыми текстами. Моя цель — обучить вас методологии и помочь выстроить логику защиты ваших собственных результатов.
-                </p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Инженерный язык</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей.
-                </p>
-              </div>
-                      {/* Примеры ситуаций */}
+              {[
+                { t: "Только технические науки", d: "Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки." },
+                { t: "Строго без написания «под ключ»", d: "Я не пишу за вас диссертации и не торгую готовыми текстами. Моя цель — обучить вас методологии и помочь выстроить логику защиты ваших собственных результатов." },
+                { t: "Инженерный язык", d: "В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей." }
+              ].map((p, i) => (
+                <div key={i} className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                  <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">{p.t}</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">{p.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+                {/* Примеры ситуаций */}
         <section className="py-10 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
-              Примеры ситуаций, с которыми я работаю
-            </h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Примеры ситуаций, с которыми я работаю</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-teal-500 transition-colors">
-                <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Научная новизна</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Новизна была сформулирована через разработку системы/алгоритма. Пересобрали положения: выделили метод, модель и границы применимости. Научный аппарат стал полностью соответствовать требованиям.
-                </p>
-              </div>
-              <div className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-teal-500 transition-colors">
-                <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Границы исследования</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Заявленная новизна оказалась слишком широкой. Уточнили объект, предмет и область применения. Работа стала заметно более защищённой от замечаний.
-                </p>
-              </div>
-              <div className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-teal-500 transition-colors">
-                <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Автореферат и структура</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Слабая связь между целью, положениями и выводами. Усилили внутреннюю логику и акценты на новом знании. Структура стала понятнее для членов совета.
-                </p>
-              </div>
-              <div className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-teal-500 transition-colors">
-                <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Предзащита и доклад</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Доклад и презентация были перегружены деталями. Перестроили логику выступления и слайды, провели репетицию. Выступление стало чётче и убедительнее.
-                </p>
-              </div>
+              {[
+                { t: "Научная новизна", d: "Новизна была сформулирована через разработку системы/алгоритма. Пересобрали положения: выделили метод, модель и границы применимости. Научный аппарат стал полностью соответствовать требованиям." },
+                { t: "Границы исследования", d: "Заявленная новизна оказалась слишком широкой. Уточнили объект, предмет и область применения. Работа стала заметно более защищённой от замечаний." },
+                { t: "Автореферат и структура", d: "Слабая связь между целью, положениями и выводами. Усилили внутреннюю логику и акценты на новом знании. Структура стала понятнее для членов совета." },
+                { t: "Предзащита и доклад", d: "Доклад и презентация были перегружены деталями. Перестроили логику выступления и слайды, провели репетицию. Выступление стало чётче и убедительнее." }
+              ].map((c, i) => (
+                <div key={i} className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
+                  <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">{c.t}</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">{c.d}</p>
+                </div>
+              ))}
             </div>
-            <div className="mt-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-teal-500 transition-colors">
+            <div className="mt-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
               <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Отзывы оппонентов</h4>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                В отзывах были и технические, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.
-              </p>
+              <p className="text-sm text-slate-600 leading-relaxed">В отзывах были и technicalческие, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.</p>
             </div>
           </div>
         </section>
@@ -132,19 +108,17 @@ export default function Home() {
                 { q: "Можно ли обратиться, если диссертация уже в работе?", a: "Да. Большинство запросов приходит не на старте, а когда уже есть текст, статьи, замечания научного руководителя или кафедры." },
                 { q: "Как обеспечивается конфиденциальность?", a: "Все материалы используются только для работы по вашему запросу. Документы и переписка не передаются третьим лицам." },
                 { q: "Что будет, если после экспресс-аудита я не захочу продолжать?", a: "Это нормальная ситуация. Экспресс-аудит — самостоятельный продукт. Вы получаете разбор и рекомендации и можете использовать их дальше самостоятельно." }
-              ].map((item, index) => (
-                <details key={index} className="group rounded-xl border border-slate-200 bg-slate-50/50">
+              ].map((f, i) => (
+                <details key={i} className="group rounded-xl border border-slate-200 bg-slate-50/50">
                   <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-100/50 transition-colors">
-                    <span>{item.q}</span>
+                    <span>{f.q}</span>
                     <span className="text-teal-600 text-xs">▼</span>
                   </summary>
-                  <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{item.a}</div>
+                  <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{f.a}</div>
                 </details>
               ))}
             </div>
           </div>
-        </section>
-
         {/* Блок действия и согласий */}
         <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
@@ -175,7 +149,7 @@ export default function Home() {
                 onClick={() => {
                   const privacy = document.getElementById('privacy-check') as HTMLInputElement;
                   const terms = document.getElementById('terms-check') as HTMLInputElement;
-                  if (!privacy?.checked || !terms?.checked) {
+                  if (!privacy?.checked && !terms?.checked) {
                     alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив обе галочки.');
                     return;
                   }
@@ -192,16 +166,5 @@ export default function Home() {
     </div>
   );
 }
-
-            </div>
-          </div>
         </section>
-                  </button>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
-}
 
