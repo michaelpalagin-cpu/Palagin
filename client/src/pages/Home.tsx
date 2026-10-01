@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../components/ui/button';
 
 export default function Home() {
   return (
@@ -27,16 +26,17 @@ export default function Home() {
                   Помогаю выстроить железобетонный научный аппарат исследования, устранить дефекты логики и подготовить материалы к успешной защите. Без написания текстов «под ключ».
                 </p>
                 <div className="pt-2">
-                  <Button 
-                    size="lg" 
-                    className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto"
-                    onClick={() => {
+                  <a 
+                    href="#contact-form"
+                    className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto text-base font-medium transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
                       const element = document.getElementById('contact-form');
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
                     Заказать экспресс-аудит
-                  </Button>
+                  </a>
                 </div>
               </div>
               <div className="md:col-span-4 flex justify-center">
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
             <div className="mt-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
               <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Отзывы оппонентов</h4>
-              <p className="text-sm text-slate-600 leading-relaxed">В отзывах были и technicalческие, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.</p>
+              <p className="text-sm text-slate-600 leading-relaxed">В отзывах были и технические, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.</p>
             </div>
           </div>
         </section>
@@ -119,6 +119,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
         {/* Блок действия и согласий */}
         <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
@@ -144,21 +145,22 @@ export default function Home() {
                   <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
                 </label>
               </div>
-              <button 
-                type="button"
-                onClick={() => {
+              <a 
+                href="https://yandex.ru"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
                   const privacy = document.getElementById('privacy-check') as HTMLInputElement;
                   const terms = document.getElementById('terms-check') as HTMLInputElement;
-                  if (!privacy?.checked && !terms?.checked) {
+                  if (!privacy?.checked || !terms?.checked) {
+                    e.preventDefault();
                     alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив обе галочки.');
-                    return;
                   }
-                  window.location.href = "https://yandex.ru";
                 }}
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans cursor-pointer"
               >
                 Отправить заявку на экспресс-аудит
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -166,5 +168,3 @@ export default function Home() {
     </div>
   );
 }
-        </section>
-
