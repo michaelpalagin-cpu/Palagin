@@ -1,12 +1,8 @@
 import React from 'react';
 import { Send, CheckCircle, Award, FileText, ArrowRight } from 'lucide-react';
-import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { useLocation } from 'wouter';
 
 export default function Home() {
-  const [, setLocation] = useLocation();
-
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
@@ -17,23 +13,24 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="py-12 sm:py-12 bg-gradient-to-b from-white to-slate-50 border-b border-border">
+        {/* Главный блок */}
+        <section className="py-12 bg-gradient-to-b from-white to-slate-50 border-b border-border">
           <div className="container max-w-5xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 text-center md:text-left space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
                   <Award size={16} /> Кандидат технических наук (с 1992 года)
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Экспертное сопровождение аспирантов по техническим специальностям
+                  Экспертное сопровождение аспирантов по technical специальностям
                 </h1>
-                <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   Помогаю выстроить железобетонный научный аппарат исследования, устранить дефекты логики и подготовить материалы к успешной защите. Без написания текстов «под ключ».
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                <div className="pt-2">
                   <Button 
                     size="lg" 
-                    className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6"
+                    className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto"
                     onClick={() => {
                       const element = document.getElementById('contact-form');
                       element?.scrollIntoView({ behavior: 'smooth' });
@@ -44,11 +41,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="md:col-span-4 flex justify-center">
-                <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-100">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-100">
                   <img 
                     src="/photo.jpg" 
                     alt="Михаил Палагин" 
-                    className="w-full h-full object-top"
+                    className="w-full h-full object-cover object-center"
                     onError={(e) => {
                       (e.target as HTMLElement).style.display = 'none';
                     }}
@@ -59,12 +56,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-12 bg-white border-b border-border">
+        {/* Принципы работы */}
+        <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
               Мои принципы работы
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
                 <CheckCircle className="text-teal-600 shrink-0 mt-1" size={20} />
                 <div>
@@ -94,9 +92,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-
-        <section className="py-12 bg-slate-50 border-b border-border">
+        </s        {/* Примеры ситуаций */}
+        <section className="py-10 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
               Примеры ситуаций, с которыми я работаю
@@ -135,7 +132,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-12 bg-white border-b border-border">
+
+        {/* Часто задаваемые вопросы (FAQ) */}
+        <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
               Часто задаваемые вопросы
@@ -203,8 +202,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className="py-12 bg-slate-50 border-b border-border">
+ </section>
+                {/* Блок действия и согласий */}
+        <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
               Готовы сделать следующий шаг?
@@ -227,8 +227,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div id="contact-form" className="max-w-xl mx-auto">
-              <div className="space-y-3 mb-4 bg-white p-4 rounded-xl border border-slate-200 text-left">
+            <div className="max-w-xl mx-auto">
+              <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input 
                     type="checkbox" 
@@ -253,10 +253,10 @@ export default function Home() {
               </div>
 
               <a 
-              href="https://forms.yandex.ru/embed/6ab40911d046882036649f4e/"
+                href="https://yandex.ru" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors animate-pulse"
+                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors"
               >
                 Отправить заявку на экспресс-аудит
               </a>
@@ -268,3 +268,5 @@ export default function Home() {
     </div>
   );
 }
+
+        
