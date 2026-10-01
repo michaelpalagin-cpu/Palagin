@@ -146,7 +146,7 @@ export default function Home() {
                 </label>
               </div>
               <a 
-                href="https://yandex.ru"
+                href="https://forms.yandex.ru/cloud/6ab40911d046882036649f4e/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
