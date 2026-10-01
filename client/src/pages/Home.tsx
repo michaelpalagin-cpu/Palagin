@@ -80,10 +80,7 @@ export default function Home() {
                   В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-                {/* Примеры ситуаций */}
+                      {/* Примеры ситуаций */}
         <section className="py-10 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
@@ -168,11 +165,6 @@ export default function Home() {
                   <input type="checkbox" id="privacy-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
                 </label>
-                             <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
-                <label className="flex items-start gap-3 cursor-pointer select-none">
-                  <input type="checkbox" id="privacy-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
-                </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" id="terms-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
@@ -193,7 +185,6 @@ export default function Home() {
               >
                 Отправить заявку на экспресс-аудит
               </button>
-
             </div>
           </div>
         </section>
@@ -202,3 +193,6 @@ export default function Home() {
   );
 }
 
+            </div>
+          </div>
+        </section>
