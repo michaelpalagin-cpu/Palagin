@@ -123,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Часто задаваемые вопросы (FAQ) */}
+             {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
@@ -161,22 +161,35 @@ export default function Home() {
                 <li>Если тема в зоне компетенции, согласовываем экспресс-аудит и дальше двигаемся предметно.</li>
               </ul>
             </div>
-            <div className="max-w-xl mx-auto">
+            
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                window.open("https://yandex.ru", "_blank", "noopener,noreferrer");
+              }}
+              className="max-w-xl mx-auto"
+            >
               <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none">
-                  <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600" />
+                  <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
                 </label>
               </div>
-              <a href="https://yandex.ru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans">Отправить заявку на экспресс-аудит</a>
-            </div>
+              <button 
+                type="submit" 
+                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans cursor-pointer"
+              >
+                Отправить заявку на экспресс-аудит
+              </button>
+            </form>
           </div>
         </section>
       </main>
     </div>
   );
 }
+ 
