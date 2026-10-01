@@ -83,7 +83,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Примеры ситуаций */}
+                {/* Примеры ситуаций */}
         <section className="py-10 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
@@ -122,7 +122,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-                  {/* Часто задаваемые вопросы (FAQ) */}
+        </section>
+        {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
@@ -195,5 +196,3 @@ export default function Home() {
   );
 }
 
-          
-       
