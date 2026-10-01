@@ -122,8 +122,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
-             {/* Часто задаваемые вопросы (FAQ) */}
+              {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
@@ -163,10 +162,9 @@ export default function Home() {
             </div>
             
             <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.open("https://yandex.ru", "_blank", "noopener,noreferrer");
-              }}
+              action="https://yandex.ru"
+              method="GET"
+              target="_blank"
               className="max-w-xl mx-auto"
             >
               <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
@@ -192,4 +190,3 @@ export default function Home() {
     </div>
   );
 }
- 
