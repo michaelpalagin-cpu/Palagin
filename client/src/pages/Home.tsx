@@ -168,6 +168,11 @@ export default function Home() {
                   <input type="checkbox" id="privacy-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
                 </label>
+                             <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
+                <label className="flex items-start gap-3 cursor-pointer select-none">
+                  <input type="checkbox" id="privacy-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
+                  <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
+                </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" id="terms-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
                   <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
@@ -179,15 +184,16 @@ export default function Home() {
                   const privacy = document.getElementById('privacy-check') as HTMLInputElement;
                   const terms = document.getElementById('terms-check') as HTMLInputElement;
                   if (!privacy?.checked || !terms?.checked) {
-                    alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив галочки.');
+                    alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив обе галочки.');
                     return;
                   }
-                  window.location.href = "https//forms.yandex.ru/u/6ab40911d046882036649f4e";
+                  window.location.href = "https://yandex.ru";
                 }}
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans cursor-pointer"
               >
                 Отправить заявку на экспресс-аудит
               </button>
+
             </div>
           </div>
         </section>
