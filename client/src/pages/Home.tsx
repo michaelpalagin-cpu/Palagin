@@ -182,7 +182,7 @@ export default function Home() {
                     alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив галочки.');
                     return;
                   }
-                  window.open("https://yandex.ru", "_blank", "noopener,noreferrer");
+                  window.location.href = "https//forms.yandex.ru/cloud/6ab40911d046882036649f4e/";
                 }}
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans cursor-pointer"
               >
