@@ -122,8 +122,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
-        {/* Часто задаваемые вопросы (FAQ) */}
+            {/* БЛОК №3 из 3: FAQ, Форма и Финал */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
@@ -148,7 +147,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Финал и форма */}
         <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
@@ -165,11 +163,11 @@ export default function Home() {
               <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="https://palagin-mentor.ru" target="_blank" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
+                  <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="https://yandex.ru" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="https://palagin-mentor.ru" target="_blank" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
+                  <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="https://yandex.ru" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
                 </label>
               </div>
               <a href="https://yandex.ru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors">Отправить заявку на экспресс-аудит</a>
@@ -180,3 +178,4 @@ export default function Home() {
     </div>
   );
 }
+ 
