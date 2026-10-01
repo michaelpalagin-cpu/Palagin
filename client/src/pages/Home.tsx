@@ -1,5 +1,4 @@
 import React from 'react';
-import { CheckCircle, Award, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 export default function Home() {
@@ -19,7 +18,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 text-center md:text-left space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
-                  <Award size={16} /> Кандидат технических наук (с 1992 года)
+                  Кандидат технических наук (с 1992 года)
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Экспертное сопровождение аспирантов по техническим специальностям
@@ -36,7 +35,7 @@ export default function Home() {
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Заказать экспресс-аудит <ArrowRight className="ml-2" size={18} />
+                    Заказать экспресс-аудит
                   </Button>
                 </div>
               </div>
@@ -63,36 +62,28 @@ export default function Home() {
               Мои принципы работы
             </h2>
             <div className="space-y-3">
-              <div className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <CheckCircle className="text-teal-600 shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Только технические науки</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки.
-                  </p>
-                </div>
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Только технические науки</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки.
+                </p>
               </div>
-              <div className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <CheckCircle className="text-teal-600 shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Строго без написания «под ключ»</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Я не пишу за вас диссертации и не торгую готовыми текстами. Моя цель — обучить вас методологии и помочь выстроить логику защиты ваших собственных результатов.
-                  </p>
-                </div>
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Строго без написания «под ключ»</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Я не пишу за вас диссертации и не торгую готовыми текстами. Моя цель — обучить вас методологии и помочь выстроить логику защиты ваших собственных результатов.
+                </p>
               </div>
-              <div className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <CheckCircle className="text-teal-600 shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Инженерный язык</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей.
-                  </p>
-                </div>
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">Инженерный язык</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей.
+                </p>
               </div>
             </div>
           </div>
-        <        {/* Примеры ситуаций */}
+        </section>
+        {/* Примеры ситуаций */}
         <section className="py-10 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">
@@ -132,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-                  {/* Блок FAQ и Финал формы */}
+        {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
@@ -148,7 +139,7 @@ export default function Home() {
                 <details key={index} className="group rounded-xl border border-slate-200 bg-slate-50/50">
                   <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-100/50 transition-colors">
                     <span>{item.q}</span>
-                    <span className="transition-transform group-open:rotate-180 text-teal-600 text-xs">▼</span>
+                    <span className="text-teal-600 text-xs">▼</span>
                   </summary>
                   <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{item.a}</div>
                 </details>
@@ -157,6 +148,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Финал и форма */}
         <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
@@ -188,5 +180,3 @@ export default function Home() {
     </div>
   );
 }
-
-        
