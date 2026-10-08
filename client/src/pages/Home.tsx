@@ -203,51 +203,7 @@ export default function Home() {
             </div>
         </section>
 
-        {/* БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
-        <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa', fontFamily: 'sans-serif' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                
-                <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
-                    Дополнительные услуги
-                </h2>
-                <p style={{ color: '#4a5568', fontSize: '16px', marginBottom: '30px' }}>
-                    Сопровождение соискателей на отдельных этапах подготовки и защиты диссертации
-                </p>
-
-                <div style={{ display: 'grid', gap: '20px' }}>
-                    
-                    {/* Услуга 1: Автореферат */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Автореферат
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Разбор структуры, усиление логики «цель — положения — выводы» и формулировок новизны.
-                        </p>
-                    </div>
-
-                    {/* Услуга 2: Презентация и доклад */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Презентация и доклад к предзащите
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Переработка логики выступления и слайдов, расстановка акцентов, репетиция при необходимости.
-                        </p>
-                    </div>
-
-                    {/* Услуга 3: Работа с отзывами */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Работа с отзывами оппонентов
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Разбор замечаний и подготовка аргументированных, тактичных ответов.
-                        </p>
-                    </div>
-
-                </div>
-
+      
                 {/* Блок стоимости доп услуг */}
                 <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
                     <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
