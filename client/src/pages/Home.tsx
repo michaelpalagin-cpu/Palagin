@@ -1,326 +1,177 @@
 import React from 'react';
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
-        <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="font-bold text-xl text-primary">Михаил Палагин</div>
-          <div className="text-sm font-semibold text-muted-foreground">Научный консалтинг к.т.н.</div>
-        </div>
-      </header>
+const Home: React.FC = () => {
+    return (
+        <div className="home-page" style={{ fontFamily: 'sans-serif', color: '#1a202c' }}>
+            {/* БЛОК ПРИВЕТСТВИЯ */}
+            <section className="hero-section" style={{ padding: '80px 20px', backgroundColor: '#e0f2fe', textAlign: 'center' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#0c4a6e', marginBottom: '16px' }}>
+                        Научно-методический консалтинг
+                    </h1>
+                    <p style={{ fontSize: '18px', color: '#0369a1', marginBottom: '24px' }}>
+                        Персональное сопровождение соискателей учёных степеней кандидата и доктора технических наук от к.т.н. Михаила Палагина.
+                    </p>
+                    <a href="#cta-form" style={{ display: 'inline-block', padding: '12px 28px', backgroundColor: '#00b4d8', color: '#ffffff', fontWeight: 600, borderRadius: '6px', textDecoration: 'none' }}>
+                        Подать заявку на аудит
+                    </a>
+                </div>
+            </section>
 
-      <main>
-        {/* Главный блок */}
-        <section className="py-12 bg-gradient-to-b from-white to-slate-50 border-b border-border">
-          <div className="container max-w-5xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-8 text-center md:text-left space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
-                  Кандидат технических наук (с 1992 года)
+            {/* БЛОК ОБ АВТОРЕ */}
+            <section className="about-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                        О менторе
+                    </h2>
+                    <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#4a5568' }}>
+                        Михаил Палагин — кандидат технических наук, specialist в области системного анализа и математического моделирования. Многолетний опыт успешного руководства научными исследованиями, подготовки соискателей к защите в ведущих диссертационных советах и экспертизы ВАК-публикаций.
+                    </p>
                 </div>
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Экспертное сопровождение аспирантов по техническим специальностям
-                </h1>
-                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-                  Помогаю выстроить железобетонный научный аппарат исследования, устранить дефекты логики и подготовить материалы к успешной защите. Без написания текстов «под ключ».
-                </p>
-                <div className="pt-2">
-                  <a 
-                    href="#contact-form"
-                    className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto text-base font-medium transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const element = document.getElementById('contact-form');
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    Заказать экспресс-аудит
-                  </a>
-                </div>
-              </div>
-              <div className="md:col-span-4 flex justify-center">
-                <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-50">
-                  <img 
-                    src="/photo.jpg" 
-                    alt="Михаил Палагин" 
-                    className="w-full h-full object-contain object-top"
-                    onError={(e) => {
-                      (e.target as HTMLElement).style.display = 'none';
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Принципы работы */}
-        <section className="py-10 bg-white border-b border-border">
-          <div className="container max-w-3xl mx-auto px-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Мои принципы работы</h2>
-            <div className="space-y-3">
-              {[
-                { t: "Только технические науки", d: "Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки." },
-                { t: "Строго без написания «под ключ»", d: "Я не пишу за вас диссертации и не торгую готовыми текстами. Моя цель — обучить вас методологии и помочь выстроить логику защиты ваших собственных результатов." },
-                { t: "Инженерный язык", d: "В технических дисциплинах абстрактные советы не работают. Мы говорим на языке моделей, физики процессов, методов измерений и оценки погрешностей." }
-              ].map((p, i) => (
-                <div key={i} className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <h4 className="font-bold text-slate-900 mb-1 text-sm sm:text-base">{p.t}</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">{p.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-                {/* Примеры ситуаций */}
-        <section className="py-10 bg-slate-50 border-b border-border">
-          <div className="container max-w-3xl mx-auto px-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Примеры ситуаций, с которыми я работаю</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                { t: "Научная новизна", d: "Новизна была сформулирована через разработку системы/алгоритма. Пересобрали положения: выделили метод, модель и границы применимости. Научный аппарат стал полностью соответствовать требованиям." },
-                { t: "Границы исследования", d: "Заявленная новизна оказалась слишком широкой. Уточнили объект, предмет и область применения. Работа стала заметно более защищённой от замечаний." },
-                { t: "Автореферат и структура", d: "Слабая связь между целью, положениями и выводами. Усилили внутреннюю логику и акценты на новом знании. Структура стала понятнее для членов совета." },
-                { t: "Предзащита и доклад", d: "Доклад и презентация были перегружены деталями. Перестроили логику выступления и слайды, провели репетицию. Выступление стало чётче и убедительнее." }
-              ].map((c, i) => (
-                <div key={i} className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-                  <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">{c.t}</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">{c.d}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-              <h4 className="font-bold text-teal-600 mb-1 text-sm sm:text-base">Отзывы оппонентов</h4>
-              <p className="text-sm text-slate-600 leading-relaxed">В отзывах были и технические, и принципиальные замечания. Подготовили аргументированные и тактичные ответы. Соискатель уверенно отстоял позицию на защите.</p>
-            </div>
-          </div>
-        </section>
-        {/* Часто задаваемые вопросы (FAQ) */}
-        <section className="py-10 bg-white border-b border-border">
-          <div className="container max-w-3xl mx-auto px-4">
-            {/* Публикации */}
-<section className="py-12 bg-white border-b border-border">
-  <div className="container max-w-3xl mx-auto px-4 text-center">
-    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-      Публикации
-    </h2>
-    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-      Некоторые публикации последних лет — авторские материалы Михаила
-      Палагина в журнале Business Excellence.
-    </p>
-    <a
-      href="/publications"
-      className="inline-flex items-center justify-center mt-5 rounded-md bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
-    >
-      Посмотреть публикации
-    </a>
-  </div>
-</section>
-
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
-            <div className="space-y-3">
-              {[
-                { q: "С какими специальностями вы работаете?", a: "Только с техническими специальностями и только в рамках тем, в которых у меня есть достаточная экспертиза. Если задача выходит за зону моей компетенции — честно откажусь ещё на этапе рассмотрения заявки." },
-                { q: "Вы пишете текст диссертации за соискателя?", a: "Нет. Я не пишу работу и не продаю готовые тексты. Моя задача — помочь выстроить логику исследования, сформулировать научную новизну, усилить научный аппарат и подготовиться к защите." },
-                { q: "Сколько длится экспресс-аудит?", a: "Обычно несколько рабочих дней после получения материалов. По итогам вы получаете письменное экспертное заключение. При необходимости проводим короткий созвон для обсуждения." },
-                { q: "Можно ли обратиться, если диссертация уже в работе?", a: "Да. Большинство запросов приходит не на старте, а когда уже есть текст, статьи, замечания научного руководителя или кафедры." },
-                { q: "Как обеспечивается конфиденциальность?", a: "Все материалы используются только для работы по вашему запросу. Документы и переписка не передаются третьим лицам." },
-                { q: "Что будет, если после экспресс-аудита я не захочу продолжать?", a: "Это нормальная ситуация. Экспресс-аудит — самостоятельный продукт. Вы получаете разбор и рекомендации и можете использовать их дальше самостоятельно." }
-              ].map((f, i) => (
-                <details key={i} className="group rounded-xl border border-slate-200 bg-slate-50/50">
-                  <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-100/50 transition-colors">
-                    <span>{f.q}</span>
-                    <span className="text-teal-600 text-xs">▼</span>
-                  </summary>
-                  <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{f.a}</div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-                      {/* БЛОК СТОИМОСТИ ОСНОВНЫХ УСЛУГ И УСЛОВИЙ ОПЛАТЫ ПО ОФЕРТЕ */}
-        <section className="main-pricing-section" style={{ padding: '40px 20px', backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                
-                <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '25px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
-                    Стоимость основных услуг
-                </h2>
-
-                <div style={{ display: 'grid', gap: '20px', marginBottom: '35px' }}>
+            </section>
+            {/* БЛОК СТОИМОСТИ ОСНОВНЫХ УСЛУГ И УСЛОВИЙ ОПЛАТЫ ПО ОФЕРТЕ */}
+            <section className="main-pricing-section" style={{ padding: '40px 20px', backgroundColor: '#ffffff' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     
-                    {/* Экспресс-аудит диссертационного исследования */}
-                    <div style={{ background: '#f8f9fa', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #00b4d8', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', flexWrap: 'wrap', gap: '15px' }}>
-                            <div style={{ flex: '1 1 500px' }}>
-                                <h3 style={{ color: '#2d3748', fontSize: '20px', margin: '0 0 8px 0', fontWeight: 600 }}>
-                                    Экспресс-аудит диссертационного исследования
-                                </h3>
-                                <p style={{ color: '#4a5568', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                                    Первичная экспертная оценка логики, структуры, диссертабельности и научной новизны вашей работы. Разбор критических уязвимостей перед выходом на кафедру или в диссертационный совет.
-                                </p>
-                            </div>
-                            <div style={{ color: '#00b4d8', fontSize: '22px', fontWeight: 700, whiteSpace: 'nowrap', paddingTop: '2px' }}>
-                                6 000 ₽
+                    <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '25px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                        Стоимость основных услуг
+                    </h2>
+
+                    <div style={{ display: 'grid', gap: '20px', marginBottom: '35px' }}>
+                        
+                        {/* Экспресс-аудит диссертационного исследования */}
+                        <div style={{ background: '#f8f9fa', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #00b4d8', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', flexWrap: 'wrap', gap: '15px' }}>
+                                <div style={{ flex: '1 1 500px' }}>
+                                    <h3 style={{ color: '#2d3748', fontSize: '20px', margin: '0 0 8px 0', fontWeight: 600 }}>
+                                        Экспресс-аудит диссертационного исследования
+                                    </h3>
+                                    <p style={{ color: '#4a5568', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                                        Первичная экспертная оценка логики, структуры, диссертабельности и научной новизны вашей работы. Разбор критических уязвимостей перед выходом на кафедру или в диссертационный совет.
+                                    </p>
+                                </div>
+                                <div style={{ color: '#00b4d8', fontSize: '22px', fontWeight: 700, whiteSpace: 'nowrap', paddingTop: '2px' }}>
+                                    6 000 ₽
+                                </div>
                             </div>
                         </div>
+
+                        {/* Менторское сопровождение */}
+                        <div style={{ background: '#f8f9fa', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #00b4d8', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', flexWrap: 'wrap', gap: '15px' }}>
+                                <div style={{ flex: '1 1 500px' }}>
+                                    <h3 style={{ color: '#2d3748', fontSize: '20px', margin: '0 0 8px 0', fontWeight: 600 }}>
+                                        Менторское сопровождение
+                                    </h3>
+                                    <p style={{ color: '#4a5568', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                                        Системное научно-методическое ведение соискателя по техническим наукам. Включает до 4 индивидуальных онлайн-сессий в месяц, проверку материалов до 30 страниц, помощь со статьями ВАК/Scopus и разбор глав. Минимальный срок — 6 месяцев.
+                                    </p>
+                                </div>
+                                <div style={{ color: '#00b4d8', fontSize: '22px', fontWeight: 700, whiteSpace: 'nowrap', paddingTop: '2px' }}>
+                                    30 000 ₽ <span style={{ fontSize: '14px', fontWeight: 400, color: '#718096' }}>/ мес.</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    {/* Менторское сопровождение */}
-                    <div style={{ background: '#f8f9fa', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #00b4d8', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', flexWrap: 'wrap', gap: '15px' }}>
-                            <div style={{ flex: '1 1 500px' }}>
-                                <h3 style={{ color: '#2d3748', fontSize: '20px', margin: '0 0 8px 0', fontWeight: 600 }}>
-                                    Менторское сопровождение
-                                </h3>
-                                <p style={{ color: '#4a5568', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                                    Системное научно-методическое ведение соискателя по техническим наукам. Включает до 4 индивидуальных онлайн-сессий в месяц, проверку материалов до 30 страниц, помощь со статьями ВАК/Scopus и разбор глав. Минимальный срок — 6 месяцев.
+                    {/* Уточненный блок условий оказания услуг */}
+                    <div style={{ padding: '24px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                        <div style={{ display: 'flex', alignItems: 'start', gap: '16px' }}>
+                            <span style={{ fontSize: '24px', lineHeight: 1 }}>⚠️</span>
+                            <div>
+                                <h4 style={{ color: '#9b2c2c', fontSize: '16px', fontWeight: 600, margin: '0 0 6px 0' }}>
+                                    Условия оказания услуг
+                                </h4>
+                                <p style={{ color: '#c53030', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>
+                                    Все экспертно-аналитические и консультационные работы выполняются на условиях 100% предоплаты после подтверждения заявки и согласования объёма работ. Порядок оплаты, прекращения сопровождения и возврата денежных средств определяется <a href="/offer" target="_blank" rel="noopener noreferrer" style={{ color: '#9b2c2c', fontWeight: 600, textDecoration: 'underline' }}>договором публичной оферты</a>.
                                 </p>
-                            </div>
-                            <div style={{ color: '#00b4d8', fontSize: '22px', fontWeight: 700, whiteSpace: 'nowrap', paddingTop: '2px' }}>
-                                30 000 ₽ <span style={{ fontSize: '14px', fontWeight: 400, color: '#718096' }}>/ мес.</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
+            </section>
+                      {/* СТРОГО ОДИН КОРРЕКТНЫЙ БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
+            <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    
+                    <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                        Дополнительные услуги
+                    </h2>
+                    <p style={{ color: '#4a5568', fontSize: '16px', marginBottom: '30px' }}>
+                        Сопровождение соискателей на отдельных этапах подготовки и защиты диссертации
+                    </p>
 
-                {/* Уточненный блок условий оказания услуг по требованию Михаила */}
-                <div style={{ padding: '24px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
-                    <div style={{ display: 'flex', alignItems: 'start', gap: '16px' }}>
-                        <span style={{ fontSize: '24px', lineHeight: 1 }}>⚠️</span>
-                        <div>
-                            <h4 style={{ color: '#9b2c2c', fontSize: '16px', fontWeight: 600, margin: '0 0 6px 0' }}>
-                                Условия оказания услуг
-                            </h4>
-                            <p style={{ color: '#c53030', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>
-                                Все экспертно-аналитические и консультационные работы выполняются на условиях 100% предоплаты после подтверждения заявки и согласования объёма работ. Порядок оплаты, прекращения сопровождения и возврата денежных средств определяется <a href="/offer" target="_blank" rel="noopener noreferrer" style={{ color: '#9b2c2c', fontWeight: 600, textDecoration: 'underline' }}>договором публичной оферты</a> [ссылка].
+                    <div style={{ display: 'grid', gap: '20px' }}>
+                        
+                        {/* Услуга 1: Автореферат */}
+                        <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                            <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                                Автореферат
+                            </h3>
+                            <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                                Разбор структуры, усиление логики «цель — положения — выводы» и формулировок новизны.
                             </p>
                         </div>
+
+                        {/* Услуга 2: Презентация и доклад */}
+                        <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                            <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                                Презентация и доклад к предзащите
+                            </h3>
+                            <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                                Переработка логики выступления и слайдов, расстановка акцентов, репетиция при необходимости.
+                            </p>
+                        </div>
+
+                        {/* Услуга 3: Работа с отзывами */}
+                        <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                            <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                                Работа с отзывами оппонентов
+                            </h3>
+                            <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                                Разбор замечаний и подготовка аргументированных, тактичных ответов.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
 
-            </div>
-        </section>
-
-      
-                {/* Блок стоимости доп услуг */}
-                <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
-                    <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
-                        💰 Стоимость рассчитывается индивидуально
-                    </p>
-                    <p style={{ color: '#0c4a6e', fontSize: '14px', margin: 0 }}>
-                        Укажите задачу при подаче заявки в форме ниже.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-    
-        {/* БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
-        <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa', fontFamily: 'sans-serif' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                
-                <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
-                    Дополнительные услуги
-                </h2>
-                <p style={{ color: '#4a5568', fontSize: '16px', marginBottom: '30px' }}>
-                    Сопровождение соискателей на отдельных этапах подготовки и защиты диссертации
-                </p>
-
-                <div style={{ display: 'grid', gap: '20px' }}>
-                    
-                    {/* Услуга 1: Автореферат */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Автореферат
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Глубокий разбор структуры, усиление внутренней логики триады <strong>«цель — положения — выводы»</strong>, а также профессиональная доработка и точечное усиление формулировок научной новизны.
+                    {/* Блок стоимости доп услуг */}
+                    <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
+                        <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
+                            💰 Стоимость рассчитывается индивидуально
                         </p>
-                    </div>
-
-                    {/* Услуга 2: Презентация и доклад */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Презентация и доклад к предзащите
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Полная переработка логики выступления и визуальной структуры слайдов. Профессиональная расстановка акцентов на защищаемых результатах, психологическая подготовка и репетиция доклада при необходимости.
-                        </p>
-                    </div>
-
-                    {/* Услуга 3: Работа с отзывами */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Работа с отзывами оппонентов
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Детальный разбор критических замечаний ведущей организации и официальных оппонентов. Подготовка аргументированных, тактичных, академически выверенных ответов для успешного прохождения защиты.
+                        <p style={{ color: '#0c4a6e', fontSize: '14px', margin: 0 }}>
+                            Укажите задачу при подаче заявки в форме ниже.
                         </p>
                     </div>
 
                 </div>
+            </section>
 
-                {/* Блок стоимости */}
-                <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
-                    <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
-                        💰 Стоимость рассчитывается индивидуально
-                    </p>
-                    <p style={{ color: '#0c4a6e', fontSize: '14px', margin: 0 }}>
-                        Пожалуйста, укажите вашу конкретную задачу при подаче заявки в форме ниже.
-                    </p>
+            {/* БЛОК ДЕЙСТВИЯ И СОГЛАСИЯ (ЯНДЕКС ФОРМА) */}
+            <section id="cta-form" className="form-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff', textAlign: 'center' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                        Подать заявку
+                    </h2>
+                    <div style={{ width: '100%', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+                        <iframe 
+                            src="https://forms.yandex.ru/u/6ab40911d046882036649f4e" 
+                            width="100%" 
+                            height="700" 
+                            frameBorder="0" 
+                            className="yandex-form-iframe"
+                            title="Yandex Form"
+                            style={{ border: 'none', background: 'transparent' }}
+                        />
+                    </div>
                 </div>
+            </section>
+        </div>
+    );
+};
 
-            </div>
-        </section>
+export default Home;
 
-        {/* Блок действия и согласий */}
-        <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
-          <div className="container max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
-            <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-xl mx-auto">Если вы узнали свою ситуацию в примерах выше или просто хотите понять, насколько текущие материалы соответствуют требованиям, начните с экспресс-аудита.</p>
-            <div className="bg-white border border-border rounded-xl p-5 text-left shadow-sm max-w-xl mx-auto mb-6">
-              <h4 className="font-bold text-slate-900 mb-3 text-sm sm:text-base">Что происходит после заявки:</h4>
-              <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside leading-relaxed">
-                <li>Я смотрю материалы и оцениваю, могу ли быть полезен именно в вашей теме.</li>
-                <li>В течение 1–2 рабочих дней даю ответ — беру работу или аргументированно отказываюсь.</li>
-                <li>Если тема в зоне компетенции, согласовываем экспресс-аудит и дальше двигаемся предметно.</li>
-              </ul>
-            </div>
-            
-            <div className="max-w-xl mx-auto">
-              <div className="space-y-3 mb-5 bg-white p-4 rounded-xl border border-slate-200 text-left">
-                <label className="flex items-start gap-3 cursor-pointer select-none">
-                  <input type="checkbox" id="privacy-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Политикой конфиденциальности</a>.</span>
-                </label>
-                <label className="flex items-start gap-3 cursor-pointer select-none">
-                  <input type="checkbox" id="terms-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
-                </label>
-              </div>
-              <a 
-                href="https://forms.yandex.ru/cloud/6ab40911d046882036649f4e/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => {
-                  const privacy = document.getElementById('privacy-check') as HTMLInputElement;
-                  const terms = document.getElementById('terms-check') as HTMLInputElement;
-                  if (!privacy?.checked || !terms?.checked) {
-                    e.preventDefault();
-                    alert('Пожалуйста, подтвердите согласие с Политикой конфиденциальности и Условиями оказания услуг, поставив обе галочки.');
-                  }
-                }}
-                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-xl shadow-md transition-colors font-sans cursor-pointer"
-              >
-                Отправить заявку на экспресс-аудит
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
-}
