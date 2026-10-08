@@ -139,7 +139,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-                {/* БЛОК СТОИМОСТИ ОСНОВНЫХ УСЛУГ И УСЛОВИЙ ОПЛАТЫ ПО ОФЕРТЕ */}
+                      {/* БЛОК СТОИМОСТИ ОСНОВНЫХ УСЛУГ И УСЛОВИЙ ОПЛАТЫ ПО ОФЕРТЕ */}
         <section className="main-pricing-section" style={{ padding: '40px 20px', backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                 
@@ -149,7 +149,7 @@ export default function Home() {
 
                 <div style={{ display: 'grid', gap: '20px', marginBottom: '35px' }}>
                     
-                    {/* Экспресс-аудит исследования */}
+                    {/* Экспресс-аудит диссертационного исследования */}
                     <div style={{ background: '#f8f9fa', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #00b4d8', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', flexWrap: 'wrap', gap: '15px' }}>
                             <div style={{ flex: '1 1 500px' }}>
@@ -157,7 +157,7 @@ export default function Home() {
                                     Экспресс-аудит диссертационного исследования
                                 </h3>
                                 <p style={{ color: '#4a5568', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                                    Письменный анализ предоставленных материалов (введения, формулировок научной новизны, защищаемых положений и выводов). Выявление критических уязвимостей и подготовка приоритетного плана доработки для предзащиты.
+                                    Первичная экспертная оценка логики, структуры, диссертабельности и научной новизны вашей работы. Разбор критических уязвимостей перед выходом на кафедру или в диссертационный совет.
                                 </p>
                             </div>
                             <div style={{ color: '#00b4d8', fontSize: '22px', fontWeight: 700, whiteSpace: 'nowrap', paddingTop: '2px' }}>
@@ -185,7 +185,7 @@ export default function Home() {
 
                 </div>
 
-                {/* Блок условий, предоплаты и ссылки на оферту */}
+                {/* Уточненный блок условий оказания услуг по требованию Михаила */}
                 <div style={{ padding: '24px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
                     <div style={{ display: 'flex', alignItems: 'start', gap: '16px' }}>
                         <span style={{ fontSize: '24px', lineHeight: 1 }}>⚠️</span>
@@ -194,7 +194,7 @@ export default function Home() {
                                 Условия оказания услуг
                             </h4>
                             <p style={{ color: '#c53030', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>
-                                Все экспертно-аналитические и консультационные работы выполняются <strong>исключительно на условиях 100% предоплаты</strong> (акцептом оферты является полная оплата после подтверждения заявки Исполнителем). Порядок оплаты, прекращения сопровождения и возврата денежных средств определяется <a href="/offer" target="_blank" rel="noopener noreferrer" style={{ color: '#9b2c2c', fontWeight: 600, textDecoration: 'underline' }}>договором публичной оферты</a>.
+                                Все экспертно-аналитические и консультационные работы выполняются на условиях 100% предоплаты после подтверждения заявки и согласования объёма работ. Порядок оплаты, прекращения сопровождения и возврата денежных средств определяется <a href="/offer" target="_blank" rel="noopener noreferrer" style={{ color: '#9b2c2c', fontWeight: 600, textDecoration: 'underline' }}>договором публичной оферты</a> [ссылка].
                             </p>
                         </div>
                     </div>
@@ -202,6 +202,65 @@ export default function Home() {
 
             </div>
         </section>
+
+        {/* БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
+        <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa', fontFamily: 'sans-serif' }}>
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                
+                <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                    Дополнительные услуги
+                </h2>
+                <p style={{ color: '#4a5568', fontSize: '16px', marginBottom: '30px' }}>
+                    Сопровождение соискателей на отдельных этапах подготовки и защиты диссертации
+                </p>
+
+                <div style={{ display: 'grid', gap: '20px' }}>
+                    
+                    {/* Услуга 1: Автореферат */}
+                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                            Автореферат
+                        </h3>
+                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                            Разбор структуры, усиление логики «цель — положения — выводы» и формулировок новизны.
+                        </p>
+                    </div>
+
+                    {/* Услуга 2: Презентация и доклад */}
+                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                            Презентация и доклад к предзащите
+                        </h3>
+                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                            Переработка логики выступления и слайдов, расстановка акцентов, репетиция при необходимости.
+                        </p>
+                    </div>
+
+                    {/* Услуга 3: Работа с отзывами */}
+                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
+                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
+                            Работа с отзывами оппонентов
+                        </h3>
+                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+                            Разбор замечаний и подготовка аргументированных, тактичных ответов.
+                        </p>
+                    </div>
+
+                </div>
+
+                {/* Блок стоимости доп услуг */}
+                <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
+                    <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
+                        💰 Стоимость рассчитывается индивидуально
+                    </p>
+                    <p style={{ color: '#0c4a6e', fontSize: '14px', margin: 0 }}>
+                        Укажите задачу при подаче заявки в форме ниже.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
     
         {/* БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
         <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa', fontFamily: 'sans-serif' }}>
