@@ -2,35 +2,52 @@ import React from 'react';
 
 const Home: React.FC = () => {
     return (
-        <div className="home-page" style={{ fontFamily: 'sans-serif', color: '#1a202c' }}>
-            {/* БЛОК ПРИВЕТСТВИЯ */}
+        <div className="home-page" style={{ fontFamily: 'sans-serif', color: '#1a202c', backgroundColor: '#ffffff' }}>
+            
+            {/* ОРИГИНАЛЬНАЯ ШАПКА САЙТА И НАВИГАЦИЯ (ВОССТАНОВЛЕНО) */}
+            <header style={{ width: '100%', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '20px 0', position: 'sticky', top: 0, zIndex: 100 }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ fontWeight: 700, fontSize: '20px', color: '#0c4a6e' }}>
+                        palagin-mentor.ru
+                    </div>
+                    <nav style={{ display: 'flex', gap: '24px' }}>
+                        <a href="#about" style={{ color: '#4a5568', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>О менторе</a>
+                        <a href="#pricing" style={{ color: '#4a5568', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Стоимость</a>
+                        <a href="#services" style={{ color: '#4a5568', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Доп. услуги</a>
+                        <a href="#cta-form" style={{ color: '#00b4d8', textDecoration: 'none', fontSize: '15px', fontWeight: 600 }}>Подать заявку</a>
+                    </nav>
+                </div>
+            </header>
+
+            {/* БЛОК ПРИВЕТСТВИЯ (HERO SECTION) */}
             <section className="hero-section" style={{ padding: '80px 20px', backgroundColor: '#e0f2fe', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#0c4a6e', marginBottom: '16px' }}>
+                    <h1 style={{ fontSize: '38px', fontWeight: 800, color: '#0c4a6e', marginBottom: '18px', lineHeight: '1.2' }}>
                         Научно-методический консалтинг
                     </h1>
-                    <p style={{ fontSize: '18px', color: '#0369a1', marginBottom: '24px' }}>
+                    <p style={{ fontSize: '19px', color: '#0369a1', marginBottom: '28px', lineHeight: '1.6' }}>
                         Персональное сопровождение соискателей учёных степеней кандидата и доктора технических наук от к.т.н. Михаила Палагина.
                     </p>
-                    <a href="#cta-form" style={{ display: 'inline-block', padding: '12px 28px', backgroundColor: '#00b4d8', color: '#ffffff', fontWeight: 600, borderRadius: '6px', textDecoration: 'none' }}>
+                    <a href="#cta-form" style={{ display: 'inline-block', padding: '14px 32px', backgroundColor: '#00b4d8', color: '#ffffff', fontWeight: 600, borderRadius: '6px', textDecoration: 'none', boxShadow: '0 4px 6px rgba(0,180,216,0.2)' }}>
                         Подать заявку на аудит
                     </a>
                 </div>
             </section>
 
             {/* БЛОК ОБ АВТОРЕ */}
-            <section className="about-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff' }}>
+            <section id="about" className="about-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
+                    <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px', color: '#1a202c' }}>
                         О менторе
                     </h2>
-                    <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#4a5568' }}>
-                        Михаил Палагин — кандидат технических наук, specialist в области системного анализа и математического моделирования. Многолетний опыт успешного руководства научными исследованиями, подготовки соискателей к защите в ведущих диссертационных советах и экспертизы ВАК-публикаций.
+                    <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#4a5568', margin: 0 }}>
+                        Михаил Палагин — кандидат технических наук, специалист в области системного анализа и математического моделирования. Многолетний опыт успешного руководства научными исследованиями, подготовки соискателей к защите в ведущих диссертационных советах и экспертизы ВАК-публикаций.
                     </p>
                 </div>
             </section>
+
             {/* БЛОК СТОИМОСТИ ОСНОВНЫХ УСЛУГ И УСЛОВИЙ ОПЛАТЫ ПО ОФЕРТЕ */}
-            <section className="main-pricing-section" style={{ padding: '40px 20px', backgroundColor: '#ffffff' }}>
+            <section id="pricing" className="main-pricing-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     
                     <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '25px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
@@ -92,8 +109,8 @@ const Home: React.FC = () => {
 
                 </div>
             </section>
-                      {/* СТРОГО ОДИН КОРРЕКТНЫЙ БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
-            <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa' }}>
+                        {/* СТРОГО ОДИН КОРРЕКТНЫЙ БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
+            <section id="services" className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     
                     <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
@@ -150,7 +167,7 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* БЛОК ДЕЙСТВИЯ И СОГЛАСИЯ (ЯНДЕКС ФОРМА) */}
+            {/* БЛОК ЯНДЕКС ФОРМЫ (ТОЧНАЯ РАБОЧАЯ ССЫЛКА МИХАИЛА) */}
             <section id="cta-form" className="form-section" style={{ padding: '60px 20px', backgroundColor: '#ffffff', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
@@ -158,13 +175,13 @@ const Home: React.FC = () => {
                     </h2>
                     <div style={{ width: '100%', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
                         <iframe 
-                            src="https://forms.yandex.ru/u/6ab40911d046882036649f4e" 
+                            src="https://yandex.ru" 
                             width="100%" 
                             height="700" 
                             frameBorder="0" 
-                            className="yandex-form-iframe"
-                            title="Yandex Form"
-                            style={{ border: 'none', background: 'transparent' }}
+                            className="yandex-form-iframe" 
+                            title="Yandex Form" 
+                            style={{ border: 'none', background: 'transparent' }} 
                         />
                     </div>
                 </div>
