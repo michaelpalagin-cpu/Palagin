@@ -99,6 +99,25 @@ export default function Home() {
         {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
+            {/* Публикации */}
+<section className="py-12 bg-white border-b border-border">
+  <div className="container max-w-3xl mx-auto px-4 text-center">
+    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+      Публикации
+    </h2>
+    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      Некоторые публикации последних лет — авторские материалы Михаила
+      Палагина в журнале Business Excellence.
+    </p>
+    <a
+      href="/publications"
+      className="inline-flex items-center justify-center mt-5 rounded-md bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
+    >
+      Посмотреть публикации
+    </a>
+  </div>
+</section>
+
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
             <div className="space-y-3">
               {[
