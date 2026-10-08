@@ -38,9 +38,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Build project
-        run: npm run build
-
       - name: Prepare GitHub Pages files
         run: |
           touch dist/public/.nojekyll
