@@ -320,6 +320,30 @@ export default function Home() {
               >
                 Отправить заявку на экспресс-аудит
               </a>
+                           <div className="mt-5 rounded-xl border border-slate-200 bg-white p-4 text-center">
+                <p className="text-sm text-slate-600">
+                  Если вам удобнее связаться напрямую:
+                </p>
+
+                <div className="mt-2 flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-4">
+                  <a
+                    href="mailto:vned.mp@yandex.ru"
+                    className="font-medium text-teal-600 underline underline-offset-2 hover:text-teal-700"
+                  >
+                    vned.mp@yandex.ru
+                  </a>
+
+                  <a
+                    href="https://t.me/MP_DSR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-teal-600 underline underline-offset-2 hover:text-teal-700"
+                  >
+                    Telegram: @MP_DSR
+                  </a>
+                </div>
+              </div>
+ 
             </div>
           </div>
         </section>
