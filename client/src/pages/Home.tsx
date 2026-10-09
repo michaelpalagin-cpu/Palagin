@@ -36,7 +36,8 @@ export default function Home() {
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Заказать экспресс-аудит
+                    Заказать экспресс-аудит — 6 000 ₽
+
                   </a>
                 </div>
               </div>
