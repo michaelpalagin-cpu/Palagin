@@ -284,6 +284,22 @@ export default function Home() {
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-xl mx-auto">Если вы узнали свою ситуацию в примерах выше или просто хотите понять, насколько текущие материалы соответствуют требованиям, начните с экспресс-аудита.</p>
+            <div className="max-w-xl mx-auto mb-6 rounded-xl border border-teal-200 bg-teal-50 p-5 text-left">
+  <h3 className="font-bold text-slate-900 mb-2">
+    Экспресс-аудит — 6 000 ₽
+  </h3>
+
+  <p className="text-sm text-slate-600 leading-relaxed">
+    Оплата производится только после предварительного согласования заявки.
+    Основной результат — письменный экспертный аудит.
+  </p>
+
+  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+    Срок подготовки обычно составляет 2–3 рабочих дня после получения оплаты
+    и необходимых для работы материалов.
+  </p>
+</div>
+
             <div className="bg-white border border-border rounded-xl p-5 text-left shadow-sm max-w-xl mx-auto mb-6">
               <h4 className="font-bold text-slate-900 mb-3 text-sm sm:text-base">Что происходит после заявки:</h4>
               <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside leading-relaxed">
