@@ -105,8 +105,9 @@ export default function Home() {
     </h2>
 
     <p className="text-center text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
-      Формат для долгосрочной совместной работы. Доступен после
-      экспресс-аудита.
+      Формат для долгосрочной совместной работы. Доступен после экспресс-аудита
+или иного предварительно согласованного экспертного этапа.
+
     </p>
 
     <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 sm:p-6">
