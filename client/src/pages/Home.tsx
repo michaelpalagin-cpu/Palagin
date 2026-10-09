@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react';{/* Часто задаваемые вопросы (FAQ) */}
+
 
 export default function Home() {
   return (
@@ -96,6 +97,86 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Менторское сопровождение */}
+<section className="py-12 bg-white border-b border-border">
+  <div className="container max-w-3xl mx-auto px-4">
+    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-3">
+      Менторское сопровождение
+    </h2>
+
+    <p className="text-center text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
+      Формат для долгосрочной совместной работы. Доступен только для
+      соискателей, успешно прошедших экспресс-аудит.
+    </p>
+
+    <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 sm:p-6">
+      <h3 className="font-bold text-slate-900 mb-4">
+        Что входит в ежемесячное сопровождение
+      </h3>
+
+      <ul className="space-y-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+        <li>
+          <strong className="text-slate-900">
+            До 4 индивидуальных онлайн-сессий в месяц
+          </strong>
+          — продолжительность каждой сессии составляет 15–30 минут.
+        </li>
+
+        <li>
+          <strong className="text-slate-900">
+            Экспертная проверка материалов
+          </strong>
+          — регулярный разбор подготовленных вами глав, введения,
+          автореферата и других согласованных фрагментов.
+        </li>
+
+        <li>
+          <strong className="text-slate-900">
+            Ограниченный объём работы
+          </strong>
+          — до 25–30 страниц в месяц.
+        </li>
+
+        <li>
+          <strong className="text-slate-900">
+            Публикационный консалтинг
+          </strong>
+          — помощь в структурировании и подготовке научных статей
+          к публикации без написания текста за автора и без гарантии
+          публикации.
+        </li>
+
+        <li>
+          <strong className="text-slate-900">
+            Поддержка в мессенджере
+          </strong>
+          — ответы на текущие рабочие вопросы в течение одного рабочего дня.
+        </li>
+      </ul>
+
+      <div className="mt-6 rounded-lg border border-teal-200 bg-teal-50 p-4">
+        <p className="font-bold text-slate-900">
+          Стоимость — 30 000 ₽ в месяц.
+        </p>
+        <p className="mt-1 text-sm text-slate-600">
+          Минимальный срок сопровождения — 6 месяцев.
+        </p>
+      </div>
+
+      <p className="mt-5 text-sm text-slate-600 leading-relaxed">
+        Все тексты и научные решения готовятся соискателем самостоятельно.
+        Сопровождение не включает написание диссертации или статей за автора
+        и не гарантирует публикацию или успешную защиту.
+      </p>
+
+      <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+        Порядок оплаты, прекращения сопровождения и возврата денежных средств
+        определяется договором публичной оферты.
+      </p>
+    </div>
+  </div>
+</section>
+
         {/* Часто задаваемые вопросы (FAQ) */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
