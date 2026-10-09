@@ -219,7 +219,7 @@ export default function Home() {
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" id="terms-check" className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 cursor-pointer" />
-                  <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, самостоятельно являюсь автором материалов и не заказываю написание «под ключ».</span>
+                  <span className="text-xs text-slate-600 leading-relaxed">Я подтверждаю, что ознакомлен с <a href="/terms.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline font-medium">Условиями оказания консалтинговых услуг (Публичной офертой)</a>, являюсь автором материалов и не заказываю написание «под ключ».</span>
                 </label>
               </div>
               <a 
