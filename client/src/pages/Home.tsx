@@ -7,7 +7,7 @@ export default function Home() {
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
         <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="font-bold text-xl text-primary">Михаил Палагин</div>
-          <div className="text-sm font-semibold text-muted-foreground">Научный консалтинг к.т.н.</div>
+          <div className="text-sm font-semibold text-muted-foreground">Консалтинг и менторство</div>
         </div>
       </header>
 
