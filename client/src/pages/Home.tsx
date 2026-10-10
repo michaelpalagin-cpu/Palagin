@@ -21,7 +21,7 @@ export default function Home() {
                   Кандидат технических наук (с 1992 года)
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Экспертное сопровождение аспирантов по техническим специальностям
+                  Диссертация к.т.н. — консалтинг и менторство
                 </h1>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   Помогаю выстроить железобетонный научный аппарат исследования, устранить дефекты логики и подготовить материалы к успешной защите. Без написания текстов «под ключ».
