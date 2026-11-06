@@ -82,6 +82,62 @@ export default function Publications() {
 
         <section className="bg-background py-14 sm:py-20">
           <div className="container">
+                        <div className="mb-12 rounded-2xl border border-border bg-secondary/30 p-6 sm:p-8">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-accent">
+                Дополнительные материалы
+              </p>
+
+              <h2 className="text-2xl font-bold text-primary sm:text-3xl">
+                Новые материалы и обсуждения
+              </h2>
+
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-foreground/70">
+                Новые заметки о диссертациях, научной новизне и подготовке к защите публикую в блоге и Telegram-канале.
+              </p>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <a
+                  href="https://dzen.ru/palagin-mentor.ru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-white p-5 transition-colors hover:border-accent hover:bg-accent/5"
+                >
+                  <span>
+                    <span className="block text-lg font-bold text-primary">
+                      Блог в Дзене
+                    </span>
+                    <span className="mt-1 block text-sm text-foreground/60">
+                      Статьи и разборы для соискателей
+                    </span>
+                  </span>
+                  <ExternalLink
+                    size={18}
+                    className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
+                  />
+                </a>
+
+                <a
+                  href="https://t.me/anatomy_dissertation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-white p-5 transition-colors hover:border-accent hover:bg-accent/5"
+                >
+                  <span>
+                    <span className="block text-lg font-bold text-primary">
+                      Telegram-канал
+                    </span>
+                    <span className="mt-1 block text-sm text-foreground/60">
+                      Короткие наблюдения и практические советы
+                    </span>
+                  </span>
+                  <MessageCircle
+                    size={19}
+                    className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
+                  />
+                </a>
+              </div>
+            </div>
+
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {publications.map((publication) => (
                 <Card key={publication.title} className="overflow-hidden border-border bg-white transition-shadow hover:shadow-md">
