@@ -7,7 +7,10 @@ export default function Home() {
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
         <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="font-bold text-xl text-primary">Михаил Палагин</div>
-          <div className="text-sm font-semibold text-muted-foreground">Консалтинг и менторство</div>
+          <div className="flex items-center gap-4">
+            <a href="/materials" className="hidden text-sm font-semibold text-teal-700 transition-colors hover:text-teal-800 sm:inline">С чем можно прийти</a>
+            <div className="text-sm font-semibold text-muted-foreground">Консалтинг и менторство</div>
+          </div>
         </div>
       </header>
 
@@ -267,6 +270,15 @@ export default function Home() {
 
                 </div>
 
+                <div style={{ marginTop: '28px', textAlign: 'center' }}>
+                    <a
+                        href="/materials"
+                        style={{ color: '#0f766e', fontSize: '15px', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}
+                    >
+                        Посмотреть, с какими материалами можно начать работу →
+                    </a>
+                </div>
+
                 {/* Блок стоимости */}
                 <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
                     <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
@@ -285,6 +297,9 @@ export default function Home() {
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-xl mx-auto">Если вы узнали свою ситуацию в примерах выше или просто хотите понять, насколько текущие материалы соответствуют требованиям, начните с экспресс-аудита.</p>
+            <div className="mb-6 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+              Не знаете, какие материалы отправить? <a href="/materials" className="font-semibold text-teal-600 underline underline-offset-2 hover:text-teal-700">Посмотрите варианты для первого обращения</a>.
+            </div>
             <div className="max-w-xl mx-auto mb-6 rounded-xl border border-teal-200 bg-teal-50 p-5 text-left">
   <h3 className="font-bold text-slate-900 mb-2">
     Экспресс-аудит — 6 000 ₽
