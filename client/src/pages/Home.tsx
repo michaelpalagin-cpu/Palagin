@@ -2,6 +2,13 @@ import React from 'react';{/* Часто задаваемые вопросы (FA
 
 
 export default function Home() {
+    React.useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('scroll') === 'contact-form') {
+      window.setTimeout(() => {
+        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
@@ -271,12 +278,26 @@ export default function Home() {
                 </div>
 
                 <div style={{ marginTop: '28px', textAlign: 'center' }}>
-                    <a
-                        href="/materials"
-                        style={{ color: '#0f766e', fontSize: '15px', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}
-                    >
-                        Посмотреть, с какими материалами можно начать работу →
-                    </a>
+                   <a
+    href="/materials"
+    style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        color: '#ffffff',
+        backgroundColor: '#0f766e',
+        fontSize: '15px',
+        fontWeight: 700,
+        textDecoration: 'none',
+        padding: '12px 18px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 10px rgba(15, 118, 110, 0.22)'
+    }}
+>
+    Посмотреть, с какими материалами можно начать работу <span aria-hidden="true">→</span>
+</a>
+
                 </div>
 
                 {/* Блок стоимости */}
