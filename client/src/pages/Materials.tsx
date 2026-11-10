@@ -95,7 +95,7 @@ export default function Materials() {
             </div>
 
             <div className="mt-8 text-center">
-              <a href="/#contact-form" className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-teal-700">
+             <a href="/?scroll=contact-form" className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-teal-700">
                 Отправить материалы на рассмотрение <ArrowRight size={18} />
               </a>
             </div>
