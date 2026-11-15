@@ -66,6 +66,137 @@ export default function Home() {
             </div>
           </div>
         </section>
+<section
+  id="ai-difference"
+  className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16"
+  aria-labelledby="ai-difference-title"
+>
+  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+    <h2
+      id="ai-difference-title"
+      className="text-2xl font-bold leading-tight text-slate-900 sm:text-3xl"
+    >
+      Разбор диссертационных исследований по техническим специальностям
+    </h2>
+
+    <p className="mt-5 text-base leading-7 text-slate-700 sm:text-lg">
+      Помогаю оценить готовность вашей работы к предзащите и защите:
+    </p>
+
+    <p className="mt-3 text-base font-semibold leading-7 text-teal-700 sm:text-lg">
+      результат → научная новизна → положения на защиту → личный вклад
+    </p>
+
+    <p className="mt-5 text-base leading-7 text-slate-700">
+      Это не генерация текста и не написание диссертации «под ключ». Это анализ
+      научного содержания, логики исследования и готовности работы к защите.
+    </p>
+
+    <p className="mt-4 text-base leading-7 text-slate-700">
+      Я не пишу диссертации и статьи за автора и не обещаю успешную защиту.
+      Показываю сильные и слабые места работы и помогаю определить порядок
+      доработки.
+    </p>
+
+    <h3 className="mt-10 text-xl font-bold text-slate-900 sm:text-2xl">
+      С чем можно работать
+    </h3>
+
+    <div className="mt-6 space-y-6">
+      <div>
+        <h4 className="text-lg font-semibold text-slate-900">
+          1. Разбор на старте
+        </h4>
+
+        <p className="mt-2 text-base leading-7 text-slate-700">
+          Тема, введение, обзор литературы и первые результаты. Проверяем,
+          выстроена ли логика исследования и понятна ли его основная задача.
+        </p>
+      </div>
+
+      <div>
+        <h4 className="text-lg font-semibold text-slate-900">
+          2. Сборка научного ядра
+        </h4>
+
+        <p className="mt-2 text-base leading-7 text-slate-700">
+          Результат, научная новизна, положения на защиту и личный вклад.
+          Определяем, что именно является содержанием диссертации и что автор
+          сможет обоснованно защищать.
+        </p>
+      </div>
+
+      <div>
+        <h4 className="text-lg font-semibold text-slate-900">
+          3. Проверка готовности к предзащите и защите
+        </h4>
+
+        <p className="mt-2 text-base leading-7 text-slate-700">
+          Диссертация и/или автореферат. Разбираем целостность научного
+          аппарата, связь между результатами и выводами, а также уязвимые
+          места, которые могут вызвать вопросы.
+        </p>
+      </div>
+    </div>
+
+    <p className="mt-6 rounded-xl bg-slate-50 p-4 text-base leading-7 text-slate-700">
+      Если текст уже есть, но научное ядро не собрано, начинаем с пересборки
+      логики исследования.
+    </p>
+
+    <div className="mt-10 border-t border-slate-200 pt-8">
+      <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+        Чем это отличается от ИИ
+      </h3>
+
+      <p className="mt-5 text-base leading-7 text-slate-700">
+        ИИ может помочь с черновиком, структурой текста, формулировками,
+        обзором литературы и языковой редактурой.
+      </p>
+
+      <p className="mt-4 text-base leading-7 text-slate-700">
+        Я анализирую не стиль, а{' '}
+        <strong className="font-semibold text-slate-900">
+          научное содержание и готовность работы к защите
+        </strong>
+        .
+      </p>
+
+      <p className="mt-5 text-base font-semibold text-slate-900">
+        Проверяю:
+      </p>
+
+      <ul className="mt-3 list-disc space-y-2 pl-6 text-base leading-7 text-slate-700">
+        <li>что именно является результатом;</li>
+        <li>в чём состоит научная новизна;</li>
+        <li>какие положения выносятся на защиту;</li>
+        <li>как подтверждается личный вклад;</li>
+        <li>где находятся границы применимости;</li>
+        <li>связаны ли между собой цель, результаты и выводы.</li>
+      </ul>
+
+      <p className="mt-5 text-base leading-7 text-slate-700">
+        Я не придумываю научную новизну вместо автора и не маскирую отсутствие
+        результата гладким текстом.
+      </p>
+    </div>
+
+    <div className="mt-10 border-t border-slate-200 pt-8">
+      <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+        Как начать
+      </h3>
+
+      <p className="mt-5 text-base leading-7 text-slate-700">
+        Выберите этап, на котором находится ваша работа, и оставьте заявку.
+      </p>
+
+      <p className="mt-4 text-base leading-7 text-slate-700">
+        К заявке можно приложить автореферат, диссертацию, черновик введения,
+        обзор литературы или отдельный фрагмент, который вызывает сомнения.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Принципы работы */}
         <section className="py-10 bg-white border-b border-border">
