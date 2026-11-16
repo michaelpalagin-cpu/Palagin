@@ -31,7 +31,7 @@ export default function Home() {
                   Кандидат технических наук (с 1992 года)
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Диссертация к.т.н. — консалтинг и менторство
+                  Диссертация — консалтинг и менторство
                 </h1>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   Экспертное сопровождение аспирантов и соискателей по техническим специальностям — от обоснования научной новизны до подготовки к защите. Не пишу диссертации и тексты «под ключ».
@@ -62,15 +62,18 @@ export default function Home() {
                     }}
                   />
                 </div>
+                <p className="mt-4 max-w-xs text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+                  к.т.н. с 1992 года. Многолетний опыт преподавания и практической работы.
+                </p>
               </div>
             </div>
           </div>
         </section>
 <section className="border-b border-border bg-white py-12 sm:py-16">
           <div className="container mx-auto max-w-4xl px-5 sm:px-8">
-            <p className="text-lg font-bold uppercase leading-relaxed tracking-wide text-slate-900 sm:text-xl">
-              Помогаю оценить готовность вашей работы:
-            </p>
+            <h2 className="text-xl font-bold uppercase leading-relaxed tracking-wide text-slate-900 sm:text-2xl">
+              Готовность к защите
+            </h2>
 
             <p className="mt-4 text-lg font-semibold leading-relaxed text-teal-700 sm:text-xl">
               результат → научная новизна → положения на защиту → личный вклад
@@ -85,9 +88,7 @@ export default function Home() {
               Показываю сильные и слабые места и помогаю определить порядок доработки.
             </p>
 
-            <h2 className="mt-10 text-xl font-bold text-slate-900 sm:text-2xl">
-              Как можем работать
-            </h2>
+            <div className="mt-10" />
 
             <div className="mt-6 space-y-7">
               <div>
