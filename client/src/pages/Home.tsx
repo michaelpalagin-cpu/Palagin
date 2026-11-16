@@ -27,8 +27,8 @@ export default function Home() {
           <div className="container max-w-5xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 text-center md:text-left space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
-                  Кандидат технических наук (с 1992 года)
+                <div className="inline-flex max-w-full items-center justify-center rounded-full border border-teal-100 bg-teal-50 px-4 py-2 text-center text-base font-semibold leading-relaxed text-teal-700 sm:text-lg">
+                  к.т.н. с 1992 года. Многолетний опыт преподавания и практической работы.
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Диссертация — консалтинг и менторство
@@ -62,9 +62,6 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <p className="mt-4 max-w-xs text-center text-sm leading-relaxed text-slate-600 sm:text-base">
-                  к.т.н. с 1992 года. Многолетний опыт преподавания и практической работы.
-                </p>
               </div>
             </div>
           </div>
@@ -130,20 +127,16 @@ export default function Home() {
 
             <div className="mt-12 border-t border-slate-200 pt-9">
               <h2 className="text-xl font-bold uppercase text-slate-900 sm:text-2xl">
-                Чем это отличается от ИИ
+                Чем мой разбор отличается от ИИ?
               </h2>
 
-              <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
-                ИИ может помочь с написанием, структурой текста, формулировками,
-                обзором литературы и языковой редактурой.
+              <p className="mt-6 text-lg font-bold leading-8 text-teal-700 sm:text-xl">
+                ИИ работает с текстом. Я проверяю научное содержание и готовность работы к защите.
               </p>
 
               <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
-                Я анализирую не стиль, а{' '}
-                <strong className="font-bold text-slate-900">
-                  научное содержание и готовность работы к защите
-                </strong>
-                .
+                ИИ может помочь с написанием, структурой текста, формулировками,
+                обзором литературы и языковой редактурой.
               </p>
 
               <p className="mt-6 text-base font-bold text-slate-900 sm:text-lg">
@@ -151,12 +144,12 @@ export default function Home() {
               </p>
 
               <ul className="mt-3 list-disc space-y-3 pl-6 text-base leading-8 text-slate-700 sm:text-lg">
-                <li>что именно является результатом;</li>
-                <li>в чём состоит научная новизна;</li>
-                <li>какие положения выносятся на защиту;</li>
-                <li>как подтверждается личный вклад;</li>
-                <li>где находятся границы применимости;</li>
-                <li>связаны ли между собой цель, результаты и выводы.</li>
+                <li>что именно является результатом</li>
+                <li>в чём состоит научная новизна</li>
+                <li>какие положения выносятся на защиту</li>
+                <li>как подтверждается личный вклад</li>
+                <li>где находятся границы применимости</li>
+                <li>связаны ли между собой цель, результаты и выводы</li>
               </ul>
 
               <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
