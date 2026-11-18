@@ -28,8 +28,9 @@ export default function Home() {
           <div className="container max-w-5xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 text-center md:text-left space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
-                  Кандидат технических наук (с 1992 года)
+                <div className="inline-flex flex-col items-center md:items-start gap-1 px-4 py-2 rounded-xl bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
+                  <span>Кандидат технических наук с 1992 года</span>
+                  <span className="font-normal">Многолетний опыт преподавания и практической работы</span>
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Диссертация к.т.н. — консалтинг и менторство
@@ -121,6 +122,30 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Отличие экспертного разбора от ИИ */}
+        <section className="py-10 bg-white border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4">
+            <div className="rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                Мой разбор отличается от ИИ
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                ИИ может быстро пересказать текст, предложить формулировку или указать на очевидное противоречие. Но он не несёт ответственности за научную конструкцию диссертации и не заменяет экспертную оценку инженерного результата.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm sm:text-base text-slate-600 leading-relaxed list-disc list-inside">
+                <li>Я разбираю, какой результат действительно получен</li>
+                <li>Проверяю связь результата с научной новизной</li>
+                <li>Сверяю цель, задачи, положения и выводы</li>
+                <li>Оцениваю доказательную базу и границы применимости</li>
+                <li>Показываю, какие вопросы могут возникнуть у совета</li>
+              </ul>
+              <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+                ИИ может быть инструментом для работы с текстом. Экспертный разбор нужен для проверки научной логики, инженерного содержания и защищаемости результата.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Форматы работы и цены */}
         <section id="pricing" className="py-12 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
@@ -241,11 +266,60 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Публикации */}
+        <section className="py-12 bg-white border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4 text-center">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Публикации</h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              Авторские материалы Михаила Палагина о диссертационной методологии, научной новизне и подготовке к защите
+            </p>
+            <a
+              href="/publications"
+              className="inline-flex items-center justify-center mt-5 rounded-md bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
+            >
+              Посмотреть публикации
+            </a>
+            <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+              <a href="https://dzen.ru/palagin-mentor.ru" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-teal-700 hover:text-teal-800">
+                Блог в Дзене
+              </a>
+              <a href="https://t.me/anatomy_dissertation" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-teal-700 hover:text-teal-800">
+                Telegram-канал
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Часто задаваемые вопросы */}
+        <section className="py-10 bg-white border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
+            <div className="space-y-3">
+              {[
+                { q: 'С какими специальностями вы работаете?', a: 'Только с техническими специальностями и только в рамках тем, в которых у меня есть достаточная экспертиза. Если задача выходит за зону моей компетенции, я честно откажусь ещё на этапе рассмотрения заявки' },
+                { q: 'Вы пишете текст диссертации за соискателя?', a: 'Нет. Я не пишу работу и не продаю готовые тексты. Моя задача — помочь выстроить логику исследования, сформулировать научную новизну, усилить научный аппарат и подготовиться к защите' },
+                { q: 'Сколько длится экспресс-аудит?', a: 'Обычно 2–3 рабочих дня после получения оплаты и необходимых материалов. Основной результат — письменное экспертное заключение' },
+                { q: 'Можно ли обратиться, если диссертация уже в работе?', a: 'Да. Можно направить готовый текст, отдельные главы, автореферат, замечания научного руководителя или материалы предварительного обсуждения' },
+                { q: 'Как обеспечивается конфиденциальность?', a: 'Все материалы используются только для работы по вашему запросу. Документы и переписка не передаются третьим лицам' },
+                { q: 'Что будет, если после аудита я не захочу продолжать?', a: 'Экспресс-аудит является самостоятельной услугой. Вы получаете заключение и рекомендации и можете использовать их дальше самостоятельно' }
+              ].map((f, i) => (
+                <details key={i} className="group rounded-xl border border-slate-200 bg-slate-50/50">
+                  <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-100/50 transition-colors">
+                    <span>{f.q}</span>
+                    <span className="text-teal-600 text-xs transition-transform group-open:rotate-180" aria-hidden="true">▼</span>
+                  </summary>
+                  <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{f.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Блок действия и согласий */}
         <section id="contact-form" className="py-12 bg-slate-50 border-b border-border">
           <div className="container max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Готовы сделать следующий шаг?</h2>
-            <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-xl mx-auto">Если вы узнали свою ситуацию в примерах выше или просто хотите понять, насколько текущие материалы соответствуют требованиям, начните с экспресс-аудита.</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Обсудим вашу задачу</h2>
+            <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-xl mx-auto">Опишите тему, текущий этап работы и вопрос, который нужно решить. Я посмотрю материалы и предложу подходящий формат работы из прайс-листа.</p>
             <div className="mb-6 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
               Не знаете, какие материалы отправить? <a href="/materials" className="font-semibold text-teal-600 underline underline-offset-2 hover:text-teal-700">Посмотрите варианты для первого обращения</a>.
             </div>
