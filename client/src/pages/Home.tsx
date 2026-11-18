@@ -33,7 +33,7 @@ export default function Home() {
                   <span className="font-normal">Многолетний опыт преподавания и практической работы</span>
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Диссертация к.т.н. — консалтинг и менторство
+                  Диссертация — консалтинг и менторство
                 </h1>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   Экспертное сопровождение аспирантов и соискателей по техническим специальностям — от обоснования научной новизны до подготовки к защите. Не пишу диссертации и тексты «под ключ».
@@ -84,7 +84,7 @@ export default function Home() {
         {/* Принципы работы */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Мои принципы работы</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Мой подход</h2>
             <div className="space-y-3">
               {[
                 { t: "Только технические науки", d: "Работаю строго в рамках специальностей, где обладаю подтвержденной экспертизой. Если тема вне зоны моих компетенций — честно откажусь на этапе рассмотрения заявки." },
@@ -127,10 +127,10 @@ export default function Home() {
           <div className="container max-w-3xl mx-auto px-4">
             <div className="rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-                Мой разбор отличается от ИИ
+                Экспертный разбор и ИИ: в чём разница
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                ИИ может быстро пересказать текст, предложить формулировку или указать на очевидное противоречие. Но он не несёт ответственности за научную конструкцию диссертации и не заменяет экспертную оценку инженерного результата.
+                ИИ может работать с текстом. Экспертный разбор проверяет научную конструкцию диссертации и инженерное содержание результата.
               </p>
               <ul className="mt-4 space-y-2 text-sm sm:text-base text-slate-600 leading-relaxed list-disc list-inside">
                 <li>Я разбираю, какой результат действительно получен</li>
@@ -160,7 +160,7 @@ export default function Home() {
             </p>
 
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5 mb-6">
-              <h3 className="font-bold text-slate-900 mb-3">Условия работы</h3>
+              <h3 className="font-bold text-slate-900 mb-3">Важные условия</h3>
               <ul className="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
                 <li>Не гарантирую положительный исход защиты или публикации</li>
                 <li>Окончательная стоимость фиксируется после ознакомления с заявкой и материалами</li>
@@ -404,5 +404,3 @@ export default function Home() {
         </section>
       </main>
     </div>
-  );
-}
