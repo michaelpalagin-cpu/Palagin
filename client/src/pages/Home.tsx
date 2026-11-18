@@ -2,13 +2,14 @@ import React from 'react';{/* Часто задаваемые вопросы (FA
 
 
 export default function Home() {
-    React.useEffect(() => {
+  React.useEffect(() => {
     if (new URLSearchParams(window.location.search).get('scroll') === 'contact-form') {
       window.setTimeout(() => {
         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
   }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <header className="border-b border-border bg-white/80 backdrop-blur sticky top-0 z-50">
@@ -27,28 +28,40 @@ export default function Home() {
           <div className="container max-w-5xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 text-center md:text-left space-y-6">
-                <div className="inline-flex max-w-full items-center justify-center rounded-full border border-teal-100 bg-teal-50 px-4 py-2 text-center text-base font-semibold leading-relaxed text-teal-700 sm:text-lg">
-                  к.т.н. с 1992 года. Многолетний опыт преподавания и практической работы.
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium">
+                  Кандидат технических наук (с 1992 года)
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Диссертация — консалтинг и менторство
+                  Диссертация к.т.н. — консалтинг и менторство
                 </h1>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   Экспертное сопровождение аспирантов и соискателей по техническим специальностям — от обоснования научной новизны до подготовки к защите. Не пишу диссертации и тексты «под ключ».
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#contact-form"
-                    className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto text-base font-medium transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const element = document.getElementById('contact-form');
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    Заказать экспресс-аудит — 6 000 ₽
-
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a 
+                      href="#contact-form"
+                      className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md h-12 px-6 w-full sm:w-auto text-base font-medium transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const element = document.getElementById('contact-form');
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      Заказать экспресс-аудит — 6 000 ₽
+                    </a>
+                    <a
+                      href="#pricing"
+                      className="inline-flex items-center justify-center border border-teal-600 text-teal-700 hover:bg-teal-50 rounded-xl h-12 px-6 w-full sm:w-auto text-base font-medium transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const element = document.getElementById('pricing');
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      Услуги и цены
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="md:col-span-4 flex justify-center">
@@ -63,131 +76,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-<section className="border-b border-border bg-white py-12 sm:py-16">
-          <div className="container mx-auto max-w-4xl px-5 sm:px-8">
-            <h2 className="text-xl font-bold uppercase leading-relaxed tracking-wide text-slate-900 sm:text-2xl">
-              Готовность к защите
-            </h2>
-
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-teal-700 sm:text-xl">
-              результат → научная новизна → положения на защиту → личный вклад
-            </p>
-
-            <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
-              Это не генерация текста и не написание «под ключ». Это анализ научного
-              содержания, логики исследования и готовности работы к защите.
-            </p>
-
-            <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
-              Показываю сильные и слабые места и помогаю определить порядок доработки.
-            </p>
-
-            <div className="mt-10" />
-
-            <div className="mt-6 space-y-7">
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 sm:text-xl">
-                  1. Разбор на старте
-                </h3>
-                <p className="mt-2 text-base leading-8 text-slate-700 sm:text-lg">
-                  Тема, введение, обзор литературы и первые результаты. Проверяем,
-                  выстроена ли логика исследования и понятна ли его основная задача.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 sm:text-xl">
-                  2. Сборка научного ядра
-                </h3>
-                <p className="mt-2 text-base leading-8 text-slate-700 sm:text-lg">
-                  Результат, научная новизна, положения на защиту и личный вклад.
-                  Определяем, что именно является содержанием диссертации и что автор
-                  сможет обоснованно защищать.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 sm:text-xl">
-                  3. Проверка готовности к предзащите и защите
-                </h3>
-                <p className="mt-2 text-base leading-8 text-slate-700 sm:text-lg">
-                  Разбираем целостность научного аппарата, связь между результатами и
-                  выводами, ищем уязвимые места, которые могут вызвать вопросы.
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-7 rounded-xl bg-slate-50 p-5 text-base leading-8 text-slate-700 sm:text-lg">
-              Если текст уже есть, но научное ядро не собрано, проводим пересборку
-              логики исследования.
-            </p>
-
-            <div className="mt-12 border-t border-slate-200 pt-9">
-              <h2 className="text-xl font-bold uppercase text-slate-900 sm:text-2xl">
-                Чем мой разбор отличается от ИИ?
-              </h2>
-
-              <p className="mt-6 text-lg font-bold leading-8 text-teal-700 sm:text-xl">
-                ИИ работает с текстом. Я проверяю научное содержание и готовность работы к защите.
-              </p>
-
-              <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
-                ИИ может помочь с написанием, структурой текста, формулировками,
-                обзором литературы и языковой редактурой.
-              </p>
-
-              <p className="mt-6 text-base font-bold text-slate-900 sm:text-lg">
-                Проверяю:
-              </p>
-
-              <ul className="mt-3 list-disc space-y-3 pl-6 text-base leading-8 text-slate-700 sm:text-lg">
-                <li>что именно является результатом</li>
-                <li>в чём состоит научная новизна</li>
-                <li>какие положения выносятся на защиту</li>
-                <li>как подтверждается личный вклад</li>
-                <li>где находятся границы применимости</li>
-                <li>связаны ли между собой цель, результаты и выводы</li>
-              </ul>
-
-              <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
-                Не придумываю научную новизну вместо автора.
-              </p>
-
-              <p className="mt-3 text-base leading-8 text-slate-700 sm:text-lg">
-                Не маскирую отсутствие результата гладким текстом.
-              </p>
-            </div>
-
-            <div className="mt-12 border-t border-slate-200 pt-9">
-              <h2 className="text-xl font-bold uppercase text-slate-900 sm:text-2xl">
-                Как начать сотрудничество
-              </h2>
-
-              <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
-                Укажите этап, на котором находится ваша работа, и оставьте заявку.
-              </p>
-
-              <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
-                К заявке можно приложить автореферат, диссертацию, введение, обзор
-                литературы или отдельные фрагменты, которые вызывают вопросы или
-                сомнения.
-              </p>
-
-              <a
-                href="#contact-form"
-                className="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-teal-600 px-6 py-3.5 text-base font-semibold text-white shadow-md transition-colors hover:bg-teal-700 sm:w-auto sm:text-lg"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact-form')?.scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }}
-              >
-                Отправить материалы на разбор
-              </a>
             </div>
           </div>
         </section>
@@ -233,209 +121,124 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Менторское сопровождение */}
-<section className="py-12 bg-white border-b border-border">
-  <div className="container max-w-3xl mx-auto px-4">
-    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-3">
-      Менторское сопровождение
-    </h2>
-
-    <p className="text-center text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
-      Формат для долгосрочной совместной работы. Доступен после экспресс-аудита
-или иного предварительно согласованного экспертного этапа.
-
-    </p>
-
-    <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 sm:p-6">
-      <h3 className="font-bold text-slate-900 mb-4">
-        Что входит в ежемесячное сопровождение
-      </h3>
-
-      <ul className="space-y-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-        <li>
-          <strong className="text-slate-900">
-            До 4 индивидуальных онлайн-сессий в месяц
-          </strong>
-          — продолжительность каждой сессии составляет 15–30 минут.
-        </li>
-
-        <li>
-          <strong className="text-slate-900">
-            Экспертная проверка материалов
-          </strong>
-          — регулярный разбор подготовленных вами глав, введения,
-          автореферата и других согласованных фрагментов.
-        </li>
-
-        <li>
-          <strong className="text-slate-900">
-            Ограниченный объём работы
-          </strong>
-          — до 25–30 страниц в месяц.
-        </li>
-
-        <li>
-          <strong className="text-slate-900">
-            Публикационный консалтинг
-          </strong>
-          — помощь в структурировании и подготовке научных статей
-          к публикации без написания текста за автора и без гарантии
-          публикации.
-        </li>
-
-        <li>
-          <strong className="text-slate-900">
-            Поддержка в мессенджере
-          </strong>
-          — ответы на текущие рабочие вопросы в течение одного рабочего дня.
-        </li>
-      </ul>
-
-      <div className="mt-6 rounded-lg border border-teal-200 bg-teal-50 p-4">
-        <p className="font-bold text-slate-900">
-          Стоимость — 30 000 ₽ в месяц.
-        </p>
-        <p className="mt-1 text-sm text-slate-600">
-          Минимальный срок сопровождения — 6 месяцев.
-        </p>
-      </div>
-
-      <p className="mt-5 text-sm text-slate-600 leading-relaxed">
-        Все тексты и научные решения готовятся соискателем самостоятельно.
-        Сопровождение не включает написание диссертации или статей за автора
-        и не гарантирует публикацию или успешную защиту.
-      </p>
-
-      <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-        Порядок оплаты, прекращения сопровождения и возврата денежных средств
-        определяется договором публичной оферты.
-      </p>
-    </div>
-  </div>
-</section>
-
-        {/* Часто задаваемые вопросы (FAQ) */}
-        <section className="py-10 bg-white border-b border-border">
+        {/* Форматы работы и цены */}
+        <section id="pricing" className="py-12 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
-            {/* Публикации */}
-<section className="py-12 bg-white border-b border-border">
-  <div className="container max-w-3xl mx-auto px-4 text-center">
-    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-      Публикации
-    </h2>
-    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-      Некоторые публикации последних лет — авторские материалы Михаила
-      Палагина в журнале Business Excellence.
-    </p>
-    <a
-      href="/publications"
-      className="inline-flex items-center justify-center mt-5 rounded-md bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
-    >
-      Посмотреть публикации
-    </a>
-  </div>
-</section>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-3">
+              Форматы работы и цены
+            </h2>
 
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">Часто задаваемые вопросы</h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-center max-w-2xl mx-auto mb-6">
+              Работаю только с техническими специальностями и в пределах своей компетенции.
+              Не пишу диссертации и статьи «под ключ»: тексты, расчёты и научные формулировки
+              готовит соискатель
+            </p>
+
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5 mb-6">
+              <h3 className="font-bold text-slate-900 mb-3">Условия работы</h3>
+              <ul className="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+                <li>Не гарантирую положительный исход защиты или публикации</li>
+                <li>Окончательная стоимость фиксируется после ознакомления с заявкой и материалами</li>
+                <li>Материалы и переписка конфиденциальны</li>
+                <li>Оплата: 100% предоплата; для физических лиц — чек плательщика НПД</li>
+              </ul>
+            </div>
+
             <div className="space-y-3">
               {[
-                { q: "С какими специальностями вы работаете?", a: "Только с техническими специальностями и только в рамках тем, в которых у меня есть достаточная экспертиза. Если задача выходит за зону моей компетенции — честно откажусь ещё на этапе рассмотрения заявки." },
-                { q: "Вы пишете текст диссертации за соискателя?", a: "Нет. Я не пишу работу и не продаю готовые тексты. Моя задача — помочь выстроить логику исследования, сформулировать научную новизну, усилить научный аппарат и подготовиться к защите." },
-                { q: "Сколько длится экспресс-аудит?", a: "Обычно несколько рабочих дней после получения материалов. По итогам вы получаете письменное экспертное заключение. При необходимости проводим короткий созвон для обсуждения." },
-                { q: "Можно ли обратиться, если диссертация уже в работе?", a: "Да. Большинство запросов приходит не на старте, а когда уже есть текст, статьи, замечания научного руководителя или кафедры." },
-                { q: "Как обеспечивается конфиденциальность?", a: "Все материалы используются только для работы по вашему запросу. Документы и переписка не передаются третьим лицам." },
-                { q: "Что будет, если после экспресс-аудита я не захочу продолжать?", a: "Это нормальная ситуация. Экспресс-аудит — самостоятельный продукт. Вы получаете разбор и рекомендации и можете использовать их дальше самостоятельно." }
-              ].map((f, i) => (
-                <details key={i} className="group rounded-xl border border-slate-200 bg-slate-50/50">
-                  <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-100/50 transition-colors">
-                    <span>{f.q}</span>
-                    <span className="text-teal-600 text-xs">▼</span>
+                {
+                  title: 'Экспресс-аудит',
+                  price: '6 000 ₽',
+                  term: '2–3 рабочих дня',
+                  lead: 'Первичный разбор темы, введения, черновиков глав или автореферата. Материалы — до 50 страниц',
+                  result: 'Письменное заключение: сильные и слабые места, научная новизна, положения и порядок доработки',
+                  note: 'Без разбора полного текста'
+                },
+                {
+                  title: 'Аудит автореферата',
+                  price: '15 000 ₽',
+                  term: '3–5 рабочих дней',
+                  lead: 'Разбор автореферата как краткой модели диссертации',
+                  result: 'Проверка структуры, связки «цель → положения → выводы» и соответствия новизны результатам исследования',
+                  note: 'Тексты и формулировки соискатель готовит самостоятельно'
+                },
+                {
+                  title: 'Аудит презентации и доклада',
+                  price: '20 000 ₽',
+                  term: '3–5 рабочих дней',
+                  lead: 'Подготовка логики выступления и содержания слайдов',
+                  result: 'Письменное заключение, до двух репетиций по 15 минут и разбор вероятных вопросов совета',
+                  note: 'Акцент на защищаемых результатах'
+                },
+                {
+                  title: 'Ответы на отзывы оппонентов и ведущей организации',
+                  price: '25 000 ₽',
+                  term: '2–4 рабочих дня',
+                  lead: 'Разбор критических замечаний и подготовка структуры ответов',
+                  result: 'Аргументированные и тактичные ответы по четырём отзывам',
+                  note: 'Услуга доступна после аудита автореферата или диссертации'
+                },
+                {
+                  title: 'Аудит диссертации по главам',
+                  price: '50 000 ₽',
+                  term: '7–10 рабочих дней',
+                  lead: 'Аудит текста до 180 страниц. Больший объём согласовывается отдельно',
+                  result: 'Заключение 10–15 страниц: карта ядра работы, логика глав, связка «цель → задачи → результаты → выводы», доказательная база, вопросы совета и план доработки',
+                  note: 'Включает созвон 30–40 минут. Это аудит конструкции, а не редактура и не перепроверка расчётов'
+                },
+                {
+                  title: 'Полный аудит',
+                  price: '75 000 ₽',
+                  term: '10–14 рабочих дней',
+                  lead: 'Диссертация, автореферат и протокол соответствия',
+                  result: 'Построчная сверка положений, новизны, выводов, цифр, таблиц, публикаций и соответствия автореферата тексту диссертации',
+                  note: 'Включает созвон до 60 минут'
+                },
+                {
+                  title: 'Менторское сопровождение',
+                  price: '30 000 ₽ в месяц',
+                  term: 'Минимальный срок — 6 месяцев',
+                  lead: 'Старт после экспресс-аудита или другого согласованного экспертного этапа',
+                  result: 'До четырёх созвонов в месяц, проверка до 25–30 страниц, поддержка в мессенджере и публикационный консалтинг',
+                  note: 'Без написания текста за автора и без гарантии публикации или успешной защиты'
+                }
+              ].map((service, i) => (
+                <details key={i} className="group rounded-xl border border-slate-200 bg-white shadow-sm">
+                  <summary className="cursor-pointer list-none px-4 py-4 sm:px-5 flex items-start justify-between gap-4 hover:bg-slate-50 transition-colors rounded-xl">
+                    <span className="min-w-0">
+                      <span className="block font-bold text-slate-900 text-sm sm:text-base">{service.title}</span>
+                      <span className="mt-1 block text-sm font-semibold text-teal-700">{service.price}</span>
+                      <span className="mt-1 block text-xs sm:text-sm text-slate-500">{service.term}</span>
+                    </span>
+                    <span className="shrink-0 text-teal-600 text-sm transition-transform group-open:rotate-180" aria-hidden="true">▼</span>
                   </summary>
-                  <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 leading-relaxed bg-white rounded-b-xl">{f.a}</div>
+                  <div className="border-t border-slate-200 px-4 py-4 sm:px-5 text-sm text-slate-600 leading-relaxed">
+                    <p>{service.lead}</p>
+                    <p className="mt-3"><strong className="text-slate-900">Результат:</strong> {service.result}</p>
+                    <p className="mt-3 text-slate-500">{service.note}</p>
+                    <a
+                      href="#contact-form"
+                      className="mt-4 inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
+                    >
+                      Обсудить задачу
+                    </a>
+                  </div>
                 </details>
               ))}
             </div>
-          </div>
-        </section>
-            {/* БЛОК ДОПОЛНИТЕЛЬНЫХ УСЛУГ */}
-        <section className="additional-services-section" style={{ padding: '60px 20px', backgroundColor: '#f8f9fa', fontFamily: 'sans-serif' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                
-                <h2 style={{ color: '#1a202c', fontSize: '28px', fontWeight: 700, marginBottom: '10px', borderBottom: '2px solid #00b4d8', paddingBottom: '10px' }}>
-                    Дополнительные услуги
-                </h2>
-                <p style={{ color: '#4a5568', fontSize: '16px', marginBottom: '30px' }}>
-                    Сопровождение соискателей на отдельных этапах подготовки и защиты диссертации
-                </p>
 
-                <div style={{ display: 'grid', gap: '20px' }}>
-                    
-                    {/* Услуга 1: Автореферат */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Автореферат
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Глубокий разбор структуры, усиление внутренней логики триады <strong>«цель — положения — выводы»</strong>, а также профессиональная доработка и точечное усиление формулировок научной новизны.
-                        </p>
-                    </div>
-
-                    {/* Услуга 2: Презентация и доклад */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Презентация и доклад к предзащите
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Полная переработка логики выступления и визуальной структуры слайдов. Профессиональная расстановка акцентов на защищаемых результатах, психологическая подготовка и репетиция доклада при необходимости.
-                        </p>
-                    </div>
-
-                    {/* Услуга 3: Работа с отзывами */}
-                    <div style={{ background: '#ffffff', padding: '24px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', borderLeft: '4px solid #00b4d8' }}>
-                        <h3 style={{ color: '#2d3748', fontSize: '20px', marginTop: 0, marginBottom: '8px', fontWeight: 600 }}>
-                            Работа с отзывами оппонентов
-                        </h3>
-                        <p style={{ color: '#718096', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
-                            Детальный разбор критических замечаний ведущей организации и официальных оппонентов. Подготовка аргументированных, тактичных, академически выверенных ответов для успешного прохождения защиты.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div style={{ marginTop: '28px', textAlign: 'center' }}>
-                   <a
-    href="/materials"
-    style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '8px',
-        color: '#ffffff',
-        backgroundColor: '#0f766e',
-        fontSize: '15px',
-        fontWeight: 700,
-        textDecoration: 'none',
-        padding: '12px 18px',
-        borderRadius: '10px',
-        boxShadow: '0 4px 10px rgba(15, 118, 110, 0.22)'
-    }}
->
-    Посмотреть, с какими материалами можно начать работу <span aria-hidden="true">→</span>
-</a>
-
-                </div>
-
-                {/* Блок стоимости */}
-                <div style={{ marginTop: '35px', padding: '20px', backgroundColor: '#e0f2fe', borderRadius: '8px', textAlign: 'center' }}>
-                    <p style={{ color: '#0369a1', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>
-                        💰 Стоимость рассчитывается индивидуально
-                    </p>
-                    <p style={{ color: '#0c4a6e', fontSize: '14px', margin: 0 }}>
-                        Пожалуйста, укажите вашу конкретную задачу при подаче заявки в форме ниже.
-                    </p>
-                </div>
-
+            <div className="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-5 text-center">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Не уверены, какой формат подходит? Направьте краткое описание задачи и доступные материалы
+              </p>
+              <a
+                href="/materials"
+                className="mt-4 inline-flex items-center justify-center rounded-lg bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
+              >
+                С чем можно начать работу
+              </a>
             </div>
+          </div>
         </section>
 
         {/* Блок действия и согласий */}
