@@ -81,6 +81,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Об эксперте */}
+        <section className="py-10 bg-slate-50 border-b border-border">
+          <div className="container max-w-3xl mx-auto px-4">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">Об эксперте</h2>
+              <div className="space-y-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p><strong className="text-slate-900">Михаил Палагин — кандидат технических наук с 1992 года.</strong></p>
+                <p>Диссертация посвящена вопросам надёжности элементов конструкций.</p>
+                <p>Более 25 лет руководил бизнесами в сфере дорожно-строительной техники и автомобилей.</p>
+                <p>В 2020 году вернулся к преподавательской деятельности.</p>
+                <p>Сегодня объединяю научный и практический опыт в работе с соискателями. Помогаю увидеть научную логику исследования, оценить обоснованность результатов и подготовиться к защите.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Принципы работы */}
         <section className="py-10 bg-white border-b border-border">
           <div className="container max-w-3xl mx-auto px-4">
